@@ -105,7 +105,6 @@ export default function ContactForm() {
                   suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="John Doe"
-                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -123,7 +122,6 @@ export default function ContactForm() {
                   suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="john@company.com"
-                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -140,7 +138,6 @@ export default function ContactForm() {
                   suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="Your Company"
-                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -157,7 +154,6 @@ export default function ContactForm() {
                   suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="+1 (555) 123-4567"
-                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
             </div>
@@ -174,7 +170,6 @@ export default function ContactForm() {
                 required
                 suppressHydrationWarning
                 className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
-                style={{ focusBorderColor: '#6B5B95' }}
               >
                 <option value="">Select an option</option>
                 <optgroup label="Products">
@@ -204,7 +199,6 @@ export default function ContactForm() {
                 suppressHydrationWarning
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-sm resize-none"
                 placeholder="Tell us about your requirements or interests..."
-                style={{ focusBorderColor: '#6B5B95' }}
               />
             </div>
 
