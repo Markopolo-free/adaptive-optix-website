@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { createClient } from '@supabase/supabase-js';
 
 interface ContactFormData {
   name: string;
@@ -10,11 +11,14 @@ interface ContactFormData {
   message: string;
 }
 
-// Store submissions in memory (for demo) - in production, use a database
-const submissions: ContactFormData[] = [];
-
 // Initialize Resend only if API key exists
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+
+// Initialize Supabase
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+);
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'noreply@resend.dev';
 
@@ -39,8 +43,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store the submission
-    submissions.push(body);
+    // Save to Supabase
+    if (process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      const { error: dbError } = await supabase
+        .from('submissions')
+        .insert([
+          {
+            name: body.name,
+            email: body.email,
+            company: body.company || null,
+            phone: body.phone || null,
+            interest: body.interest,
+            message: body.message || null,
+          },
+        ]);
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        // Continue with email even if DB fails
+      }
+    }
 
     // Send emails if Resend is configured
     if (resend) {
@@ -104,15 +126,8 @@ export async function POST(request: NextRequest) {
         });
       } catch (emailError) {
         console.error('Error sending emails:', emailError);
-        // Don't fail the request if email fails, just log it
+        // Don't fail the request if email fails
       }
-    } else {
-      // Log to console if Resend is not configured
-      console.log('New contact form submission:', {
-        timestamp: new Date().toISOString(),
-        ...body,
-      });
-      console.log('⚠️ Resend not configured. To enable email notifications, add RESEND_API_KEY to .env.local');
     }
 
     return NextResponse.json(
