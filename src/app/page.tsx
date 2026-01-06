@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [showPortalModal, setShowPortalModal] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const productCards = [
     {
@@ -73,13 +74,64 @@ export default function Home() {
 
       {/* Navigation Bar */}
       <nav style={{ backgroundColor: 'white', padding: '20px 0', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <a href="#products" style={{ padding: '10px 24px', backgroundColor: '#6B5B95', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
-            Products
-          </a>
-          <a href="#solutions" style={{ padding: '10px 24px', backgroundColor: '#6B5B95', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
-            Solutions
-          </a>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', position: 'relative' }}>
+          
+          {/* Products Dropdown */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
+              onMouseEnter={() => setOpenDropdown('products')}
+              style={{ padding: '10px 24px', backgroundColor: '#6B5B95', color: 'white', fontWeight: '600', borderRadius: '8px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px', border: 'none', cursor: 'pointer' }}
+            >
+              Products
+              <span style={{ fontSize: '10px' }}>▼</span>
+            </button>
+            {openDropdown === 'products' && (
+              <div
+                onMouseLeave={() => setOpenDropdown(null)}
+                style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', minWidth: '220px', zIndex: 1001 }}
+              >
+                <Link href="/products/fx-pricing" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  FX Pricing
+                </Link>
+                <Link href="/products/loyalty" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  Rewards and Loyalty
+                </Link>
+                <Link href="/products/offers-campaigns" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderRadius: '0 0 8px 8px' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  Offers and Campaigns
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Solutions Dropdown */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setOpenDropdown(openDropdown === 'solutions' ? null : 'solutions')}
+              onMouseEnter={() => setOpenDropdown('solutions')}
+              style={{ padding: '10px 24px', backgroundColor: '#6B5B95', color: 'white', fontWeight: '600', borderRadius: '8px', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px', border: 'none', cursor: 'pointer' }}
+            >
+              Solutions
+              <span style={{ fontSize: '10px' }}>▼</span>
+            </button>
+            {openDropdown === 'solutions' && (
+              <div
+                onMouseLeave={() => setOpenDropdown(null)}
+                style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', minWidth: '220px', zIndex: 1001 }}
+              >
+                <Link href="/solutions/baas" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  Banking as a Service
+                </Link>
+                <Link href="/solutions/saas" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  Software as a Service
+                </Link>
+                <Link href="/solutions/api" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderRadius: '0 0 8px 8px' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                  APIs & Integration
+                </Link>
+              </div>
+            )}
+          </div>
+
           <a href="#why-choose-us" style={{ padding: '10px 24px', backgroundColor: '#6B5B95', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
             Why Choose Us
           </a>
