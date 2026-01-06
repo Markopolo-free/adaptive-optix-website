@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     description: config.site.description,
     type: "website",
   },
+  other: {
+    'google-font': 'Inter:wght@300;400;500;600;700',
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

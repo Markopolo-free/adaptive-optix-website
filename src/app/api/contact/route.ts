@@ -14,10 +14,10 @@ interface ContactFormData {
 // Initialize Resend only if API key exists
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
-// Initialize Supabase
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+// Initialize Supabase only if URL and key exist
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null
 );
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'noreply@resend.dev';
@@ -43,24 +43,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Save to Supabase
-    if (process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      const { error: dbError } = await supabase
-        .from('submissions')
-        .insert([
-          {
-            name: body.name,
-            email: body.email,
-            company: body.company || null,
-            phone: body.phone || null,
-            interest: body.interest,
-            message: body.message || null,
-          },
-        ]);
+    // Save to Supabase if configured
+    if (supabase) {
+      try {
+        const { error: dbError } = await supabase
+          .from('submissions')
+          .insert([
+            {
+              name: body.name,
+              email: body.email,
+              company: body.company || null,
+              phone: body.phone || null,
+              interest: body.interest,
+              message: body.message || null,
+            },
+          ]);
 
-      if (dbError) {
-        console.error('Database error:', dbError);
-        // Continue with email even if DB fails
+        if (dbError) {
+          console.error('Database error:', dbError);
+          // Continue with email even if DB fails
+        }
+      } catch (error) {
+        console.error('Supabase error:', error);
+        // Continue with email even if Supabase fails
       }
     }
 
