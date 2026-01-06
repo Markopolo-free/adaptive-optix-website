@@ -89,7 +89,7 @@ export default function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-white rounded-lg shadow-md border border-gray-200 p-10 space-y-6 max-w-3xl w-full mx-auto px-6 sm:px-8 lg:px-12">
+          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-white rounded-lg shadow-md border border-gray-200 space-y-6 max-w-3xl w-full mx-auto" style={{ padding: '32px 48px 32px 32px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label htmlFor="name" className="block text-base font-bold text-gray-900 mb-3">

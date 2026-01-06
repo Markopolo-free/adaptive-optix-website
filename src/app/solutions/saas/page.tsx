@@ -1,16 +1,65 @@
+'use client';
+
 import Link from 'next/link';
 import { config } from '@/data/config';
+import { useState } from 'react';
 
 const saas = config.solutions.find((s) => s.id === 'saas')!;
 
-export const metadata = {
-  title: `${saas.name} - Adaptive Optix`,
-  description: saas.description,
-};
-
 export default function SaaSPage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <main className="bg-white text-gray-900">
+      {/* Modal */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8"
+            onClick={(e) => e.stopPropagation()}
+            style={{ borderTop: '4px solid #6B5B95' }}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900">API Integration Example</h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+              <pre className="text-sm text-green-400 font-mono">
+{`// API Integration Example
+const pricing = await fetch('/api/price', {
+  method: 'POST',
+  body: JSON.stringify({
+    segment: 'corporate',
+    volume: 100000,
+    product: 'premium'
+  })
+});
+
+const rate = await pricing.json();`}
+              </pre>
+            </div>
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={() => setShowModal(false)}
+                className="px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition"
+                style={{ backgroundColor: '#6B5B95' }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
       <section className="text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -120,30 +169,44 @@ export default function SaaSPage() {
               {
                 title: 'Browser-Based',
                 description: 'Access from any device with an internet connection',
+                clickable: false,
               },
               {
                 title: 'Automatic Updates',
                 description: 'Always have the latest features and security patches',
+                clickable: false,
               },
               {
                 title: 'Data Security',
                 description: 'Enterprise-grade encryption and compliance certifications',
+                clickable: false,
               },
               {
                 title: 'Collaboration',
                 description: 'Built-in tools for team collaboration and communication',
+                clickable: false,
               },
               {
                 title: 'API Access',
                 description: 'Connect with other tools in your tech stack',
+                clickable: true,
               },
               {
                 title: '99.9% Uptime SLA',
                 description: 'Reliable service with guaranteed availability',
+                clickable: false,
               },
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+              <div
+                key={index}
+                className={`bg-white rounded-lg hover:shadow-lg transition mr-4 ${feature.clickable ? 'cursor-pointer' : ''}`}
+                style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+                onClick={() => feature.clickable && setShowModal(true)}
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {feature.title}
+                  {feature.clickable && <span className="ml-2 text-sm" style={{ color: '#6B5B95' }}>→</span>}
+                </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
               </div>
             ))}
