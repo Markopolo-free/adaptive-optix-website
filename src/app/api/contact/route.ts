@@ -159,11 +159,3 @@ function getInterestLabel(interest: string): string {
   };
   return labels[interest] || interest;
 }
-
-// Optional: GET endpoint to retrieve submissions (for demo only)
-export async function GET() {
-  return NextResponse.json({
-    submissions,
-    count: submissions.length,
-  });
-}
