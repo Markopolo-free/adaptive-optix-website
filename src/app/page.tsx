@@ -209,7 +209,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16 mt-12">
             {config.solutions.map((solution: any, index: number) => (
               <Link key={index} href={`/solutions/${solution.name}`}>
                 <div className="h-full bg-gray-50 border-t-4 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
@@ -225,7 +225,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16 mt-32">
             {movedCards.map((product) => (
               <Link key={product.id} href={product.href} className="block h-full">
                 <div className="h-full w-full bg-gray-50 border-t-4 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
