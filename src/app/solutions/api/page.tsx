@@ -62,8 +62,8 @@ export default function APIPage() {
               API Options
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {[ 
               {
                 title: 'REST API',
                 description: 'Industry-standard HTTP-based API for simple integrations',
@@ -80,7 +80,7 @@ export default function APIPage() {
                 features: ['Event-driven', 'Custom payloads', 'Retry logic'],
               },
             ].map((apiType, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{apiType.title}</h3>
                 <p className="text-gray-600 mb-4 text-sm">{apiType.description}</p>
                 <ul className="space-y-2">
@@ -104,9 +104,9 @@ export default function APIPage() {
               Key Benefits
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {api.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   Build custom integrations that work with your technology stack.
@@ -125,7 +125,7 @@ export default function APIPage() {
               Developer Resources
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 title: 'API Documentation',
@@ -152,7 +152,7 @@ export default function APIPage() {
                 description: 'Manage API keys and monitor usage metrics',
               },
             ].map((resource, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{resource.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{resource.description}</p>
               </div>
@@ -169,7 +169,7 @@ export default function APIPage() {
               Security & Reliability
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
               {
                 title: 'API Key Authentication',
@@ -188,7 +188,7 @@ export default function APIPage() {
                 description: 'All API communications are encrypted in transit',
               },
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
               </div>

@@ -111,9 +111,9 @@ const rate = await pricing.json();`}
               Key Advantages
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {saas.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   Cloud-based delivery with enterprise reliability and support.
@@ -132,7 +132,7 @@ const rate = await pricing.json();`}
               Flexible Pricing Models
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 title: 'Freemium',
@@ -147,7 +147,7 @@ const rate = await pricing.json();`}
                 description: 'Pay only for what you use with transparent per-transaction pricing',
               },
             ].map((model, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{model.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{model.description}</p>
               </div>
@@ -164,7 +164,7 @@ const rate = await pricing.json();`}
               SaaS Platform Features
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 title: 'Browser-Based',
@@ -199,7 +199,7 @@ const rate = await pricing.json();`}
             ].map((feature, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-lg hover:shadow-lg transition mr-4 ${feature.clickable ? 'cursor-pointer' : ''}`}
+                className={`bg-white rounded-lg hover:shadow-lg transition ${feature.clickable ? 'cursor-pointer' : ''}`}
                 style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
                 onClick={() => feature.clickable && setShowModal(true)}
               >
@@ -222,7 +222,7 @@ const rate = await pricing.json();`}
               Use Cases
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 title: 'Enterprise Teams',
@@ -237,7 +237,7 @@ const rate = await pricing.json();`}
                 description: 'Scale infrastructure without upfront capital investment',
               },
             ].map((useCase, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">{useCase.description}</p>
               </div>
