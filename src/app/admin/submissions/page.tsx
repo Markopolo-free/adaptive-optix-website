@@ -14,10 +14,11 @@ interface Submission {
   created_at: string;
 }
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabase = supabaseUrl && supabaseKey
+  ? createClient(supabaseUrl, supabaseKey)
+  : null;
 
 export default function SubmissionsPage() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
@@ -29,6 +30,12 @@ export default function SubmissionsPage() {
   }, []);
 
   async function fetchSubmissions() {
+    if (!supabase) {
+      setError('Supabase environment variables are missing.');
+      setLoading(false);
+      return;
+    }
+
     try {
       const { data, error: fetchError } = await supabase
         .from('submissions')
