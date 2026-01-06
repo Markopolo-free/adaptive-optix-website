@@ -3,8 +3,11 @@
 import Link from 'next/link';
 import { config } from '@/data/config';
 import ContactForm from '@/components/ContactForm';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showPortalModal, setShowPortalModal] = useState(false);
+
   const productCards = [
     {
       name: 'FX Rate personalization',
@@ -26,6 +29,48 @@ export default function Home() {
   const movedCards = config.products.filter((p) => ['loyalty', 'offers-campaigns'].includes(p.id));
   return (
     <main>
+      {/* Staff Portal Modal */}
+      {showPortalModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+          onClick={() => setShowPortalModal(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-2xl max-w-4xl w-full p-8"
+            onClick={(e) => e.stopPropagation()}
+            style={{ borderTop: '4px solid #6B5B95' }}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900">Staff Portal Screenshots</h3>
+              <button
+                onClick={() => setShowPortalModal(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <div className="space-y-4">
+              <p className="text-gray-600 mb-4">
+                Upload your screenshots to showcase your customizable staff portal. Screenshots will be displayed here.
+              </p>
+              <div className="bg-gray-100 rounded-lg p-12 text-center border-2 border-dashed border-gray-300">
+                <p className="text-gray-500">Screenshot gallery will be displayed here</p>
+              </div>
+            </div>
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={() => setShowPortalModal(false)}
+                className="px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition"
+                style={{ backgroundColor: '#6B5B95' }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation Bar */}
       <nav style={{ backgroundColor: 'white', padding: '20px 0', position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -163,24 +208,46 @@ export default function Home() {
             {[
               {
                 title: 'Battle-Tested Architecture',
-                description: 'Our solutions are built on proven eMobility technology serving millions of transactions.'
+                description: 'Our solutions are built on proven eMobility technology serving millions of transactions.',
+                clickable: false,
               },
               {
                 title: 'Rapid Implementation',
-                description: 'Fast deployment with minimal disruption to your existing operations.'
+                description: 'Fast deployment with minimal disruption to your existing operations.',
+                clickable: false,
               },
               {
                 title: 'Flexible Integration',
-                description: 'Choose BaaS, SaaS, or API-based solutions that fit your needs.'
+                description: 'Choose BaaS, SaaS, or API-based solutions that fit your needs.',
+                clickable: false,
               },
               {
                 title: 'Expert Support',
-                description: 'Dedicated teams to ensure your success from day one.'
+                description: 'Dedicated teams to ensure your success from day one.',
+                clickable: false,
+              },
+              {
+                title: 'Fully Customizable Staff Portal',
+                description: 'Tailored portal solutions designed to meet your specific business requirements.',
+                clickable: true,
               },
             ].map((item, index) => (
-              <div key={index} className="bg-white border-t-4 rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div
+                key={index}
+                className={`bg-white border-t-4 rounded-lg hover:shadow-lg transition mr-4 ${item.clickable ? 'cursor-pointer' : ''}`}
+                style={{ borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+                onClick={() => item.clickable && setShowPortalModal(true)}
+              >
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   {item.title}
+                  {item.clickable && (
+                    <button
+                      className="ml-2 text-sm px-3 py-1 rounded hover:opacity-80 transition"
+                      style={{ backgroundColor: '#6B5B95', color: 'white' }}
+                    >
+                      View Screenshots →
+                    </button>
+                  )}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   {item.description}
