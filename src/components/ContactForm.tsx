@@ -23,28 +23,46 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError(null);
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to send inquiry');
+      }
+
       setSubmitted(true);
-      setLoading(false);
       setFormData({ name: '', email: '', company: '', phone: '', interest: '', message: '' });
 
       setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section id="contact" className="bg-white py-36 md:py-52">
+    <section id="contact" style={{ backgroundColor: '#F5E6D3', paddingTop: '120px', paddingBottom: '120px' }}>
       <div className="flex flex-col items-center justify-center">
         <div className="text-center mb-14 max-w-2xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -56,14 +74,22 @@ export default function ContactForm() {
         </div>
 
           {submitted && (
-            <div className="mb-8 p-4 bg-green-50 border-l-4 border-green-600 rounded-lg max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="mb-8 p-4 bg-green-50 border-l-4 rounded-lg max-w-3xl mx-auto px-6 sm:px-8 lg:px-12" style={{ borderLeftColor: '#6B5B95' }}>
               <p className="text-green-900 font-semibold text-center">
                 ✓ Thank you! We've received your inquiry and will contact you soon.
               </p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-white rounded-lg shadow-md border border-gray-200 p-10 space-y-6 max-w-3xl w-full mx-auto px-6 sm:px-8 lg:px-12\">
+          {error && (
+            <div className="mb-8 p-4 bg-red-50 border-l-4 rounded-lg max-w-3xl mx-auto px-6 sm:px-8 lg:px-12" style={{ borderLeftColor: '#dc2626' }}>
+              <p className="text-red-900 font-semibold text-center">
+                ✕ {error}
+              </p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-white rounded-lg shadow-md border border-gray-200 p-10 space-y-6 max-w-3xl w-full mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label htmlFor="name" className="block text-base font-bold text-gray-900 mb-3">
@@ -77,8 +103,9 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="John Doe"
+                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -94,8 +121,9 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="john@company.com"
+                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -110,8 +138,9 @@ export default function ContactForm() {
                   value={formData.company}
                   onChange={handleChange}
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="Your Company"
+                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
 
@@ -126,8 +155,9 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
                   placeholder="+1 (555) 123-4567"
+                  style={{ focusBorderColor: '#6B5B95' }}
                 />
               </div>
             </div>
@@ -143,7 +173,8 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 suppressHydrationWarning
-                className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-base"
+                className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                style={{ focusBorderColor: '#6B5B95' }}
               >
                 <option value="">Select an option</option>
                 <optgroup label="Products">
@@ -171,8 +202,9 @@ export default function ContactForm() {
                 onChange={handleChange}
                 rows={4}
                 suppressHydrationWarning
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-gray-900 text-sm resize-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-sm resize-none"
                 placeholder="Tell us about your requirements or interests..."
+                style={{ focusBorderColor: '#6B5B95' }}
               />
             </div>
 
@@ -180,7 +212,8 @@ export default function ContactForm() {
               type="submit"
               disabled={loading}
               suppressHydrationWarning
-              className="w-full px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md text-sm"
+              className="w-full px-6 py-2.5 text-white font-semibold rounded-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md text-sm"
+              style={{ backgroundColor: '#6B5B95' }}
             >
               {loading ? 'Sending...' : 'Register Interest'}
             </button>
