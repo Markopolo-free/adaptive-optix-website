@@ -1,0 +1,157 @@
+import Link from 'next/link';
+import { config } from '@/data/config';
+
+const fxPricing = config.products.find((p) => p.id === 'fx-pricing')!;
+
+export const metadata = {
+  title: `${fxPricing.name} - Adaptive Optix`,
+  description: fxPricing.description,
+};
+
+export default function FXPricingPage() {
+  return (
+    <main className="bg-white text-gray-900">
+      {/* Hero */}
+      <section className="text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center">
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '24px', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}>
+              ← Home
+            </Link>
+            <div className="text-5xl mb-6">{fxPricing.icon}</div>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '32px' }}>
+              {fxPricing.name}
+            </h1>
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
+              {fxPricing.description}
+            </p>
+            <Link
+              href="#contact"
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+            >
+              Request Demo
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+              Key Features
+            </h2>
+            <p className="text-base text-gray-600 leading-relaxed mt-2">
+              Advanced capabilities built into every feature for maximum efficiency.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {fxPricing.features.map((feature, index) => (
+              <div key={index} className="bg-white border-t-4 border-blue-600 rounded-lg shadow-sm mr-4" style={{ padding: '24px 40px 24px 24px' }}>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{feature}</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  Advanced capabilities built into every feature for maximum efficiency.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+              Why FX Pricing?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Real-Time Accuracy',
+                description: 'Get the most current market rates with millisecond precision',
+              },
+              {
+                title: 'Multi-Currency Support',
+                description: 'Handle transactions in any currency with automatic conversion',
+              },
+              {
+                title: 'Risk Management',
+                description: 'Built-in tools to hedge and manage foreign exchange risk',
+              },
+              {
+                title: 'Compliance Ready',
+                description: 'Full audit trails and regulatory compliance reporting',
+              },
+              {
+                title: 'API Driven',
+                description: 'Seamlessly integrate with your existing systems',
+              },
+              {
+                title: '24/7 Availability',
+                description: 'Global market support round the clock',
+              },
+            ].map((benefit, index) => (
+              <div key={index} className="bg-gray-50 border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+              Use Cases
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'International Payments',
+                description: 'Process cross-border payments with competitive rates and instant settlement',
+              },
+              {
+                title: 'Travel & Tourism',
+                description: 'Provide real-time currency conversion for better customer experience',
+              },
+              {
+                title: 'E-Commerce',
+                description: 'Accept payments in multiple currencies with automatic conversion',
+              },
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p className="text-lg text-blue-100 mb-10 leading-relaxed">
+              Let us show you how FX Pricing can transform your business.
+            </p>
+            <Link
+              href="#contact"
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+            >
+              Request a Demo
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
