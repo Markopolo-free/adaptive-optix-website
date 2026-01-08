@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '@/components/Button';
 import { config } from '@/data/config';
 
 const fxPricing = config.products.find((p) => p.id === 'fx-pricing')!;
@@ -25,12 +26,7 @@ export default function FXPricingPage() {
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
               {fxPricing.description}
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              Request Demo
-            </Link>
+            <Button href="#contact" label="Request Demo" />
           </div>
         </div>
       </section>
@@ -143,12 +139,7 @@ export default function FXPricingPage() {
             <p className="text-lg text-blue-100 mb-10 leading-relaxed">
               Let us show you how FX Pricing can transform your business.
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              Request a Demo
-            </Link>
+            <Button href="#contact" label="Request a Demo" />
           </div>
         </div>
       </section>

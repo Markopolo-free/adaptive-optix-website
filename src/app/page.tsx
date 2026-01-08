@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { config } from '@/data/config';
 import ContactForm from '@/components/ContactForm';
 import Header from '@/components/Header';
+import Button from '@/components/Button';
 import { useEffect, useState } from 'react';
 
 type CardContent = {
@@ -205,18 +206,8 @@ export default function Home() {
               {heroSubheading}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="#contact"
-                style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/products/fx-pricing"
-                style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-              >
-                Learn More
-              </Link>
+              <Button href="#contact" label="Get Started" />
+              <Button href="/products/fx-pricing" label="Learn More" />
             </div>
           </div>
         </div>
@@ -353,12 +344,7 @@ export default function Home() {
             <p className="text-lg text-blue-100 mb-10 leading-relaxed">
               {ctaSubheading}
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              {ctaButtonLabel}
-            </Link>
+            <Button href="#contact" label={ctaButtonLabel} />
           </div>
         </div>
       </section>

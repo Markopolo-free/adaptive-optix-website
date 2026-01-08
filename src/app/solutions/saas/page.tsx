@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Button from '@/components/Button';
 import { config } from '@/data/config';
 import { useState } from 'react';
 
@@ -254,12 +255,7 @@ const rate = await pricing.json();`}
             <p className="text-lg text-blue-100 mb-10 leading-relaxed">
               Experience the simplicity and power of cloud-based software solutions.
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              Schedule a Demo
-            </Link>
+            <Button href="#contact" label="Schedule a Demo" />
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '@/components/Button';
 import { config } from '@/data/config';
 
 const loyalty = config.products.find((p) => p.id === 'loyalty')!;
@@ -25,12 +26,7 @@ export default function LoyaltyPage() {
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
               {loyalty.description}
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              Request Demo
-            </Link>
+            <Button href="#contact" label="Request Demo" />
           </div>
         </div>
       </section>
