@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Button from './Button';
 import { useState } from 'react';
 
 export default function Header() {
@@ -83,9 +84,7 @@ export default function Header() {
               Why Choose Us
             </a>
 
-            <a href="#contact" className="font-semibold rounded-lg transition" style={{ padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
-              Contact Us
-            </a>
+            <Button href="#contact" label="Contact Us" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -170,13 +169,9 @@ export default function Header() {
             >
               Why Choose Us
             </a>
-            <Link
-              href="#contact"
-              className="block mt-4 px-4 py-3 text-white rounded-lg text-center font-semibold transition shadow-md"
-              style={{ backgroundColor: '#f26419ff' }}
-            >
-              Contact Us
-            </Link>
+            <div className="mt-4">
+              <Button href="#contact" label="Contact Us" className="w-full text-center block" />
+            </div>
           </div>
         )}
       </nav>

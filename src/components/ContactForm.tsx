@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import Button from './Button';
 
 interface FormData {
   name: string;
@@ -203,15 +204,12 @@ export default function ContactForm() {
             </div>
 
             <div className="flex justify-center">
-              <button
+              <Button
+                label={loading ? 'Sending...' : 'Register Interest'}
                 type="submit"
                 disabled={loading}
-                suppressHydrationWarning
-                className="text-white font-semibold rounded-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
-                style={{ backgroundColor: '#f26419ff', padding: '8px 24px', fontSize: '16px' }}
-              >
-                {loading ? 'Sending...' : 'Register Interest'}
-              </button>
+                className="hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+              />
             </div>
 
             <p className="text-xs text-gray-300 text-center leading-relaxed">

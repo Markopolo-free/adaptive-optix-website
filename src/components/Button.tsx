@@ -1,13 +1,24 @@
 import Link from 'next/link';
 
 interface ButtonProps {
-  href: string;
+  href?: string;
   label: string;
-  variant?: 'primary' | 'secondary' | 'home';
+  variant?: 'primary' | 'secondary' | 'home' | 'modal';
   className?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit';
+  disabled?: boolean;
 }
 
-export default function Button({ href, label, variant = 'primary', className = '' }: ButtonProps) {
+export default function Button({ 
+  href, 
+  label, 
+  variant = 'primary', 
+  className = '',
+  onClick,
+  type = 'button',
+  disabled = false
+}: ButtonProps) {
   const baseStyles = {
     display: 'inline-block',
     padding: '10px 24px',
@@ -33,6 +44,10 @@ export default function Button({ href, label, variant = 'primary', className = '
       backgroundColor: 'white',
       color: '#000029ff',
     },
+    modal: {
+      backgroundColor: '#6B5B95',
+      color: 'white',
+    },
   };
 
   const combinedStyles = {
@@ -40,9 +55,25 @@ export default function Button({ href, label, variant = 'primary', className = '
     ...variantStyles[variant],
   };
 
+  // If it's a link, use Link component
+  if (href) {
+    return (
+      <Link href={href} style={combinedStyles} className={className}>
+        {label}
+      </Link>
+    );
+  }
+
+  // Otherwise, use button element
   return (
-    <Link href={href} style={combinedStyles} className={className}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      style={combinedStyles}
+      className={className}
+    >
       {label}
-    </Link>
+    </button>
   );
 }

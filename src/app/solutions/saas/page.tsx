@@ -49,13 +49,11 @@ const rate = await pricing.json();`}
               </pre>
             </div>
             <div className="mt-6 flex justify-end">
-              <button
+              <Button
+                label="Close"
+                variant="modal"
                 onClick={() => setShowModal(false)}
-                className="px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition"
-                style={{ backgroundColor: '#6B5B95' }}
-              >
-                Close
-              </button>
+              />
             </div>
           </div>
         </div>
