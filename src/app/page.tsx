@@ -213,7 +213,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/products/fx-pricing"
-                style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'transparent', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: '2px solid white', cursor: 'pointer' }}
+                style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
               >
                 Learn More
               </Link>
