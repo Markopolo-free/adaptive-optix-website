@@ -113,9 +113,9 @@ const rate = await pricing.json();`}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {saas.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-3">{benefit}</h3>
+                <p className="text-white leading-relaxed text-sm">
                   Cloud-based delivery with enterprise reliability and support.
                 </p>
               </div>
@@ -147,9 +147,9 @@ const rate = await pricing.json();`}
                 description: 'Pay only for what you use with transparent per-transaction pricing',
               },
             ].map((model, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{model.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{model.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-2">{model.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{model.description}</p>
               </div>
             ))}
           </div>
@@ -199,8 +199,8 @@ const rate = await pricing.json();`}
             ].map((feature, index) => (
               <div
                 key={index}
-                className={`bg-[#14143A] rounded-lg hover:shadow-lg transition ${feature.clickable ? 'cursor-pointer' : ''}`}
-                style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+                className={`bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition ${feature.clickable ? 'cursor-pointer' : ''}`}
+                style={{ padding: '32px 48px 32px 32px' }}
                 onClick={() => feature.clickable && setShowModal(true)}
               >
                 <h3 className="text-lg font-bold text-white mb-2">
@@ -237,9 +237,9 @@ const rate = await pricing.json();`}
                 description: 'Scale infrastructure without upfront capital investment',
               },
             ].map((useCase, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">{useCase.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{useCase.description}</p>
               </div>
             ))}
           </div>

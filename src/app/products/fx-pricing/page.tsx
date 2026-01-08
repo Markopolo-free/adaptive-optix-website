@@ -126,7 +126,7 @@ export default function FXPricingPage() {
                 description: 'Accept payments in multiple currencies with automatic conversion',
               },
             ].map((useCase, index) => (
-              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
                 <p className="text-white leading-relaxed text-sm">{useCase.description}</p>
               </div>

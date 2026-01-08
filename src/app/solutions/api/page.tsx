@@ -80,7 +80,7 @@ export default function APIPage() {
                 features: ['Event-driven', 'Custom payloads', 'Retry logic'],
               },
             ].map((apiType, index) => (
-              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-white mb-2">{apiType.title}</h3>
                 <p className="text-white mb-4 text-sm">{apiType.description}</p>
                 <ul className="space-y-2">
@@ -106,7 +106,7 @@ export default function APIPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {api.benefits.map((benefit, index) => (
-              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-white mb-3">{benefit}</h3>
                 <p className="text-white leading-relaxed text-sm">
                   Build custom integrations that work with your technology stack.
@@ -152,9 +152,9 @@ export default function APIPage() {
                 description: 'Manage API keys and monitor usage metrics',
               },
             ].map((resource, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{resource.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{resource.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-2">{resource.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{resource.description}</p>
               </div>
             ))}
           </div>
@@ -188,9 +188,9 @@ export default function APIPage() {
                 description: 'All API communications are encrypted in transit',
               },
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
