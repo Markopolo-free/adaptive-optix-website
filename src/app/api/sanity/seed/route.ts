@@ -85,8 +85,9 @@ export async function POST() {
       ctaButtonLabel: 'Schedule a Demo',
     };
 
-    [homeCopyDoc, ...homeDocs, ...whyDocs, ...productDocs, ...solutionDocs].forEach((doc) => {
-      tx.createOrReplace(doc);
+    const allDocs = [homeCopyDoc, ...homeDocs, ...whyDocs, ...productDocs, ...solutionDocs];
+    allDocs.forEach((doc) => {
+      tx.createOrReplace(doc as any);
     });
     await tx.commit({ visibility: 'async' });
 
