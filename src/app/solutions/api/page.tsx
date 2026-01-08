@@ -10,12 +10,12 @@ export const metadata = {
 
 export default function APIPage() {
   return (
-    <main className="bg-white text-gray-900">
+    <main style={{ backgroundColor: '#000029ff', color: '#ffffff' }}>
       {/* Hero */}
-      <section className="text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
-            <Link href="/" style={{ display: 'inline-block', marginBottom: '24px', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}>
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '24px', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}>
               ← Home
             </Link>
             <div className="text-5xl mb-6">{api.icon}</div>
@@ -27,7 +27,7 @@ export default function APIPage() {
             </p>
             <Link
               href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
             >
               Request Demo
             </Link>
@@ -36,18 +36,18 @@ export default function APIPage() {
       </section>
 
       {/* Overview */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Comprehensive API Suite
             </h2>
           </div>
           <div className="max-w-3xl mx-auto">
-            <p className="text-base text-gray-600 leading-relaxed mb-6">
+            <p className="text-base text-white leading-relaxed mb-6">
               Connect Adaptive Optix with your existing systems and third-party applications through our powerful, well-documented APIs. Build custom integrations that work exactly how you need them.
             </p>
-            <p className="text-base text-gray-600 leading-relaxed">
+            <p className="text-base text-white leading-relaxed">
               From REST to GraphQL, webhooks to SDKs, we provide the tools and documentation needed to integrate seamlessly into your technology stack.
             </p>
           </div>
@@ -55,10 +55,10 @@ export default function APIPage() {
       </section>
 
       {/* API Types */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               API Options
             </h2>
           </div>
@@ -97,10 +97,10 @@ export default function APIPage() {
       </section>
 
       {/* Benefits */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Key Benefits
             </h2>
           </div>
@@ -118,10 +118,10 @@ export default function APIPage() {
       </section>
 
       {/* Developer Resources */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Developer Resources
             </h2>
           </div>
@@ -162,10 +162,10 @@ export default function APIPage() {
       </section>
 
       {/* Security & Reliability */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Security & Reliability
             </h2>
           </div>
@@ -198,7 +198,7 @@ export default function APIPage() {
       </section>
 
       {/* CTA */}
-      <section className="text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Start Integrating</h2>
@@ -207,7 +207,7 @@ export default function APIPage() {
             </p>
             <Link
               href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
             >
               Get API Access
             </Link>

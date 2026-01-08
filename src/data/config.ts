@@ -130,6 +130,56 @@ export const config = {
       ],
     },
   ],
+  // Homepage card content centralized here for easy edits
+  homeProductCards: [
+    {
+      name: 'FX Rate personalization',
+      icon: '💹',
+      description:
+        'Deliver personalized FX rates tailored to each customer segment with dynamic pricing controls.',
+    },
+    {
+      name: 'Leverage our clean-room technology',
+      icon: '🧼',
+      description:
+        'Collaborate on sensitive data securely using privacy-preserving clean-room infrastructure.',
+    },
+    {
+      name: 'Tiered FX Pricing',
+      icon: '📊',
+      description:
+        'Offer tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.',
+    },
+  ],
+  whyChooseUs: [
+    {
+      title: 'Battle-Tested Architecture',
+      description:
+        'Our solutions are built on proven eMobility technology serving millions of transactions.',
+      clickable: false,
+    },
+    {
+      title: 'Rapid Implementation',
+      description: 'Fast deployment with minimal disruption to your existing operations.',
+      clickable: false,
+    },
+    {
+      title: 'Flexible Integration',
+      description: 'Choose BaaS, SaaS, or API-based solutions that fit your needs.',
+      clickable: false,
+    },
+    {
+      title: 'Expert Support',
+      description: 'Dedicated teams to ensure your success from day one.',
+      clickable: false,
+    },
+    {
+      title: 'Fully Customizable Staff Portal',
+      description:
+        'Tailored portal solutions designed to meet your specific business requirements.',
+      clickable: true,
+    },
+  ],
 };
 
 export type Config = typeof config;

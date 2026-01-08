@@ -9,17 +9,27 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sanity/client": "^7.14.0",
+    "@sanity/ui": "^3.1.11",
+    "@sanity/vision": "^5.2.0",
     "@supabase/supabase-js": "^2.89.0",
+    "groq": "^5.2.0",
     "next": "16.1.1",
+    "next-sanity": "^12.0.10",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "resend": "^6.6.0"
+    "resend": "^6.6.0",
+    "sanity": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/event-source-polyfill": "^1.0.5",
+    "@types/eventsource": "^1.1.15",
+    "@types/follow-redirects": "^1.14.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",

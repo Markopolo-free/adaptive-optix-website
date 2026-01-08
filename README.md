@@ -79,6 +79,50 @@ Edit `src/data/config.ts` to update:
 ### Edit Copy/Text
 All text is in the respective page files (`.tsx` files) and can be easily updated.
 
+## 🗂️ Sanity CMS (cards)
+
+Cards on the homepage (product tiles and Why Choose Us) and the Products/Solutions grids can be edited through Sanity.
+
+### Configure
+- Add to `.env.local`:
+
+```bash
+SANITY_PROJECT_ID=your_project_id
+SANITY_DATASET=production
+# optional
+SANITY_API_VERSION=2024-06-01
+```
+
+### Run the Studio
+- Start dev server: `npm run dev`
+- Open `http://localhost:3000/studio`
+- Create/edit documents:
+  - `Homepage Product Card`
+  - `Why Choose Us Card`
+  - `Product Card`
+  - `Solution Card`
+
+### Runtime behavior
+- If Sanity is configured, `/api/content/cards` pulls live content.
+- If not configured or fetching fails, the site falls back to `src/data/config.ts`.
+
+### Seed initial content
+To copy your current config into Sanity (so you can edit in Studio):
+
+1. Create a Sanity API token with write access and add to `.env.local`:
+
+```bash
+SANITY_API_TOKEN=your_write_token
+```
+
+2. Restart dev server and call the seed endpoint:
+
+```bash
+curl -X POST http://localhost:3000/api/sanity/seed
+```
+
+This upserts homepage cards, Why Choose Us cards, Products, and Solutions into your dataset.
+
 ## 📚 Getting Started
 
 ### Prerequisites
@@ -178,4 +222,4 @@ For questions or issues, contact the development team.
 
 ---
 
-**Last Updated**: January 6, 2026
+**Last Updated**: January 8, 2026

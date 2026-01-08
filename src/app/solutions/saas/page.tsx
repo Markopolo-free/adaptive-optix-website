@@ -10,7 +10,7 @@ export default function SaaSPage() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <main className="bg-white text-gray-900">
+    <main style={{ backgroundColor: '#000029ff', color: '#ffffff' }}>
       {/* Modal */}
       {showModal && (
         <div
@@ -61,10 +61,10 @@ const rate = await pricing.json();`}
       )}
 
       {/* Hero */}
-      <section className="text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
-            <Link href="/" style={{ display: 'inline-block', marginBottom: '24px', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}>
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '24px', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}>
               ← Home
             </Link>
             <div className="text-5xl mb-6">{saas.icon}</div>
@@ -76,7 +76,7 @@ const rate = await pricing.json();`}
             </p>
             <Link
               href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
             >
               Request Demo
             </Link>
@@ -85,18 +85,18 @@ const rate = await pricing.json();`}
       </section>
 
       {/* Overview */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               What is {saas.name}?
             </h2>
           </div>
           <div className="max-w-3xl mx-auto">
-            <p className="text-base text-gray-600 leading-relaxed mb-6">
+            <p className="text-base text-white leading-relaxed mb-6">
               Software as a Service delivers powerful applications through your browser. No installation, no maintenance, no worries. Just log in and get to work.
             </p>
-            <p className="text-base text-gray-600 leading-relaxed">
+            <p className="text-base text-white leading-relaxed">
               Our SaaS solutions are designed to be intuitive, scalable, and secure, with automatic updates ensuring you always have the latest features and security patches.
             </p>
           </div>
@@ -104,10 +104,10 @@ const rate = await pricing.json();`}
       </section>
 
       {/* Benefits */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Key Advantages
             </h2>
           </div>
@@ -125,10 +125,10 @@ const rate = await pricing.json();`}
       </section>
 
       {/* Pricing Models */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Flexible Pricing Models
             </h2>
           </div>
@@ -157,10 +157,10 @@ const rate = await pricing.json();`}
       </section>
 
       {/* Features */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               SaaS Platform Features
             </h2>
           </div>
@@ -215,10 +215,10 @@ const rate = await pricing.json();`}
       </section>
 
       {/* Use Cases */}
-      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#F5E6D3' }}>
+      <section className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ marginBottom: '32px' }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Use Cases
             </h2>
           </div>
@@ -247,7 +247,7 @@ const rate = await pricing.json();`}
       </section>
 
       {/* CTA */}
-      <section className="text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundImage: 'linear-gradient(to bottom right, #6B5B95, #5a4a7e, #4a3a6e)' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready for Cloud?</h2>
@@ -256,7 +256,7 @@ const rate = await pricing.json();`}
             </p>
             <Link
               href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#6B5B95', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
+              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
             >
               Schedule a Demo
             </Link>

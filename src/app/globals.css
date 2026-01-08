@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000029ff;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000029ff;
+    --foreground: #ffffff;
   }
 }
 
@@ -39,5 +39,26 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Hero banner with double orange separator */
+.hero-banner {
+  position: relative;
+  background-color: #000029ff;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  background: linear-gradient(
+    to bottom,
+    #f26419ff 0 2px,
+    transparent 2px 6px,
+    #f26419ff 6px 8px
+  );
 }
 

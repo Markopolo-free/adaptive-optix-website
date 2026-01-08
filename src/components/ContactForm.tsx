@@ -62,13 +62,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" style={{ backgroundColor: '#F5E6D3', paddingTop: '120px', paddingBottom: '120px' }}>
+    <section id="contact" style={{ backgroundColor: '#000029ff', paddingTop: '120px', paddingBottom: '120px' }}>
       <div className="flex flex-col items-center justify-center">
         <div className="text-center mb-14 max-w-2xl mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Get in Touch
           </h2>
-          <p className="text-base text-gray-600 leading-relaxed">
+          <p className="text-base text-white leading-relaxed">
             Register your interest in our products and solutions. We'll get back to you shortly.
           </p>
         </div>
@@ -213,7 +213,7 @@ export default function ContactForm() {
             </button>
 
             <p className="text-xs text-gray-600 text-center leading-relaxed">
-              We respect your privacy. Your information will only be used to contact you about your inquiry.
+              We respect your privacy. Your information will only be used to contact you about your inquiry, stored securely, and deleted once we have provided the information you requested.
             </p>
           </form>
 

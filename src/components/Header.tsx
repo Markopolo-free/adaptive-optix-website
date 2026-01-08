@@ -5,52 +5,93 @@ import { useState } from 'react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { name: 'Why Price', href: '#pricing' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Overview', href: '/' },
-    { name: 'Products', href: '#products' },
-  ];
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header className="sticky top-0 z-50 shadow-sm" style={{ backgroundColor: '#000029ff' }} suppressHydrationWarning>
       <nav className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#f26419ff' }}>
               <span className="text-white font-bold text-lg">AO</span>
             </div>
-            <span className="font-bold text-xl text-gray-900">Adaptive Optix</span>
+            <span className="font-bold text-xl text-white">Adaptive Optix</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-blue-600 font-medium transition"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <Link
-              href="#contact"
-              className="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold shadow-md"
-            >
+            {/* Products Dropdown */}
+            <div style={{ position: 'relative', marginRight: '16px' }}>
+              <button
+                onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
+                onMouseEnter={() => setOpenDropdown('products')}
+                className="font-semibold rounded-lg transition"
+                style={{ padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px', border: 'none', cursor: 'pointer' }}
+              >
+                Products
+                <span style={{ fontSize: '10px' }}>▼</span>
+              </button>
+              {openDropdown === 'products' && (
+                <div
+                  onMouseLeave={() => setOpenDropdown(null)}
+                  style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', minWidth: '220px', zIndex: 1001 }}
+                >
+                  <Link href="/products/fx-pricing" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    FX Pricing
+                  </Link>
+                  <Link href="/products/loyalty" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    Rewards and Loyalty
+                  </Link>
+                  <Link href="/products/offers-campaigns" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderRadius: '0 0 8px 8px' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    Offers and Campaigns
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Solutions Dropdown */}
+            <div style={{ position: 'relative', marginRight: '16px' }}>
+              <button
+                onClick={() => setOpenDropdown(openDropdown === 'solutions' ? null : 'solutions')}
+                onMouseEnter={() => setOpenDropdown('solutions')}
+                className="font-semibold rounded-lg transition"
+                style={{ padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '8px', border: 'none', cursor: 'pointer' }}
+              >
+                Solutions
+                <span style={{ fontSize: '10px' }}>▼</span>
+              </button>
+              {openDropdown === 'solutions' && (
+                <div
+                  onMouseLeave={() => setOpenDropdown(null)}
+                  style={{ position: 'absolute', top: '100%', left: 0, marginTop: '8px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', minWidth: '220px', zIndex: 1001 }}
+                >
+                  <Link href="/solutions/baas" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    Banking as a Service
+                  </Link>
+                  <Link href="/solutions/saas" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderBottom: '1px solid #f3f4f6' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    Software as a Service
+                  </Link>
+                  <Link href="/solutions/api" style={{ display: 'block', padding: '12px 20px', color: '#374151', textDecoration: 'none', fontSize: '14px', borderRadius: '0 0 8px 8px' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5E6D3'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+                    APIs & Integration
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <a href="#why-choose-us" className="font-semibold rounded-lg transition" style={{ padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer', marginRight: '16px' }}>
+              Why Choose Us
+            </a>
+
+            <a href="#contact" className="font-semibold rounded-lg transition" style={{ padding: '10px 24px', backgroundColor: '#f26419ff', color: 'white', textDecoration: 'none', fontSize: '14px', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
               Contact Us
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+            className="md:hidden p-2 rounded-lg transition"
+            style={{ color: '#ffffff' }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,18 +107,73 @@ export default function Header() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <Link
+              href="/products/fx-pricing"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              FX Pricing
+            </Link>
+            <Link
+              href="/products/loyalty"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              Rewards and Loyalty
+            </Link>
+            <Link
+              href="/products/offers-campaigns"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              Offers and Campaigns
+            </Link>
+            <Link
+              href="/solutions/baas"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              Banking as a Service
+            </Link>
+            <Link
+              href="/solutions/saas"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              Software as a Service
+            </Link>
+            <Link
+              href="/solutions/api"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              APIs & Integration
+            </Link>
+            <a
+              href="#why-choose-us"
+              className="block px-4 py-2 rounded-lg transition font-medium"
+              style={{ color: '#ffffff' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              Why Choose Us
+            </a>
             <Link
               href="#contact"
-              className="block mt-4 px-4 py-3 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 font-semibold transition shadow-md"
+              className="block mt-4 px-4 py-3 text-white rounded-lg text-center font-semibold transition shadow-md"
+              style={{ backgroundColor: '#f26419ff' }}
             >
               Contact Us
             </Link>
