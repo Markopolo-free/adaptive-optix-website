@@ -3,7 +3,7 @@ import Link from 'next/link';
 interface ButtonProps {
   href: string;
   label: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'home';
   className?: string;
 }
 
@@ -28,6 +28,10 @@ export default function Button({ href, label, variant = 'primary', className = '
       backgroundColor: 'transparent',
       color: 'white',
       border: '2px solid white',
+    },
+    home: {
+      backgroundColor: 'white',
+      color: '#000029ff',
     },
   };
 
