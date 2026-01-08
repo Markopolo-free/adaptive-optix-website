@@ -16,7 +16,7 @@ export default function BaaSPage() {
       <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
-            <Button href="/" label="← Home" variant="home" />
+            <Button href="/" label="← Home" />
             <div className="text-5xl mb-6">{baas.icon}</div>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '32px' }}>
               {baas.name}
