@@ -71,12 +71,7 @@ const rate = await pricing.json();`}
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
               {saas.description}
             </p>
-            <Link
-              href="#contact"
-              style={{ display: 'inline-block', padding: '10px 24px', backgroundColor: 'white', color: '#000029ff', fontWeight: '600', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', border: 'none', cursor: 'pointer' }}
-            >
-              Request Demo
-            </Link>
+            <Button href="#contact" label="Request Demo" variant="home" />
           </div>
         </div>
       </section>
