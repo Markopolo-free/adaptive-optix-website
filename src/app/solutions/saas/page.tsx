@@ -199,15 +199,15 @@ const rate = await pricing.json();`}
             ].map((feature, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-lg hover:shadow-lg transition ${feature.clickable ? 'cursor-pointer' : ''}`}
+                className={`bg-[#14143A] rounded-lg hover:shadow-lg transition ${feature.clickable ? 'cursor-pointer' : ''}`}
                 style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
                 onClick={() => feature.clickable && setShowModal(true)}
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {feature.title}
                   {feature.clickable && <span className="ml-2 text-sm" style={{ color: '#6B5B95' }}>→</span>}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
+                <p className="text-white leading-relaxed text-sm">{feature.description}</p>
               </div>
             ))}
           </div>

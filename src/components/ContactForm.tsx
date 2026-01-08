@@ -89,10 +89,10 @@ export default function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-white rounded-lg shadow-md border border-gray-200 space-y-6 max-w-3xl w-full mx-auto" style={{ padding: '32px 48px 32px 32px' }}>
+          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-[#14143A] rounded-lg shadow-md border border-[#6B5B95] space-y-6 max-w-3xl w-full mx-auto" style={{ padding: '32px 48px 32px 32px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="name" className="block text-base font-bold text-gray-900 mb-3">
+                <label htmlFor="name" className="block text-base font-bold text-white mb-3">
                   Full Name *
                 </label>
                 <input
@@ -103,13 +103,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-base font-bold text-gray-900 mb-3">
+                <label htmlFor="email" className="block text-base font-bold text-white mb-3">
                   Email Address *
                 </label>
                 <input
@@ -120,13 +120,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="john@company.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-base font-bold text-gray-900 mb-3">
+                <label htmlFor="company" className="block text-base font-bold text-white mb-3">
                   Company
                 </label>
                 <input
@@ -136,13 +136,13 @@ export default function ContactForm() {
                   value={formData.company}
                   onChange={handleChange}
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="Your Company"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-base font-bold text-gray-900 mb-3">
+                <label htmlFor="phone" className="block text-base font-bold text-white mb-3">
                   Phone Number
                 </label>
                 <input
@@ -152,14 +152,14 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   suppressHydrationWarning
-                  className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                  className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="interest" className="block text-base font-bold text-gray-900 mb-3">
+              <label htmlFor="interest" className="block text-base font-bold text-white mb-3">
                 Product/Solution Interest *
               </label>
               <select
@@ -169,7 +169,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 suppressHydrationWarning
-                className="w-full px-5 py-3.5 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-base"
+                className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
               >
                 <option value="">Select an option</option>
                 <optgroup label="Products">
@@ -187,7 +187,7 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2">
+              <label htmlFor="message" className="block text-sm font-bold text-white mb-2">
                 Message
               </label>
               <textarea
@@ -197,22 +197,24 @@ export default function ContactForm() {
                 onChange={handleChange}
                 rows={4}
                 suppressHydrationWarning
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition text-gray-900 text-sm resize-none"
+                className="w-full px-4 py-2 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-sm resize-none bg-white"
                 placeholder="Tell us about your requirements or interests..."
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              suppressHydrationWarning
-              className="w-full px-6 py-2.5 text-white font-semibold rounded-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md text-sm"
-              style={{ backgroundColor: '#6B5B95' }}
-            >
-              {loading ? 'Sending...' : 'Register Interest'}
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                disabled={loading}
+                suppressHydrationWarning
+                className="text-white font-semibold rounded-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                style={{ backgroundColor: '#f26419ff', padding: '8px 24px', fontSize: '16px' }}
+              >
+                {loading ? 'Sending...' : 'Register Interest'}
+              </button>
+            </div>
 
-            <p className="text-xs text-gray-600 text-center leading-relaxed">
+            <p className="text-xs text-gray-300 text-center leading-relaxed">
               We respect your privacy. Your information will only be used to contact you about your inquiry, stored securely, and deleted once we have provided the information you requested.
             </p>
           </form>

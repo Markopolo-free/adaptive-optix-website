@@ -48,9 +48,9 @@ export default function OffersCampaignsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offersCampaigns.features.map((feature, index) => (
-              <div key={index} className="bg-white border-t-4 border-blue-600 rounded-lg shadow-sm mr-4" style={{ padding: '24px 40px 24px 24px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{feature}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg shadow-sm mr-4" style={{ padding: '24px 40px 24px 24px' }}>
+                <h3 className="text-lg font-bold text-white mb-3">{feature}</h3>
+                <p className="text-white leading-relaxed text-sm">
                   Powerful tools for creating and managing successful promotional campaigns.
                 </p>
               </div>
@@ -94,9 +94,9 @@ export default function OffersCampaignsPage() {
                 description: 'Deliver personalized messages based on customer behavior',
               },
             ].map((benefit, index) => (
-              <div key={index} className="bg-gray-50 border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">{benefit.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>

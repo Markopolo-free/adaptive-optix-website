@@ -48,9 +48,9 @@ export default function FXPricingPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {fxPricing.features.map((feature, index) => (
-              <div key={index} className="bg-white border-t-4 border-blue-600 rounded-lg shadow-sm mr-4" style={{ padding: '24px 40px 24px 24px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{feature}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg shadow-sm mr-4" style={{ padding: '24px 40px 24px 24px' }}>
+                <h3 className="text-lg font-bold text-white mb-3">{feature}</h3>
+                <p className="text-white leading-relaxed text-sm">
                   Advanced capabilities built into every feature for maximum efficiency.
                 </p>
               </div>
@@ -94,9 +94,9 @@ export default function FXPricingPage() {
                 description: 'Global market support round the clock',
               },
             ].map((benefit, index) => (
-              <div key={index} className="bg-gray-50 border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">{benefit.description}</p>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -126,9 +126,9 @@ export default function FXPricingPage() {
                 description: 'Accept payments in multiple currencies with automatic conversion',
               },
             ].map((useCase, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">{useCase.description}</p>
+              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
+                <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{useCase.description}</p>
               </div>
             ))}
           </div>

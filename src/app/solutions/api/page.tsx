@@ -80,12 +80,12 @@ export default function APIPage() {
                 features: ['Event-driven', 'Custom payloads', 'Retry logic'],
               },
             ].map((apiType, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{apiType.title}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{apiType.description}</p>
+              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+                <h3 className="text-lg font-bold text-white mb-2">{apiType.title}</h3>
+                <p className="text-white mb-4 text-sm">{apiType.description}</p>
                 <ul className="space-y-2">
                   {apiType.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm text-gray-600">
+                    <li key={i} className="flex items-center text-sm text-white">
                       <span className="mr-2">✓</span>{feature}
                     </li>
                   ))}
@@ -106,9 +106,9 @@ export default function APIPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {api.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
+              <div key={index} className="bg-[#14143A] rounded-lg hover:shadow-lg transition" style={{ borderTopWidth: '4px', borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}
+                <h3 className="text-lg font-bold text-white mb-3">{benefit}</h3>
+                <p className="text-white leading-relaxed text-sm">
                   Build custom integrations that work with your technology stack.
                 </p>
               </div>
