@@ -239,7 +239,7 @@ export default function Home() {
               <div key={index} className="h-full bg-white border-t-4 rounded-lg hover:shadow-lg transition mr-4" style={{ borderTopColor: '#6B5B95', padding: '32px 48px 32px 32px' }}>
                 <div className="text-3xl mb-5">{product.icon}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  {product.name || product.title}
+                  {product.name}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   {product.description}
