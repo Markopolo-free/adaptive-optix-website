@@ -150,6 +150,12 @@ export const config = {
       description:
         'Offer tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.',
     },
+    {
+      name: 'Repeat Business',
+      icon: '🔄',
+      description:
+        'Drive customer loyalty and increase transaction frequency with targeted retention strategies.',
+    },
   ],
   whyChooseUs: [
     {
