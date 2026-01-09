@@ -216,7 +216,7 @@ export default function Home() {
       {/* Products Section */}
       <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-24">
+          <div className="text-center" style={{ marginBottom: '120px' }}>
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {productsHeading}
             </h2>
