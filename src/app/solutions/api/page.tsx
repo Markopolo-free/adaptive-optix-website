@@ -99,7 +99,7 @@ export default function APIPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {api.benefits.map((benefit, index) => (
+            {api.benefits && api.benefits.map((benefit, index) => (
               <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-white mb-3">{benefit}</h3>
                 <p className="text-white leading-relaxed text-sm">

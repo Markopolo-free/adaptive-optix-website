@@ -23,9 +23,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {config.products.map((product) => (
                 <li key={product.id}>
-                  <Link href={product.href} className="text-gray-400 hover:text-white transition text-sm">
-                    {product.name}
-                  </Link>
+                  {product.href ? (
+                    <Link href={product.href} className="text-gray-400 hover:text-white transition text-sm">
+                      {product.name}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-400 text-sm">{product.name}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -37,9 +41,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {config.solutions.map((solution) => (
                 <li key={solution.id}>
-                  <Link href={solution.href} className="text-gray-400 hover:text-white transition text-sm">
-                    {solution.name}
-                  </Link>
+                  {solution.href ? (
+                    <Link href={solution.href} className="text-gray-400 hover:text-white transition text-sm">
+                      {solution.name}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-400 text-sm">{solution.name}</span>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Optix - Site Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #000029 0%, #14143A 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            color: #f26419;
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+        
+        .sitemap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .node {
+            background: #14143A;
+            border: 2px solid #4169E1;
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin: 10px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(242, 100, 25, 0.4);
+            border-color: #f26419;
+        }
+        
+        .node-home {
+            background: linear-gradient(135deg, #f26419 0%, #ff8c42 100%);
+            border-color: #f26419;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .node-section {
+            background: #1a1a4a;
+            border-color: #6495ED;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .node-page {
+            background: #14143A;
+            border-color: #4169E1;
+        }
+        
+        .node-api {
+            background: #1a2a1a;
+            border-color: #50C878;
+        }
+        
+        .icon {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+        
+        .level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 20px;
+        }
+        
+        .group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .children {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .connector {
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(180deg, #4169E1 0%, transparent 100%);
+            margin: 0 auto;
+        }
+        
+        .horizontal-connector {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #4169E1 50%, transparent 100%);
+            flex-grow: 1;
+        }
+        
+        .description {
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            border: 2px solid;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .node {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+            
+            .children {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗺️ Adaptive Optix Website</h1>
+        <p class="subtitle">Site Structure & Navigation Map</p>
+        
+        <div class="sitemap">
+            <!-- Home -->
+            <div class="group">
+                <div class="node node-home">
+                    <span class="icon">🏠</span>
+                    <strong>Home</strong> (/)
+                    <div class="description">Hero, Products, Solutions, Why Us, Contact</div>
+                </div>
+                <div class="connector"></div>
+                <div class="children">
+                    <div class="node node-page" style="background: #1a2a3a; border-color: #5B9BD5;">
+                        <span class="icon">💹</span>
+                        <strong>A Financial Reality</strong>
+                        <div class="description">Significance of pricing and financial opportunities</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a2a3a; border-color: #5B9BD5;">
+                        <span class="icon">🧼</span>
+                        <strong>Market USP</strong>
+                        <div class="description">Pricing and the unique selling proposition</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a2a3a; border-color: #5B9BD5;">
+                        <span class="icon">📊</span>
+                        <strong>Tailored Value</strong>
+                        <div class="description">Tiered FX rates with volume rewards and margin protection</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a2a3a; border-color: #5B9BD5;">
+                        <span class="icon">📊</span>
+                        <strong>Repeat Business</strong>
+                        <div class="description">Customer loyalty and targeted retention strategies</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why Choose Us Cards -->
+            <div class="group" style="margin-top: 40px;">
+                <div class="node node-section" style="background: #2a2a1a; border-color: #FFD700;">
+                    <span class="icon">⭐</span>
+                    WHY CHOOSE US
+                </div>
+                <div class="connector"></div>
+                <div class="children">
+                    <div class="node node-page" style="background: #1a1a2a; border-color: #9370DB;">
+                        <strong>Battle-Tested Architecture</strong>
+                        <div class="description">Built on proven eMobility technology</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a1a2a; border-color: #9370DB;">
+                        <strong>Rapid Implementation</strong>
+                        <div class="description">Fast deployment with minimal disruption</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a1a2a; border-color: #9370DB;">
+                        <strong>Flexible Integration</strong>
+                        <div class="description">BaaS, SaaS, or API solutions</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a1a2a; border-color: #9370DB;">
+                        <strong>Expert Support</strong>
+                        <div class="description">Dedicated teams for success</div>
+                    </div>
+                    <div class="node node-page" style="background: #1a1a2a; border-color: #9370DB;">
+                        <strong>Fully Customizable Staff Portal</strong>
+                        <div class="description">Tailored portal solutions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Sections -->
+            <div class="level">
+                <!-- Products Section -->
+                <div class="group">
+                    <div class="node node-section">
+                        <span class="icon">📦</span>
+                        PRODUCTS
+                    </div>
+                    <div class="connector"></div>
+                    <div class="children">
+                        <div class="node node-page">
+                            <span class="icon">💱</span>
+                            <strong>Price Management Solutions</strong>
+                            <div class="description">Real-time currency pricing and market intelligence</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">Whether starting from scratch or going for sophistication - all pricing needs active management and this is where you can rely on our expertise</div>
+                        </div>
+                        <div class="node node-page">
+                            <span class="icon">🎁</span>
+                            <strong>Rewards and Loyalty</strong>
+                            <div class="description">Customer loyalty and rewards programs</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">Comprehensive loyalty platform designed to increase customer retention and lifetime value through intelligent rewards.</div>
+                        </div>
+                        <div class="node node-page">
+                            <span class="icon">🚀</span>
+                            <strong>Offers & Campaigns</strong>
+                            <div class="description">Dynamic promotional campaign management</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">Create, manage, and optimize promotional campaigns with advanced targeting, segmentation, and performance analytics.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solutions Section -->
+                <div class="group">
+                    <div class="node node-section">
+                        <span class="icon">🔧</span>
+                        SOLUTIONS
+                    </div>
+                    <div class="connector"></div>
+                    <div class="children">
+                        <div class="node node-page">
+                            <span class="icon">🏗️</span>
+                            <strong>Banking as a Service (BaaS)</strong>
+                            <div class="description">Fully managed backend infrastructure</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">Focus on your core business logic without infrastructure overhead. Includes scalable infrastructure, automatic backups, and security & compliance.</div>
+                        </div>
+                        <div class="node node-page">
+                            <span class="icon">☁️</span>
+                            <strong>Software as a Service (SaaS)</strong>
+                            <div class="description">Cloud-based software delivered via browser</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">Zero installation required. Multi-tenant support with automatic updates, enterprise-grade security, and global accessibility.</div>
+                        </div>
+                        <div class="node node-page">
+                            <span class="icon">🔗</span>
+                            <strong>Pricing Features</strong>
+                            <div class="description">Product, size, sales channel or timing-specific dimensions</div>
+                            <div class="description" style="font-size: 0.75em; opacity: 0.6; margin-top: 8px;">RESTful & GraphQL APIs with comprehensive documentation, rate limiting, webhook support, and SDK availability.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admin & Studio -->
+            <div class="level" style="margin-top: 40px;">
+                <div class="group">
+                    <div class="node node-section" style="background: #2a1a4a; border-color: #9370DB;">
+                        <span class="icon">🔐</span>
+                        ADMIN
+                    </div>
+                    <div class="connector"></div>
+                    <div class="node node-page">
+                        <strong>Form Submissions</strong>
+                        <div class="description">/admin/submissions</div>
+                    </div>
+                </div>
+                
+                <div class="group">
+                    <div class="node node-section" style="background: #4a1a1a; border-color: #FF6347;">
+                        <span class="icon">🎨</span>
+                        CMS STUDIO
+                    </div>
+                    <div class="connector"></div>
+                    <div class="node node-page">
+                        <strong>Sanity Studio</strong>
+                        <div class="description">/studio</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- API Endpoints -->
+            <div class="level" style="margin-top: 40px;">
+                <div class="group">
+                    <div class="node node-section" style="background: #1a3a1a; border-color: #50C878;">
+                        <span class="icon">🔌</span>
+                        API ENDPOINTS
+                    </div>
+                    <div class="connector"></div>
+                    <div class="children">
+                        <div class="node node-api">
+                            <strong>Contact</strong>
+                            <div class="description">POST /api/contact</div>
+                        </div>
+                        <div class="node node-api">
+                            <strong>Cards Content</strong>
+                            <div class="description">GET /api/content/cards</div>
+                        </div>
+                        <div class="node node-api">
+                            <strong>Sanity Seed</strong>
+                            <div class="description">POST /api/sanity/seed</div>
+                        </div>
+                        <div class="node node-api">
+                            <strong>Sanity Snapshot</strong>
+                            <div class="description">GET /api/sanity/snapshot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #f26419 0%, #ff8c42 100%); border-color: #f26419;"></div>
+                <span>Homepage</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #1a1a4a; border-color: #6495ED;"></div>
+                <span>Main Sections</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #14143A; border-color: #4169E1;"></div>
+                <span>Content Pages</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #1a3a1a; border-color: #50C878;"></div>
+                <span>API Endpoints</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

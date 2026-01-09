@@ -277,17 +277,31 @@ export default function Home() {
             style={{ gap: '40px 40px', marginTop: '128px' }}
           >
             {movedCards.map((product) => (
-              <Link key={product.id} href={product.href} className="block h-full">
-                <div className="h-full w-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                  <div className="text-3xl mb-5">{product.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-4">
-                    {product.name}
-                  </h3>
-                  <p className="text-white leading-relaxed text-sm">
-                    {product.description}
-                  </p>
+              product.href ? (
+                <Link key={product.id} href={product.href} className="block h-full">
+                  <div className="h-full w-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
+                    <div className="text-3xl mb-5">{product.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-4">
+                      {product.name}
+                    </h3>
+                    <p className="text-white leading-relaxed text-sm">
+                      {product.description}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <div key={product.id} className="block h-full">
+                  <div className="h-full w-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px', opacity: 0.6 }}>
+                    <div className="text-3xl mb-5">{product.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-4">
+                      {product.name}
+                    </h3>
+                    <p className="text-white leading-relaxed text-sm">
+                      {product.description}
+                    </p>
+                  </div>
                 </div>
-              </Link>
+              )
             ))}
             <div className="hidden md:block" />
           </div>

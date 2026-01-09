@@ -57,7 +57,7 @@ export default function BaaSPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {baas.benefits.map((benefit, index) => (
+            {baas.benefits && baas.benefits.map((benefit, index) => (
               <div key={index} className="bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition" style={{ padding: '32px 48px 32px 32px' }}>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit}</h3>
                 <p className="text-gray-700 leading-relaxed text-sm">

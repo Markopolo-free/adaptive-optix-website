@@ -31,161 +31,157 @@ export const config = {
     { name: 'Contact', href: '#contact' },
   ],
   products: [
-    {
-      id: 'fx-pricing',
-      name: 'FX Pricing',
-      href: '/products/fx-pricing',
-      icon: '💱',
-      shortDescription: 'Real-time currency pricing and market intelligence',
-      description:
-        'Advanced FX pricing engine with real-time market data, sophisticated algorithms, and customizable pricing strategies.',
-      features: [
-        'Real-time rate updates',
-        'Multi-currency support',
-        'Customizable pricing rules',
-        'Historical data analysis',
-        'Risk management tools',
-      ],
-      cta: 'Learn More',
-    },
-    {
-      id: 'loyalty',
-      name: 'Rewards and Loyalty',
-      href: '/products/loyalty',
-      icon: '🎁',
-      shortDescription: 'Customer loyalty and rewards programs',
-      description:
-        'Comprehensive loyalty platform designed to increase customer retention and lifetime value through intelligent rewards.',
-      features: [
-        'Flexible reward structures',
-        'Tiered membership levels',
-        'Real-time point tracking',
-        'Gamification elements',
-        'Analytics dashboard',
-      ],
-      cta: 'Learn More',
-    },
-    {
-      id: 'offers-campaigns',
-      name: 'Offers & Campaigns',
-      href: '/products/offers-campaigns',
-      icon: '🚀',
-      shortDescription: 'Dynamic promotional campaign management',
-      description:
-        'Create, manage, and optimize promotional campaigns with advanced targeting, segmentation, and performance analytics.',
-      features: [
-        'Campaign builder',
-        'Advanced segmentation',
-        'A/B testing capabilities',
-        'Real-time performance metrics',
-        'Multi-channel integration',
-      ],
-      cta: 'Learn More',
-    },
-  ],
+  {
+    cta: null,
+    description: "Whether starting from scratch or going for sophistication - all pricing needs active management and this is where you can rely on our expertise",
+    features: [
+      "Real-time rate updates",
+      "Multi-currency support",
+      "Customizable pricing rules",
+      "Historical data analysis",
+      "Risk management tools"
+    ],
+    href: "/products/fx-pricing",
+    icon: "💱",
+    id: "fx-pricing",
+    name: "Price Management Solutions",
+    shortDescription: "Real-time currency pricing and market intelligence"
+  },
+  {
+    cta: null,
+    description: "Comprehensive loyalty platform designed to increase customer retention and lifetime value through intelligent rewards.",
+    features: [
+      "Flexible reward structures",
+      "Tiered membership levels",
+      "Real-time point tracking",
+      "Gamification elements",
+      "Analytics dashboard"
+    ],
+    href: "/products/loyalty",
+    icon: "🎁",
+    id: "loyalty",
+    name: "Rewards and Loyalty",
+    shortDescription: "Customer loyalty and rewards programs"
+  },
+  {
+    cta: null,
+    description: "Create, manage, and optimize promotional campaigns with advanced targeting, segmentation, and performance analytics.",
+    features: [
+      "Campaign builder",
+      "Advanced segmentation",
+      "A/B testing capabilities",
+      "Real-time performance metrics",
+      "Multi-channel integration"
+    ],
+    href: "/products/offers-campaigns",
+    icon: "🚀",
+    id: "offers-campaigns",
+    name: "Offers & Campaigns",
+    shortDescription: "Dynamic promotional campaign management"
+  }
+],
   solutions: [
-    {
-      id: 'baas',
-      name: 'Banking as a Service (BaaS)',
-      href: '/solutions/baas',
-      icon: '🏗️',
-      description:
-        'Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.',
-      benefits: [
-        'Scalable infrastructure',
-        'Automatic backups',
-        'Security & compliance',
-        'Real-time database',
-        'Reduced operational costs',
-      ],
-    },
-    {
-      id: 'saas',
-      name: 'Software as a Service (SaaS)',
-      href: '/solutions/saas',
-      icon: '☁️',
-      description:
-        'Cloud-based software solutions delivered via browser, requiring no installation or maintenance on your end.',
-      benefits: [
-        'Zero installation required',
-        'Automatic updates',
-        'Multi-tenant support',
-        'Enterprise-grade security',
-        'Global accessibility',
-      ],
-    },
-    {
-      id: 'api',
-      name: 'APIs & Integration',
-      href: '/solutions/api',
-      icon: '🔗',
-      description:
-        'Comprehensive API suite enabling seamless integration with your existing systems and third-party applications.',
-      benefits: [
-        'RESTful & GraphQL APIs',
-        'Comprehensive documentation',
-        'Rate limiting & throttling',
-        'Webhook support',
-        'SDK availability',
-      ],
-    },
-  ],
+  {
+    benefits: [
+      "Scalable infrastructure",
+      "Automatic backups",
+      "Security & compliance",
+      "Real-time database",
+      "Reduced operational costs"
+    ],
+    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
+    href: "/solutions/baas",
+    icon: "🏗️",
+    id: "baas",
+    name: "Banking as a Service (BaaS)"
+  },
+  {
+    benefits: [
+      "Zero installation required",
+      "Automatic updates",
+      "Multi-tenant support",
+      "Enterprise-grade security",
+      "Global accessibility"
+    ],
+    description: "Cloud-based software solutions delivered via browser, requiring no installation or maintenance on your end.",
+    href: "/solutions/saas",
+    icon: "☁️",
+    id: "saas",
+    name: "Software as a Service (SaaS)"
+  },
+  {
+    benefits: [
+      "RESTful & GraphQL APIs",
+      "Comprehensive documentation",
+      "Rate limiting & throttling",
+      "Webhook support",
+      "SDK availability"
+    ],
+    description: "Product, size, sales channel or timing-specific are just some of the dimensions available.",
+    href: "/solutions/api",
+    icon: "🔗",
+    id: "api",
+    name: "Pricing Features"
+  },
+  {
+    benefits: null,
+    description: "This is a test card",
+    href: null,
+    icon: null,
+    id: "test",
+    name: "test"
+  }
+],
   // Homepage card content centralized here for easy edits
   homeProductCards: [
-    {
-      name: 'FX Rate personalization',
-      icon: '💹',
-      description:
-        'Deliver personalized FX rates tailored to each customer segment with dynamic pricing controls.',
-    },
-    {
-      name: 'Leverage our clean-room technology',
-      icon: '🧼',
-      description:
-        'Collaborate on sensitive data securely using privacy-preserving clean-room infrastructure.',
-    },
-    {
-      name: 'Tiered FX Pricing',
-      icon: '📊',
-      description:
-        'Offer tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.',
-    },
-    {
-      name: 'Repeat Business',
-      icon: '🔄',
-      description:
-        'Drive customer loyalty and increase transaction frequency with targeted retention strategies.',
-    },
-  ],
+  {
+    description: "Words about significance of pricing and the financial opportunities",
+    icon: "💹",
+    name: "A Financial Reality"
+  },
+  {
+    description: "Words about Pricing and the USP",
+    icon: "🧼",
+    name: "Market USP"
+  },
+  {
+    description: "Words about tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.",
+    icon: "📊",
+    name: "Tailored Value"
+  },
+  {
+    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    icon: "📊",
+    name: "Repeat Business"
+  }
+],
   whyChooseUs: [
-    {
-      title: 'Battle-Tested Architecture',
-      description:
-        'Our solutions are built on proven eMobility technology serving millions of transactions.',
-      clickable: false,
-    },
-    {
-      title: 'Rapid Implementation',
-      description: 'Fast deployment with minimal disruption to your existing operations.',
-      clickable: false,
-    },
-    {
-      title: 'Flexible Integration',
-      description: 'Choose BaaS, SaaS, or API-based solutions that fit your needs.',
-      clickable: false,
-    },
-    {
-      title: 'Expert Support',
-      description: 'Dedicated teams to ensure your success from day one.',
-      clickable: false,
-    },
-    {
-      title: 'Fully Customizable Staff Portal',
-      description:
-        'Tailored portal solutions designed to meet your specific business requirements.',
-      clickable: true,
-    },
-  ],
+  {
+    clickable: false,
+    description: "Our solutions are built on proven eMobility technology serving millions of transactions.",
+    title: "Battle-Tested Architecture"
+  },
+  {
+    clickable: false,
+    description: "Fast deployment with minimal disruption to your existing operations.",
+    title: "Rapid Implementation"
+  },
+  {
+    clickable: false,
+    description: "Choose BaaS, SaaS, or API-based solutions that fit your needs.",
+    title: "Flexible Integration"
+  },
+  {
+    clickable: false,
+    description: "Dedicated teams to ensure your success from day one.",
+    title: "Expert Support"
+  },
+  {
+    clickable: true,
+    description: "Tailored portal solutions designed to meet your specific business requirements.",
+    title: "Fully Customizable Staff Portal"
+  }
+],
 };
 
 export type Config = typeof config;
