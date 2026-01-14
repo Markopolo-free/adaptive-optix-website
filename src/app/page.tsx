@@ -12,6 +12,9 @@ type CardContent = {
   whyChooseUs: typeof config.whyChooseUs;
   products: typeof config.products;
   solutions: typeof config.solutions;
+  useCases: typeof config.useCases;
+  consultancy: typeof config.consultancy;
+  pricingManagement: typeof config.pricingManagement;
   homeCopy?: {
     heroTitle?: string;
     heroSubheading?: string;
@@ -76,6 +79,9 @@ export default function Home() {
   const whyChooseUs = cardContent?.whyChooseUs ?? config.whyChooseUs;
   const products = cardContent?.products ?? config.products;
   const solutions = cardContent?.solutions ?? config.solutions;
+  const useCases = cardContent?.useCases ?? config.useCases;
+  const consultancy = cardContent?.consultancy ?? config.consultancy;
+  const pricingManagement = cardContent?.pricingManagement ?? config.pricingManagement;
   const heroTitle = cardContent?.homeCopy?.heroTitle ?? 'Adaptive Optix';
   const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
   const productsHeading = cardContent?.homeCopy?.productsHeading ?? 'The power of pricing';
@@ -270,12 +276,6 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-
-          <div
-            className="grid grid-cols-1 md:grid-cols-3"
-            style={{ gap: '40px 40px', marginTop: '128px' }}
-          >
             {movedCards.map((product) => (
               product.href ? (
                 <Link key={product.id} href={product.href} className="block h-full">
@@ -303,7 +303,141 @@ export default function Home() {
                 </div>
               )
             ))}
-            <div className="hidden md:block" />
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section id="use-cases" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
+              Use Cases
+            </h2>
+            <p className="text-base text-white leading-relaxed mt-2">
+              Real-world applications of our solutions
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: '40px 40px', marginTop: '48px' }}
+          >
+            {useCases.map((useCase: any, index: number) => (
+              useCase.href ? (
+                <Link key={index} href={useCase.href}>
+                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
+                    <div className="text-3xl mb-5">{useCase.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-4">
+                      {useCase.name}
+                    </h3>
+                    <p className="text-white leading-relaxed text-sm">
+                      {useCase.description}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
+                  <div className="text-3xl mb-5">{useCase.icon}</div>
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    {useCase.name}
+                  </h3>
+                  <p className="text-white leading-relaxed text-sm">
+                    {useCase.description}
+                  </p>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consultancy Section */}
+      <section id="consultancy" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
+              Consultancy
+            </h2>
+            <p className="text-base text-white leading-relaxed mt-2">
+              Expert guidance and strategic insights
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ gap: '40px 40px', marginTop: '48px' }}
+          >
+            {consultancy.map((service: any, index: number) => (
+              service.href ? (
+                <Link key={index} href={service.href}>
+                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
+                    <div className="text-3xl mb-5">{service.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-4">
+                      {service.name}
+                    </h3>
+                    <p className="text-white leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
+                  <div className="text-3xl mb-5">{service.icon}</div>
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    {service.name}
+                  </h3>
+                  <p className="text-white leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Management Solutions Section */}
+      <section id="pricing-management" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="text-center mb-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
+              Pricing Management Solutions
+            </h2>
+            <p className="text-base text-white leading-relaxed mt-2">
+              Comprehensive pricing strategies and tools
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ gap: '40px 40px', marginTop: '48px' }}
+          >
+            {pricingManagement.map((solution: any, index: number) => (
+              solution.href ? (
+                <Link key={index} href={solution.href}>
+                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
+                    <div className="text-3xl mb-5">{solution.icon}</div>
+                    <h3 className="text-lg font-bold text-white mb-4">
+                      {solution.name}
+                    </h3>
+                    <p className="text-white leading-relaxed text-sm">
+                      {solution.description}
+                    </p>
+                  </div>
+                </Link>
+              ) : (
+                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
+                  <div className="text-3xl mb-5">{solution.icon}</div>
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    {solution.name}
+                  </h3>
+                  <p className="text-white leading-relaxed text-sm">
+                    {solution.description}
+                  </p>
+                </div>
+              )
+            ))}
           </div>
         </div>
       </section>
@@ -328,6 +462,7 @@ export default function Home() {
                 style={{ padding: '32px 48px 32px 32px' }}
                 onClick={() => item.clickable && openPortalModal()}
               >
+                {item.icon && <div className="text-4xl mb-4">{item.icon}</div>}
                 <h3 className="text-lg font-bold text-white mb-4">
                   {item.title}
                   {item.clickable && (

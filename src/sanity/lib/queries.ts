@@ -11,6 +11,7 @@ export const whyCardsQuery = `*[_type == "whyCard"] | order(order asc) {
   _id,
   title,
   description,
+  icon,
   clickable,
   order
 }`;
@@ -28,6 +29,39 @@ export const productCardsQuery = `*[_type == "productCard"] | order(order asc) {
 }`;
 
 export const solutionCardsQuery = `*[_type == "solutionCard"] | order(order asc) {
+  _id,
+  id,
+  name,
+  href,
+  icon,
+  description,
+  benefits,
+  order
+}`;
+
+export const useCaseCardsQuery = `*[_type == "useCaseCard"] | order(order asc) {
+  _id,
+  id,
+  name,
+  href,
+  icon,
+  description,
+  benefits,
+  order
+}`;
+
+export const consultancyCardsQuery = `*[_type == "consultancyCard"] | order(order asc) {
+  _id,
+  id,
+  name,
+  href,
+  icon,
+  description,
+  benefits,
+  order
+}`;
+
+export const pricingManagementCardsQuery = `*[_type == "pricingManagementCard"] | order(order asc) {
   _id,
   id,
   name,

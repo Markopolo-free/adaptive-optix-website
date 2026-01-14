@@ -38,6 +38,7 @@ export async function POST() {
     _id: `whyCard-${i + 1}`,
     title: c.title,
     description: c.description,
+    icon: c.icon,
     clickable: Boolean(c.clickable),
     order: i,
   }));
@@ -67,6 +68,42 @@ export async function POST() {
     order: i,
   }));
 
+  const useCaseDocs = localConfig.useCases.map((u, i) => ({
+    _type: 'useCaseCard',
+    _id: `useCaseCard-${u.id}`,
+    id: u.id,
+    name: u.name,
+    href: u.href,
+    icon: u.icon,
+    description: u.description,
+    benefits: u.benefits,
+    order: i,
+  }));
+
+  const consultancyDocs = localConfig.consultancy.map((c, i) => ({
+    _type: 'consultancyCard',
+    _id: `consultancyCard-${c.id}`,
+    id: c.id,
+    name: c.name,
+    href: c.href,
+    icon: c.icon,
+    description: c.description,
+    benefits: c.benefits,
+    order: i,
+  }));
+
+  const pricingManagementDocs = localConfig.pricingManagement.map((p, i) => ({
+    _type: 'pricingManagementCard',
+    _id: `pricingManagementCard-${p.id}`,
+    id: p.id,
+    name: p.name,
+    href: p.href,
+    icon: p.icon,
+    description: p.description,
+    benefits: p.benefits,
+    order: i,
+  }));
+
   try {
     const tx = client.transaction();
     const homeCopyDoc = {
@@ -85,14 +122,14 @@ export async function POST() {
       ctaButtonLabel: 'Schedule a Demo',
     };
 
-    const allDocs = [homeCopyDoc, ...homeDocs, ...whyDocs, ...productDocs, ...solutionDocs];
+    const allDocs = [homeCopyDoc, ...homeDocs, ...whyDocs, ...productDocs, ...solutionDocs, ...useCaseDocs, ...consultancyDocs, ...pricingManagementDocs];
     allDocs.forEach((doc) => {
       tx.createOrReplace(doc as any);
     });
     await tx.commit({ visibility: 'async' });
 
     return NextResponse.json({ ok: true, counts: {
-      home: homeDocs.length, why: whyDocs.length, products: productDocs.length, solutions: solutionDocs.length, homeCopy: 1,
+      home: homeDocs.length, why: whyDocs.length, products: productDocs.length, solutions: solutionDocs.length, useCases: useCaseDocs.length, consultancy: consultancyDocs.length, pricingManagement: pricingManagementDocs.length, homeCopy: 1,
     } });
   } catch (error: any) {
     return NextResponse.json({ error: error?.message || 'Seeding failed' }, { status: 500 });

@@ -89,11 +89,11 @@ export const config = {
       "Real-time database",
       "Reduced operational costs"
     ],
-    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
+    description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
     href: "/solutions/baas",
     icon: "🏗️",
-    id: "baas",
-    name: "Banking as a Service (BaaS)"
+    id: "data",
+    name: "Data Insights & Visualisation "
   },
   {
     benefits: [
@@ -117,19 +117,137 @@ export const config = {
       "Webhook support",
       "SDK availability"
     ],
-    description: "Product, size, sales channel or timing-specific are just some of the dimensions available.",
+    description: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price",
     href: "/solutions/api",
     icon: "🔗",
     id: "api",
-    name: "Pricing Features"
+    name: "High Level Pricing Features"
   },
   {
     benefits: null,
-    description: "This is a test card",
+    description: "Your data security is central to us - our solution approach ensures its integrity",
     href: null,
-    icon: null,
-    id: "test",
-    name: "test"
+    icon: "🔒",
+    id: "Security",
+    name: "Security"
+  }
+],
+  useCases: [
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "💼",
+    id: "use-case-1",
+    name: "Use Case 1"
+  },
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "🎯",
+    id: "use-case-2",
+    name: "Use Case 2"
+  },
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "🚀",
+    id: "use-case-3",
+    name: "Use Case 3"
+  },
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "⚡",
+    id: "use-case-4",
+    name: "Use Case 4"
+  },
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "🌟",
+    id: "use-case-5",
+    name: "Use Case 5"
+  },
+  {
+    benefits: null,
+    description: "Example use case description",
+    href: null,
+    icon: "💡",
+    id: "use-case-6",
+    name: "Use Case 6"
+  }
+],
+  consultancy: [
+  {
+    benefits: null,
+    description: "Expert consultancy service description",
+    href: null,
+    icon: "🎓",
+    id: "consultancy-1",
+    name: "Consultancy Service 1"
+  },
+  {
+    benefits: null,
+    description: "Expert consultancy service description",
+    href: null,
+    icon: "📊",
+    id: "consultancy-2",
+    name: "Consultancy Service 2"
+  },
+  {
+    benefits: null,
+    description: "Expert consultancy service description",
+    href: null,
+    icon: "💼",
+    id: "consultancy-3",
+    name: "Consultancy Service 3"
+  },
+  {
+    benefits: null,
+    description: "Expert consultancy service description",
+    href: null,
+    icon: "🔍",
+    id: "consultancy-4",
+    name: "Consultancy Service 4"
+  }
+],
+  pricingManagement: [
+  {
+    benefits: null,
+    description: "Pricing management solution description",
+    href: null,
+    icon: "💰",
+    id: "pricing-mgmt-1",
+    name: "Pricing Solution 1"
+  },
+  {
+    benefits: null,
+    description: "Pricing management solution description",
+    href: null,
+    icon: "📈",
+    id: "pricing-mgmt-2",
+    name: "Pricing Solution 2"
+  },
+  {
+    benefits: null,
+    description: "Pricing management solution description",
+    href: null,
+    icon: "💳",
+    id: "pricing-mgmt-3",
+    name: "Pricing Solution 3"
+  },
+  {
+    benefits: null,
+    description: "Pricing management solution description",
+    href: null,
+    icon: "⚙️",
+    id: "pricing-mgmt-4",
+    name: "Pricing Solution 4"
   }
 ],
   // Homepage card content centralized here for easy edits
@@ -158,27 +276,32 @@ export const config = {
   whyChooseUs: [
   {
     clickable: false,
-    description: "Our solutions are built on proven eMobility technology serving millions of transactions.",
-    title: "Battle-Tested Architecture"
+    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
+    icon: "💰",
+    title: "Passionate About Pricing"
   },
   {
     clickable: false,
     description: "Fast deployment with minimal disruption to your existing operations.",
+    icon: "⚡",
     title: "Rapid Implementation"
   },
   {
     clickable: false,
-    description: "Choose BaaS, SaaS, or API-based solutions that fit your needs.",
-    title: "Flexible Integration"
+    description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
+    icon: "🌍",
+    title: "Global Platform Meets Local Needs  "
   },
   {
     clickable: false,
-    description: "Dedicated teams to ensure your success from day one.",
-    title: "Expert Support"
+    description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
+    icon: "🏆",
+    title: "Expert Foundation"
   },
   {
     clickable: true,
     description: "Tailored portal solutions designed to meet your specific business requirements.",
+    icon: "⚙️",
     title: "Fully Customizable Staff Portal"
   }
 ],

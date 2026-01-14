@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
-import { homeCardsQuery, productCardsQuery, solutionCardsQuery, whyCardsQuery, homeCopyQuery } from '@/sanity/lib/queries';
+import { homeCardsQuery, productCardsQuery, solutionCardsQuery, useCaseCardsQuery, consultancyCardsQuery, pricingManagementCardsQuery, whyCardsQuery, homeCopyQuery } from '@/sanity/lib/queries';
 import { config as localConfig } from '@/data/config';
 
 export async function GET() {
@@ -17,6 +17,9 @@ export async function GET() {
       whyChooseUs: localConfig.whyChooseUs,
       products: localConfig.products,
       solutions: localConfig.solutions,
+      useCases: localConfig.useCases,
+      consultancy: localConfig.consultancy,
+      pricingManagement: localConfig.pricingManagement,
       homeCopy: {
         heroTitle: 'Adaptive Optix',
         heroSubheading: 'Empower your organization with data-driven pricing insights',
@@ -35,11 +38,14 @@ export async function GET() {
   }
 
   try {
-    const [homeProductCards, whyChooseUs, products, solutions, homeCopy] = await Promise.all([
+    const [homeProductCards, whyChooseUs, products, solutions, useCases, consultancy, pricingManagement, homeCopy] = await Promise.all([
       sanityClient.fetch(homeCardsQuery),
       sanityClient.fetch(whyCardsQuery),
       sanityClient.fetch(productCardsQuery),
       sanityClient.fetch(solutionCardsQuery),
+      sanityClient.fetch(useCaseCardsQuery),
+      sanityClient.fetch(consultancyCardsQuery),
+      sanityClient.fetch(pricingManagementCardsQuery),
       sanityClient.fetch(homeCopyQuery),
     ]);
 
@@ -48,6 +54,9 @@ export async function GET() {
       whyChooseUs: whyChooseUs?.length ? whyChooseUs : localConfig.whyChooseUs,
       products: products?.length ? products : localConfig.products,
       solutions: solutions?.length ? solutions : localConfig.solutions,
+      useCases: useCases?.length ? useCases : localConfig.useCases,
+      consultancy: consultancy?.length ? consultancy : localConfig.consultancy,
+      pricingManagement: pricingManagement?.length ? pricingManagement : localConfig.pricingManagement,
       homeCopy: homeCopy ?? {
         heroTitle: 'Adaptive Optix',
         heroSubheading: 'Empower your organization with data-driven pricing insights',
