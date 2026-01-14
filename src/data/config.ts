@@ -89,11 +89,11 @@ export const config = {
       "Real-time database",
       "Reduced operational costs"
     ],
-    description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
+    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
     href: "/solutions/baas",
     icon: "🏗️",
-    id: "data",
-    name: "Data Insights & Visualisation "
+    id: "baas",
+    name: "Banking as a Service (BaaS)"
   },
   {
     benefits: [
