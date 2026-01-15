@@ -81,6 +81,9 @@ export async function GET() {
         whyChooseUs: localConfig.whyChooseUs,
         products: localConfig.products,
         solutions: localConfig.solutions,
+        useCases: localConfig.useCases,
+        consultancy: localConfig.consultancy,
+        pricingManagement: localConfig.pricingManagement,
         homeCopy: {
           heroTitle: 'Adaptive Optix',
           heroSubheading: 'Empower your organization with data-driven pricing insights',
