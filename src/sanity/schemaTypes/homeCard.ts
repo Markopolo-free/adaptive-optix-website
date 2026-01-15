@@ -9,6 +9,7 @@ export default defineType({
     defineField({ name: 'title', title: 'Title', type: 'string' }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
+    defineField({ name: 'href', title: 'Link (href)', type: 'string' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
