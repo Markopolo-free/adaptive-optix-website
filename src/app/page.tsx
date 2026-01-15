@@ -484,9 +484,7 @@ export default function Home() {
                   </p>
                 </div>
               );
-                </p>
-              </div>
-            ))}
+            })}
           </div>
         </div>
       </section>
