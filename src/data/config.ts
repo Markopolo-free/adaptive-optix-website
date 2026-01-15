@@ -42,7 +42,7 @@ export const config = {
       "Risk management tools"
     ],
     href: "/products/fx-pricing",
-    icon: "💱",
+    icon: null,
     id: "fx-pricing",
     name: "Price Management Solutions",
     shortDescription: "Real-time currency pricing and market intelligence"
@@ -58,7 +58,7 @@ export const config = {
       "Analytics dashboard"
     ],
     href: "/products/loyalty",
-    icon: "🎁",
+    icon: null,
     id: "loyalty",
     name: "Rewards and Loyalty",
     shortDescription: "Customer loyalty and rewards programs"
@@ -74,7 +74,7 @@ export const config = {
       "Multi-channel integration"
     ],
     href: "/products/offers-campaigns",
-    icon: "🚀",
+    icon: null,
     id: "offers-campaigns",
     name: "Offers & Campaigns",
     shortDescription: "Dynamic promotional campaign management"
@@ -91,7 +91,7 @@ export const config = {
     ],
     description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
     href: "/solutions/baas",
-    icon: "🏗️",
+    icon: null,
     id: "baas",
     name: "Banking as a Service (BaaS)"
   },
@@ -105,7 +105,7 @@ export const config = {
     ],
     description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
     href: "/solutions/baas",
-    icon: "🏗️",
+    icon: null,
     id: "data",
     name: "Data Insights & Visualisation "
   },
@@ -119,7 +119,7 @@ export const config = {
     ],
     description: "Cloud-based software solutions delivered via browser, requiring no installation or maintenance on your end.",
     href: "/solutions/saas",
-    icon: "☁️",
+    icon: null,
     id: "saas",
     name: "Software as a Service (SaaS)"
   },
@@ -133,7 +133,7 @@ export const config = {
     ],
     description: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price",
     href: "/solutions/api",
-    icon: "🔗",
+    icon: null,
     id: "api",
     name: "High Level Pricing Features"
   },
@@ -141,7 +141,7 @@ export const config = {
     benefits: null,
     description: "Your data security is central to us - our solution approach ensures its integrity",
     href: null,
-    icon: "🔒",
+    icon: null,
     id: "Security",
     name: "Security"
   }
@@ -268,37 +268,42 @@ export const config = {
   homeProductCards: [
   {
     description: "Words about significance of pricing and the financial opportunities",
-    icon: "💹",
+    icon: null,
     name: "A Financial Reality"
   },
   {
     description: "Words about Pricing and the USP",
-    icon: "🧼",
+    icon: null,
     name: "Market USP"
   },
   {
     description: "Words about tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.",
-    icon: "📊",
+    icon: null,
     name: "Tailored Value"
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    icon: "📊",
+    icon: null,
     name: "Repeat Business"
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    icon: "📊",
+    icon: null,
     name: "Repeat Business"
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    icon: "📊",
+    icon: null,
     name: "Repeat Business"
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    icon: "📊",
+    icon: null,
+    name: "Repeat Business"
+  },
+  {
+    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    icon: null,
     name: "Repeat Business"
   },
   {
