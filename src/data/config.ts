@@ -290,6 +290,11 @@ export const config = {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
     icon: "📊",
     name: "Repeat Business"
+  },
+  {
+    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    icon: "📊",
+    name: "Repeat Business"
   }
 ],
   whyChooseUs: [
