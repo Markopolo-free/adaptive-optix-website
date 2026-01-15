@@ -157,132 +157,132 @@ export const config = {
   useCases: [
   {
     benefits: null,
-    description: "Automated FX rate management for global transactions.",
+    description: "Example use case description",
     href: null,
-    icon: "💹",
+    icon: "💼",
     id: "use-case-1",
-    name: "Automated FX Management",
+    name: "Use Case 1",
     order: 0
   },
   {
     benefits: null,
-    description: "Tiered loyalty programs to reward frequent customers.",
+    description: "Example use case description",
     href: null,
-    icon: "🎁",
+    icon: "🎯",
     id: "use-case-2",
-    name: "Loyalty Rewards",
+    name: "Use Case 2",
     order: 1
   },
   {
     benefits: null,
-    description: "Dynamic campaign management for targeted offers.",
+    description: "Example use case description",
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Campaign Automation",
+    name: "Use Case 3",
     order: 2
   },
   {
     benefits: null,
-    description: "Real-time analytics for pricing optimization.",
+    description: "Example use case description",
     href: null,
-    icon: "📊",
+    icon: "⚡",
     id: "use-case-4",
-    name: "Pricing Analytics",
+    name: "Use Case 4",
     order: 3
   },
   {
     benefits: null,
-    description: "Consultancy for custom pricing solutions.",
+    description: "Example use case description",
     href: null,
-    icon: "🎓",
+    icon: "🌟",
     id: "use-case-5",
-    name: "Custom Consultancy",
+    name: "Use Case 5",
     order: 4
   },
   {
     benefits: null,
-    description: "Integrated payment and workflow automation.",
+    description: "Example use case description",
     href: null,
-    icon: "⚙️",
+    icon: "💡",
     id: "use-case-6",
-    name: "Integrated Automation",
+    name: "Use Case 6",
     order: 5
   }
 ],
   consultancy: [
   {
     benefits: null,
-    description: "Strategic pricing consultancy for financial institutions.",
+    description: "Expert consultancy service description",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Strategic Pricing",
+    name: "Consultancy Service 1",
     order: 0
   },
   {
     benefits: null,
-    description: "Data-driven insights for pricing optimization.",
+    description: "Expert consultancy service description",
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Data Insights",
+    name: "Consultancy Service 2",
     order: 1
   },
   {
     benefits: null,
-    description: "Business process automation consultancy.",
+    description: "Expert consultancy service description",
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Process Automation",
+    name: "Consultancy Service 3",
     order: 2
   },
   {
     benefits: null,
-    description: "Custom workflow solutions for pricing operations.",
+    description: "Expert consultancy service description",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Workflow Solutions",
+    name: "Consultancy Service 4",
     order: 3
   }
 ],
   pricingManagement: [
   {
     benefits: null,
-    description: "Automated support for pricing management, including real-time updates and intelligent recommendations.",
+    description: "Pricing management solution description",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Automated Support",
+    name: "Pricing Solution 1",
     order: 0
   },
   {
     benefits: null,
-    description: "Advanced analytics and reporting tools to optimize pricing strategies.",
+    description: "Pricing management solution description",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Analytics & Reporting",
+    name: "Pricing Solution 2",
     order: 1
   },
   {
     benefits: null,
-    description: "Integrated payment solutions for seamless transaction management.",
+    description: "Pricing management solution description",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Integrated Payments",
+    name: "Pricing Solution 3",
     order: 2
   },
   {
     benefits: null,
-    description: "Customizable automation workflows for pricing operations.",
+    description: "Pricing management solution description",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "Workflow Automation",
+    name: "Pricing Solution 4",
     order: 3
   }
 ],
