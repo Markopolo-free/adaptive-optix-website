@@ -7,6 +7,8 @@ import Header from '@/components/Header';
 import Button from '@/components/Button';
 import { useEffect, useState } from 'react';
 
+// Version: v2.0.0 - Contains Use Cases, Consultancy, and Pricing Management sections
+
 type CardContent = {
   homeProductCards: typeof config.homeProductCards;
   whyChooseUs: typeof config.whyChooseUs;
