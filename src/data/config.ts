@@ -89,11 +89,25 @@ export const config = {
       "Real-time database",
       "Reduced operational costs"
     ],
-    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
+    description: "Provide samples of UI inter-action",
     href: "/solutions/baas",
     icon: "🏗️",
-    id: "baas",
-    name: "Banking as a Service (BaaS)"
+    id: "data",
+    name: "Front End mocks"
+  },
+  {
+    benefits: [
+      "Scalable infrastructure",
+      "Automatic backups",
+      "Security & compliance",
+      "Real-time database",
+      "Reduced operational costs"
+    ],
+    description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
+    href: "/solutions/baas",
+    icon: "🏗️",
+    id: "data",
+    name: "Data Insights & Visualisation "
   },
   {
     benefits: [
@@ -135,119 +149,119 @@ export const config = {
   useCases: [
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Provide value-add services to your financial partners and end-users",
     href: null,
     icon: "💼",
     id: "use-case-1",
-    name: "Use Case 1"
+    name: "Banking as a Service"
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Personalize customer experiences directly through a range of end-user specific offerings",
     href: null,
     icon: "🎯",
     id: "use-case-2",
-    name: "Use Case 2"
+    name: "Fintech Services"
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue",
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Use Case 3"
+    name: "Billing Providers"
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Consolidate price and incentive management from disparate service providers into a single solution",
     href: null,
     icon: "⚡",
     id: "use-case-4",
-    name: "Use Case 4"
+    name: "Mobility as a Service"
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives",
     href: null,
     icon: "🌟",
     id: "use-case-5",
-    name: "Use Case 5"
+    name: "Leisure Activity Pricing"
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value",
     href: null,
     icon: "💡",
     id: "use-case-6",
-    name: "Use Case 6"
+    name: "3rd Party Rewards"
   }
 ],
   consultancy: [
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Let us work with you to understand more about your core business and identify where additional value can be unlocked",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Consultancy Service 1"
+    name: "Insight Discovery"
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "By reviewing current processes, let us help you to optimise functions, facilitate efficiencies and identify financial opportunities",
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Consultancy Service 2"
+    name: "Workflow & Data Analysis "
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "By analyzing your current pricing paradigms, we can partner with you to define - or optimise baseline or advanced pricing strategies",
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Consultancy Service 3"
+    name: "Price Book Review "
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Understanding customer needs enables value optimization - we can support you in defining advanced segmentation and personalization strategies",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Consultancy Service 4"
+    name: "Customer Segmentation "
   }
 ],
   pricingManagement: [
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "High volumes, trend identification, dynamic pricing? \nTrack and react will support your needs",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Pricing Solution 1"
+    name: "Automated Support "
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Internal or external regulation, segmentation or strategy rules - once set the solution ensures adherence",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Pricing Solution 2"
+    name: "Classical Rules"
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Expert consultancy to monitor and manage day to day functions - removing operations complexity either as a bootstrap or longer term approach",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Pricing Solution 3"
+    name: "Operations Specialists"
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Flexible training through to 24x7 support - we are here to support your needs",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "Pricing Solution 4"
+    name: "On Call Support"
   }
 ],
   // Homepage card content centralized here for easy edits
@@ -271,37 +285,37 @@ export const config = {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
     icon: "📊",
     name: "Repeat Business"
+  },
+  {
+    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    icon: "📊",
+    name: "Repeat Business"
   }
 ],
   whyChooseUs: [
   {
     clickable: false,
-    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
-    icon: "💰",
+    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses",
     title: "Passionate About Pricing"
   },
   {
     clickable: false,
-    description: "Fast deployment with minimal disruption to your existing operations.",
-    icon: "⚡",
+    description: "Fast deployment with minimal disruption to your existing operations",
     title: "Rapid Implementation"
   },
   {
     clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
-    icon: "🌍",
-    title: "Global Platform Meets Local Needs  "
+    title: "Global Platform Meets Local Needs"
   },
   {
     clickable: false,
     description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
-    icon: "🏆",
     title: "Expert Foundation"
   },
   {
     clickable: true,
-    description: "Tailored portal solutions designed to meet your specific business requirements.",
-    icon: "⚙️",
+    description: "Tailored portal solutions designed to meet your specific business requirements",
     title: "Fully Customizable Staff Portal"
   }
 ],
