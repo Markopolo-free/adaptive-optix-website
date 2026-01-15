@@ -251,38 +251,38 @@ export const config = {
   pricingManagement: [
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Automated support for pricing management, including real-time updates and intelligent recommendations.",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Pricing Solution 1",
+    name: "Automated Support",
     order: 0
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Advanced analytics and reporting tools to optimize pricing strategies.",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Pricing Solution 2",
+    name: "Analytics & Reporting",
     order: 1
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Integrated payment solutions for seamless transaction management.",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Pricing Solution 3",
+    name: "Integrated Payments",
     order: 2
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Customizable automation workflows for pricing operations.",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "Pricing Solution 4",
+    name: "Workflow Automation",
     order: 3
   }
 ],
