@@ -457,27 +457,33 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <div
-                key={index}
-                className={`bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4 ${item.clickable ? 'cursor-pointer' : ''}`}
-                style={{ padding: '32px 48px 32px 32px' }}
-                onClick={() => item.clickable && openPortalModal()}
-              >
-                {item.icon && <div className="text-4xl mb-4">{item.icon}</div>}
-                <h3 className="text-lg font-bold text-white mb-4">
-                  {item.title}
-                  {item.clickable && (
-                    <button
-                      className="ml-2 text-sm px-3 py-1 rounded hover:opacity-80 transition"
-                      style={{ backgroundColor: '#6B5B95', color: 'white' }}
-                    >
-                      View Screenshots →
-                    </button>
-                  )}
-                </h3>
-                <p className="text-white leading-relaxed text-sm">
-                  {item.description}
+            {whyChooseUs.map((item, index) => {
+              // Only render icon if it exists (for type safety)
+              const icon = (item as any).icon;
+              return (
+                <div
+                  key={index}
+                  className={`bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4 ${item.clickable ? 'cursor-pointer' : ''}`}
+                  style={{ padding: '32px 48px 32px 32px' }}
+                  onClick={() => item.clickable && openPortalModal()}
+                >
+                  {icon && <div className="text-4xl mb-4">{icon}</div>}
+                  <h3 className="text-lg font-bold text-white mb-4">
+                    {item.title}
+                    {item.clickable && (
+                      <button
+                        className="ml-2 text-sm px-3 py-1 rounded hover:opacity-80 transition"
+                        style={{ backgroundColor: '#6B5B95', color: 'white' }}
+                      >
+                        View Screenshots →
+                      </button>
+                    )}
+                  </h3>
+                  <p className="text-white leading-relaxed text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              );
                 </p>
               </div>
             ))}
