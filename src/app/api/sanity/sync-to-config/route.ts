@@ -12,21 +12,16 @@ export async function POST() {
       );
     }
 
-    // Fetch all content from Sanity
-    const [homeCards, whyCards, products, solutions, homeCopy] = await Promise.all([
-      sanityClient.fetch(`*[_type == "homeCard"] | order(order asc) { name, icon, description }`),
-      sanityClient.fetch(`*[_type == "whyCard"] | order(order asc) { title, description, clickable }`),
-      sanityClient.fetch(`*[_type == "productCard"] | order(order asc) { 
-        id, name, href, icon, shortDescription, description, features, cta 
-      }`),
-      sanityClient.fetch(`*[_type == "solutionCard"] | order(order asc) { 
-        id, name, href, icon, description, benefits 
-      }`),
-      sanityClient.fetch(`*[_type == "homeCopy"][0] {
-        heroTitle, heroSubheading, productsHeading, productsSubheading,
-        solutionsHeading, solutionsSubheading, whyHeading, whySubheading,
-        ctaHeading, ctaSubheading, ctaButtonLabel
-      }`),
+    // Fetch all content from Sanity, including useCases, consultancy, and pricingManagement
+    const [homeCards, whyCards, products, solutions, useCases, consultancy, pricingManagement, homeCopy] = await Promise.all([
+      sanityClient.fetch(`*[_type == "homeCard"] | order(order asc) { name, icon, href, description, order }`),
+      sanityClient.fetch(`*[_type == "whyCard"] | order(order asc) { title, description, clickable, icon, href, order }`),
+      sanityClient.fetch(`*[_type == "productCard"] | order(order asc) { id, name, href, icon, shortDescription, description, features, cta, order }`),
+      sanityClient.fetch(`*[_type == "solutionCard"] | order(order asc) { id, name, href, icon, description, benefits, order }`),
+      sanityClient.fetch(`*[_type == "useCaseCard"] | order(order asc) { id, name, href, icon, description, benefits, order }`),
+      sanityClient.fetch(`*[_type == "consultancyCard"] | order(order asc) { id, name, href, icon, description, benefits, order }`),
+      sanityClient.fetch(`*[_type == "pricingManagementCard"] | order(order asc) { id, name, href, icon, description, benefits, order }`),
+      sanityClient.fetch(`*[_type == "homeCopy"][0] { heroTitle, heroSubheading, productsHeading, productsSubheading, solutionsHeading, solutionsSubheading, whyHeading, whySubheading, ctaHeading, ctaSubheading, ctaButtonLabel }`),
     ]);
 
     // Generate the TypeScript config file content
@@ -62,11 +57,14 @@ export const config = {
     { name: 'Solutions', href: '#solutions', submenu: true },
     { name: 'Contact', href: '#contact' },
   ],
-  products: ${JSON.stringify(products, null, 2).replace(/"([^"]+)":/g, '$1:')},
-  solutions: ${JSON.stringify(solutions, null, 2).replace(/"([^"]+)":/g, '$1:')},
+  products: ${JSON.stringify(products, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  solutions: ${JSON.stringify(solutions, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  useCases: ${JSON.stringify(useCases, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  consultancy: ${JSON.stringify(consultancy, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  pricingManagement: ${JSON.stringify(pricingManagement, null, 2).replace(/"([^\"]+)":/g, '$1:')},
   // Homepage card content centralized here for easy edits
-  homeProductCards: ${JSON.stringify(homeCards, null, 2).replace(/"([^"]+)":/g, '$1:')},
-  whyChooseUs: ${JSON.stringify(whyCards, null, 2).replace(/"([^"]+)":/g, '$1:')},
+  homeProductCards: ${JSON.stringify(homeCards, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  whyChooseUs: ${JSON.stringify(whyCards, null, 2).replace(/"([^\"]+)":/g, '$1:')},
 };
 
 export type Config = typeof config;
@@ -84,6 +82,9 @@ export type Config = typeof config;
         whyCards: whyCards.length,
         products: products.length,
         solutions: solutions.length,
+        useCases: useCases.length,
+        consultancy: consultancy.length,
+        pricingManagement: pricingManagement.length,
       },
     });
   } catch (error) {
