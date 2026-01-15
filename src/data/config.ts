@@ -45,6 +45,7 @@ export const config = {
     icon: null,
     id: "fx-pricing",
     name: "Price Management Solutions",
+    order: 0,
     shortDescription: "Real-time currency pricing and market intelligence"
   },
   {
@@ -61,6 +62,7 @@ export const config = {
     icon: null,
     id: "loyalty",
     name: "Rewards and Loyalty",
+    order: 1,
     shortDescription: "Customer loyalty and rewards programs"
   },
   {
@@ -77,6 +79,7 @@ export const config = {
     icon: null,
     id: "offers-campaigns",
     name: "Offers & Campaigns",
+    order: 2,
     shortDescription: "Dynamic promotional campaign management"
   }
 ],
@@ -93,7 +96,8 @@ export const config = {
     href: "/solutions/baas",
     icon: "🏗️",
     id: "baas",
-    name: "Banking as a Service (BaaS)"
+    name: "Banking as a Service (BaaS)",
+    order: 0
   },
   {
     benefits: [
@@ -107,7 +111,8 @@ export const config = {
     href: "/solutions/baas",
     icon: "🏗️",
     id: "data",
-    name: "Data Insights & Visualisation "
+    name: "Data Insights & Visualisation ",
+    order: 1
   },
   {
     benefits: [
@@ -121,7 +126,8 @@ export const config = {
     href: "/solutions/saas",
     icon: "☁️",
     id: "saas",
-    name: "Software as a Service (SaaS)"
+    name: "Software as a Service (SaaS)",
+    order: 2
   },
   {
     benefits: [
@@ -135,7 +141,8 @@ export const config = {
     href: "/solutions/api",
     icon: "🔗",
     id: "api",
-    name: "High Level Pricing Features"
+    name: "High Level Pricing Features",
+    order: 3
   },
   {
     benefits: null,
@@ -143,7 +150,8 @@ export const config = {
     href: null,
     icon: null,
     id: "Security",
-    name: "Security"
+    name: "Security",
+    order: 4
   }
 ],
   useCases: [
@@ -153,7 +161,8 @@ export const config = {
     href: null,
     icon: "💼",
     id: "use-case-1",
-    name: "Use Case 1"
+    name: "Use Case 1",
+    order: 0
   },
   {
     benefits: null,
@@ -161,7 +170,8 @@ export const config = {
     href: null,
     icon: "🎯",
     id: "use-case-2",
-    name: "Use Case 2"
+    name: "Use Case 2",
+    order: 1
   },
   {
     benefits: null,
@@ -169,7 +179,8 @@ export const config = {
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Use Case 3"
+    name: "Use Case 3",
+    order: 2
   },
   {
     benefits: null,
@@ -177,7 +188,8 @@ export const config = {
     href: null,
     icon: "⚡",
     id: "use-case-4",
-    name: "Use Case 4"
+    name: "Use Case 4",
+    order: 3
   },
   {
     benefits: null,
@@ -185,7 +197,8 @@ export const config = {
     href: null,
     icon: "🌟",
     id: "use-case-5",
-    name: "Use Case 5"
+    name: "Use Case 5",
+    order: 4
   },
   {
     benefits: null,
@@ -193,7 +206,8 @@ export const config = {
     href: null,
     icon: "💡",
     id: "use-case-6",
-    name: "Use Case 6"
+    name: "Use Case 6",
+    order: 5
   }
 ],
   consultancy: [
@@ -203,7 +217,8 @@ export const config = {
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Consultancy Service 1"
+    name: "Consultancy Service 1",
+    order: 0
   },
   {
     benefits: null,
@@ -211,7 +226,8 @@ export const config = {
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Consultancy Service 2"
+    name: "Consultancy Service 2",
+    order: 1
   },
   {
     benefits: null,
@@ -219,7 +235,8 @@ export const config = {
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Consultancy Service 3"
+    name: "Consultancy Service 3",
+    order: 2
   },
   {
     benefits: null,
@@ -227,7 +244,8 @@ export const config = {
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Consultancy Service 4"
+    name: "Consultancy Service 4",
+    order: 3
   }
 ],
   pricingManagement: [
@@ -237,7 +255,8 @@ export const config = {
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Pricing Solution 1"
+    name: "Pricing Solution 1",
+    order: 0
   },
   {
     benefits: null,
@@ -245,7 +264,8 @@ export const config = {
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Pricing Solution 2"
+    name: "Pricing Solution 2",
+    order: 1
   },
   {
     benefits: null,
@@ -253,7 +273,8 @@ export const config = {
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Pricing Solution 3"
+    name: "Pricing Solution 3",
+    order: 2
   },
   {
     benefits: null,
@@ -261,91 +282,129 @@ export const config = {
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "Pricing Solution 4"
+    name: "Pricing Solution 4",
+    order: 3
   }
 ],
   // Homepage card content centralized here for easy edits
   homeProductCards: [
   {
     description: "Words about significance of pricing and the financial opportunities",
+    href: null,
     icon: "💹",
-    name: "A Financial Reality"
+    name: "A Financial Reality",
+    order: 0
   },
   {
     description: "Words about Pricing and the USP",
+    href: null,
     icon: "🧼",
-    name: "Market USP"
+    name: "Market USP",
+    order: 1
   },
   {
     description: "Words about tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.",
+    href: null,
     icon: "📊",
-    name: "Tailored Value"
+    name: "Tailored Value",
+    order: 2
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: "📊",
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 3
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: null,
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 4
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: null,
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 5
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: null,
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 6
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: null,
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 7
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: null,
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 8
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: "📊",
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: 9
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    href: null,
     icon: "📊",
-    name: "Repeat Business"
+    name: "Repeat Business",
+    order: null
   }
 ],
   whyChooseUs: [
   {
     clickable: false,
     description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
+    href: null,
+    icon: "💡",
+    order: 0,
     title: "Passionate About Pricing"
   },
   {
     clickable: false,
     description: "Fast deployment with minimal disruption to your existing operations.",
+    href: null,
+    icon: "⚡",
+    order: 1,
     title: "Rapid Implementation"
   },
   {
     clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
+    href: null,
+    icon: "🌍",
+    order: 2,
     title: "Global Platform Meets Local Needs  "
   },
   {
     clickable: false,
     description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
+    href: null,
+    icon: "🎓",
+    order: 3,
     title: "Expert Foundation"
   },
   {
     clickable: true,
     description: "Tailored portal solutions designed to meet your specific business requirements.",
+    href: null,
+    icon: "🛠️",
+    order: 4,
     title: "Fully Customizable Staff Portal"
   }
 ],
