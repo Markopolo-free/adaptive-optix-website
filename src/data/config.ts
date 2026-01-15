@@ -89,11 +89,11 @@ export const config = {
       "Real-time database",
       "Reduced operational costs"
     ],
-    description: "Provide samples of UI inter-action",
+    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
     href: "/solutions/baas",
     icon: "🏗️",
-    id: "data",
-    name: "Front End mocks"
+    id: "baas",
+    name: "Banking as a Service (BaaS)"
   },
   {
     benefits: [
@@ -149,119 +149,119 @@ export const config = {
   useCases: [
   {
     benefits: null,
-    description: "Provide value-add services to your financial partners and end-users",
+    description: "Example use case description",
     href: null,
     icon: "💼",
     id: "use-case-1",
-    name: "Banking as a Service"
+    name: "Use Case 1"
   },
   {
     benefits: null,
-    description: "Personalize customer experiences directly through a range of end-user specific offerings",
+    description: "Example use case description",
     href: null,
     icon: "🎯",
     id: "use-case-2",
-    name: "Fintech Services"
+    name: "Use Case 2"
   },
   {
     benefits: null,
-    description: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue",
+    description: "Example use case description",
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Billing Providers"
+    name: "Use Case 3"
   },
   {
     benefits: null,
-    description: "Consolidate price and incentive management from disparate service providers into a single solution",
+    description: "Example use case description",
     href: null,
     icon: "⚡",
     id: "use-case-4",
-    name: "Mobility as a Service"
+    name: "Use Case 4"
   },
   {
     benefits: null,
-    description: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives",
+    description: "Example use case description",
     href: null,
     icon: "🌟",
     id: "use-case-5",
-    name: "Leisure Activity Pricing"
+    name: "Use Case 5"
   },
   {
     benefits: null,
-    description: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value",
+    description: "Example use case description",
     href: null,
     icon: "💡",
     id: "use-case-6",
-    name: "3rd Party Rewards"
+    name: "Use Case 6"
   }
 ],
   consultancy: [
   {
     benefits: null,
-    description: "Let us work with you to understand more about your core business and identify where additional value can be unlocked",
+    description: "Expert consultancy service description",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Insight Discovery"
+    name: "Consultancy Service 1"
   },
   {
     benefits: null,
-    description: "By reviewing current processes, let us help you to optimise functions, facilitate efficiencies and identify financial opportunities",
+    description: "Expert consultancy service description",
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Workflow & Data Analysis "
+    name: "Consultancy Service 2"
   },
   {
     benefits: null,
-    description: "By analyzing your current pricing paradigms, we can partner with you to define - or optimise baseline or advanced pricing strategies",
+    description: "Expert consultancy service description",
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Price Book Review "
+    name: "Consultancy Service 3"
   },
   {
     benefits: null,
-    description: "Understanding customer needs enables value optimization - we can support you in defining advanced segmentation and personalization strategies",
+    description: "Expert consultancy service description",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Customer Segmentation "
+    name: "Consultancy Service 4"
   }
 ],
   pricingManagement: [
   {
     benefits: null,
-    description: "High volumes, trend identification, dynamic pricing? \nTrack and react will support your needs",
+    description: "Pricing management solution description",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Automated Support "
+    name: "Pricing Solution 1"
   },
   {
     benefits: null,
-    description: "Internal or external regulation, segmentation or strategy rules - once set the solution ensures adherence",
+    description: "Pricing management solution description",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Classical Rules"
+    name: "Pricing Solution 2"
   },
   {
     benefits: null,
-    description: "Expert consultancy to monitor and manage day to day functions - removing operations complexity either as a bootstrap or longer term approach",
+    description: "Pricing management solution description",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Operations Specialists"
+    name: "Pricing Solution 3"
   },
   {
     benefits: null,
-    description: "Flexible training through to 24x7 support - we are here to support your needs",
+    description: "Pricing management solution description",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "On Call Support"
+    name: "Pricing Solution 4"
   }
 ],
   // Homepage card content centralized here for easy edits
@@ -295,18 +295,18 @@ export const config = {
   whyChooseUs: [
   {
     clickable: false,
-    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses",
+    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
     title: "Passionate About Pricing"
   },
   {
     clickable: false,
-    description: "Fast deployment with minimal disruption to your existing operations",
+    description: "Fast deployment with minimal disruption to your existing operations.",
     title: "Rapid Implementation"
   },
   {
     clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
-    title: "Global Platform Meets Local Needs"
+    title: "Global Platform Meets Local Needs  "
   },
   {
     clickable: false,
@@ -315,7 +315,7 @@ export const config = {
   },
   {
     clickable: true,
-    description: "Tailored portal solutions designed to meet your specific business requirements",
+    description: "Tailored portal solutions designed to meet your specific business requirements.",
     title: "Fully Customizable Staff Portal"
   }
 ],
