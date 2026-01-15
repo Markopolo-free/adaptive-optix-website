@@ -91,7 +91,7 @@ export const config = {
     ],
     description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
     href: "/solutions/baas",
-    icon: null,
+    icon: "🏗️",
     id: "baas",
     name: "Banking as a Service (BaaS)"
   },
@@ -105,7 +105,7 @@ export const config = {
     ],
     description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
     href: "/solutions/baas",
-    icon: null,
+    icon: "🏗️",
     id: "data",
     name: "Data Insights & Visualisation "
   },
@@ -119,7 +119,7 @@ export const config = {
     ],
     description: "Cloud-based software solutions delivered via browser, requiring no installation or maintenance on your end.",
     href: "/solutions/saas",
-    icon: null,
+    icon: "☁️",
     id: "saas",
     name: "Software as a Service (SaaS)"
   },
@@ -133,7 +133,7 @@ export const config = {
     ],
     description: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price",
     href: "/solutions/api",
-    icon: null,
+    icon: "🔗",
     id: "api",
     name: "High Level Pricing Features"
   },
@@ -268,22 +268,22 @@ export const config = {
   homeProductCards: [
   {
     description: "Words about significance of pricing and the financial opportunities",
-    icon: null,
+    icon: "💹",
     name: "A Financial Reality"
   },
   {
     description: "Words about Pricing and the USP",
-    icon: null,
+    icon: "🧼",
     name: "Market USP"
   },
   {
     description: "Words about tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.",
-    icon: null,
+    icon: "📊",
     name: "Tailored Value"
   },
   {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    icon: null,
+    icon: "📊",
     name: "Repeat Business"
   },
   {
@@ -321,27 +321,32 @@ export const config = {
   {
     clickable: false,
     description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
-    title: "Passionate About Pricing"
+    title: "Passionate About Pricing",
+    icon: "💡"
   },
   {
     clickable: false,
     description: "Fast deployment with minimal disruption to your existing operations.",
-    title: "Rapid Implementation"
+    title: "Rapid Implementation",
+    icon: "⚡"
   },
   {
     clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
-    title: "Global Platform Meets Local Needs  "
+    title: "Global Platform Meets Local Needs  ",
+    icon: "🌍"
   },
   {
     clickable: false,
     description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
-    title: "Expert Foundation"
+    title: "Expert Foundation",
+    icon: "🎓"
   },
   {
     clickable: true,
     description: "Tailored portal solutions designed to meet your specific business requirements.",
-    title: "Fully Customizable Staff Portal"
+    title: "Fully Customizable Staff Portal",
+    icon: "🛠️"
   }
 ],
 };
