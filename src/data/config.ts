@@ -157,94 +157,94 @@ export const config = {
   useCases: [
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Automated FX rate management for global transactions.",
     href: null,
-    icon: "💼",
+    icon: "💹",
     id: "use-case-1",
-    name: "Use Case 1",
+    name: "Automated FX Management",
     order: 0
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Tiered loyalty programs to reward frequent customers.",
     href: null,
-    icon: "🎯",
+    icon: "🎁",
     id: "use-case-2",
-    name: "Use Case 2",
+    name: "Loyalty Rewards",
     order: 1
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Dynamic campaign management for targeted offers.",
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Use Case 3",
+    name: "Campaign Automation",
     order: 2
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Real-time analytics for pricing optimization.",
     href: null,
-    icon: "⚡",
+    icon: "📊",
     id: "use-case-4",
-    name: "Use Case 4",
+    name: "Pricing Analytics",
     order: 3
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Consultancy for custom pricing solutions.",
     href: null,
-    icon: "🌟",
+    icon: "🎓",
     id: "use-case-5",
-    name: "Use Case 5",
+    name: "Custom Consultancy",
     order: 4
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Integrated payment and workflow automation.",
     href: null,
-    icon: "💡",
+    icon: "⚙️",
     id: "use-case-6",
-    name: "Use Case 6",
+    name: "Integrated Automation",
     order: 5
   }
 ],
   consultancy: [
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Strategic pricing consultancy for financial institutions.",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Consultancy Service 1",
+    name: "Strategic Pricing",
     order: 0
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Data-driven insights for pricing optimization.",
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Consultancy Service 2",
+    name: "Data Insights",
     order: 1
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Business process automation consultancy.",
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Consultancy Service 3",
+    name: "Process Automation",
     order: 2
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Custom workflow solutions for pricing operations.",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Consultancy Service 4",
+    name: "Workflow Solutions",
     order: 3
   }
 ],
