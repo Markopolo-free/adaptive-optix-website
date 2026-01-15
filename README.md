@@ -14,10 +14,16 @@ A modern, professional brochureware website for Adaptive Optix showcasing financ
 - **Software as a Service (SaaS)** - Cloud-based software solutions
 - **APIs & Integration** - Comprehensive API suite for seamless integration
 
+### Additional Sections
+- **Use Cases** - Real-world implementation scenarios and customer success stories
+- **Consultancy** - Professional consulting and implementation services
+- **Pricing Management Solutions** - Advanced pricing strategy and management tools
+
 ### Additional Features
 - ✨ Responsive design (mobile, tablet, desktop)
 - 🎨 Customizable colors and styling via CSS variables
 - 📧 Contact form for lead generation
+- 🎯 Comprehensive CMS integration with Sanity Studio
 - 🏃 Fast performance with Next.js
 - 📱 Mobile-first approach
 - 🔒 Built with modern security best practices
