@@ -315,38 +315,38 @@ export const config = {
     description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
     icon: "📊",
     name: "Repeat Business"
+  },
+  {
+    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    icon: "📊",
+    name: "Repeat Business"
   }
 ],
   whyChooseUs: [
   {
     clickable: false,
     description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
-    title: "Passionate About Pricing",
-    icon: "💡"
+    title: "Passionate About Pricing"
   },
   {
     clickable: false,
     description: "Fast deployment with minimal disruption to your existing operations.",
-    title: "Rapid Implementation",
-    icon: "⚡"
+    title: "Rapid Implementation"
   },
   {
     clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
-    title: "Global Platform Meets Local Needs  ",
-    icon: "🌍"
+    title: "Global Platform Meets Local Needs  "
   },
   {
     clickable: false,
     description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
-    title: "Expert Foundation",
-    icon: "🎓"
+    title: "Expert Foundation"
   },
   {
     clickable: true,
     description: "Tailored portal solutions designed to meet your specific business requirements.",
-    title: "Fully Customizable Staff Portal",
-    icon: "🛠️"
+    title: "Fully Customizable Staff Portal"
   }
 ],
 };
