@@ -29,7 +29,7 @@ export async function POST() {
     name: c.name,
     title: c.name,
     description: c.description,
-    icon: c.icon,
+    // icon: c.icon, // removed to match config structure
     order: i,
   }));
 
@@ -38,7 +38,6 @@ export async function POST() {
     _id: `whyCard-${i + 1}`,
     title: c.title,
     description: c.description,
-    icon: c.icon,
     clickable: Boolean(c.clickable),
     order: i,
   }));
@@ -49,7 +48,7 @@ export async function POST() {
     id: p.id,
     name: p.name,
     href: p.href,
-    icon: p.icon,
+    // icon: p.icon, // removed to match config structure if not present
     shortDescription: p.shortDescription,
     description: p.description,
     features: p.features,
@@ -62,7 +61,7 @@ export async function POST() {
     id: s.id,
     name: s.name,
     href: s.href,
-    icon: s.icon,
+    // icon: s.icon, // removed to match config structure if not present
     description: s.description,
     benefits: s.benefits,
     order: i,
@@ -74,7 +73,7 @@ export async function POST() {
     id: u.id,
     name: u.name,
     href: u.href,
-    icon: u.icon,
+    // icon: u.icon, // removed to match config structure if not present
     description: u.description,
     benefits: u.benefits,
     order: i,
@@ -86,7 +85,7 @@ export async function POST() {
     id: c.id,
     name: c.name,
     href: c.href,
-    icon: c.icon,
+    // icon: c.icon, // removed to match config structure if not present
     description: c.description,
     benefits: c.benefits,
     order: i,
@@ -98,7 +97,7 @@ export async function POST() {
     id: p.id,
     name: p.name,
     href: p.href,
-    icon: p.icon,
+    // icon: p.icon, // removed to match config structure if not present
     description: p.description,
     benefits: p.benefits,
     order: i,
