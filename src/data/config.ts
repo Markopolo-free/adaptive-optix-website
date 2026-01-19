@@ -315,55 +315,6 @@ export const config = {
     icon: "📊",
     name: "Repeat Business",
     order: 3
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: null,
-    name: "Repeat Business",
-    order: 4
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: null,
-    name: "Repeat Business",
-    order: 5
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: null,
-    name: "Repeat Business",
-    order: 6
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: null,
-    name: "Repeat Business",
-    order: 7
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: null,
-    name: "Repeat Business",
-    order: 8
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: "📊",
-    name: "Repeat Business",
-    order: 9
-  },
-  {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
-    href: null,
-    icon: "📊",
-    name: "Repeat Business",
-    order: null
   }
 ],
   whyChooseUs: [
