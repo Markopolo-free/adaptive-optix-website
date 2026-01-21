@@ -11,7 +11,7 @@ import { syncToConfigTool } from './src/sanity/tools/syncToConfig';
 export default defineConfig({
   name: 'default',
   title: 'Adaptive Optix Content',
-  projectId: 'prj_VXfbj4oj7rGrs8SG3UBBUVkvyIlK', // <-- hardcoded
+  projectId: '2cg9komv', // <-- hardcoded
   dataset: 'production', // <-- hardcoded
   apiVersion: '2026-01-20',
   basePath: '/studio',
