@@ -3,6 +3,9 @@ import { sanityClient } from '@/sanity/lib/client';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function POST() {
   try {
     if (!sanityClient) {
