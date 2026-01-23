@@ -207,16 +207,9 @@ export default function Home() {
       <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '45px', paddingBottom: '45px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '48px' }}>
-              {heroTitle}
-            </h1>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '80px' }}>
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
               {heroSubheading}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="#contact" label="Get Started" />
-              <Button href="/products/fx-pricing" label="Learn More" />
-            </div>
           </div>
         </div>
       </section>
