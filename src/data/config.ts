@@ -39,7 +39,8 @@ export const config = {
       "Multi-currency support",
       "Customizable pricing rules",
       "Historical data analysis",
-      "Risk management tools"
+      "Risk management tools",
+      "24 x7"
     ],
     href: "/products/fx-pricing",
     icon: null,
@@ -85,18 +86,12 @@ export const config = {
 ],
   solutions: [
   {
-    benefits: [
-      "Scalable infrastructure",
-      "Automatic backups",
-      "Security & compliance",
-      "Real-time database",
-      "Reduced operational costs"
-    ],
-    description: "Fully managed backend infrastructure allowing you to focus on your core business logic without infrastructure overhead.",
+    benefits: null,
+    description: "Identify valuable customers or groups, engage directly and grow your business",
     href: "/solutions/baas",
-    icon: "🏗️",
+    icon: "🛠️",
     id: "baas",
-    name: "Banking as a Service (BaaS)",
+    name: "Loyalty & Rewards",
     order: 0
   },
   {
@@ -109,25 +104,10 @@ export const config = {
     ],
     description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
     href: "/solutions/baas",
-    icon: "🏗️",
+    icon: "🛠️",
     id: "data",
     name: "Data Insights & Visualisation ",
     order: 1
-  },
-  {
-    benefits: [
-      "Zero installation required",
-      "Automatic updates",
-      "Multi-tenant support",
-      "Enterprise-grade security",
-      "Global accessibility"
-    ],
-    description: "Cloud-based software solutions delivered via browser, requiring no installation or maintenance on your end.",
-    href: "/solutions/saas",
-    icon: "☁️",
-    id: "saas",
-    name: "Software as a Service (SaaS)",
-    order: 2
   },
   {
     benefits: [
@@ -141,7 +121,7 @@ export const config = {
     href: "/solutions/api",
     icon: "🔗",
     id: "api",
-    name: "High Level Pricing Features",
+    name: "Pricing Features",
     order: 3
   },
   {
@@ -150,74 +130,74 @@ export const config = {
     href: null,
     icon: null,
     id: "Security",
-    name: "Security",
+    name: "Data Security",
     order: 4
   }
 ],
   useCases: [
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Provide value-add services to your financial partners and end-users",
     href: null,
     icon: "💼",
     id: "use-case-1",
-    name: "Use Case 1",
+    name: "Banking as a Service",
     order: 0
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Personalize customer experiences directly through a range of end-user specific offerings",
     href: null,
     icon: "🎯",
     id: "use-case-2",
-    name: "Use Case 2",
+    name: "Fintech Services",
     order: 1
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue",
     href: null,
     icon: "🚀",
     id: "use-case-3",
-    name: "Use Case 3",
+    name: "Billing Providers",
     order: 2
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Consolidate price and incentive offerings from multiple service providers through a single solution",
     href: null,
     icon: "⚡",
     id: "use-case-4",
-    name: "Use Case 4",
+    name: "Mobility as a Service",
     order: 3
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives",
     href: null,
     icon: "🌟",
     id: "use-case-5",
-    name: "Use Case 5",
+    name: "Leisure Activity Pricing",
     order: 4
   },
   {
     benefits: null,
-    description: "Example use case description",
+    description: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value",
     href: null,
     icon: "💡",
     id: "use-case-6",
-    name: "Use Case 6",
+    name: "3rd Party Rewards",
     order: 5
   }
 ],
   consultancy: [
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Let us work with you to understand more about your core business to identify where value can be unlocked",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Consultancy Service 1",
+    name: "Insight Discover",
     order: 0
   },
   {
@@ -226,16 +206,16 @@ export const config = {
     href: null,
     icon: "📊",
     id: "consultancy-2",
-    name: "Consultancy Service 2",
+    name: "Workflow & Data Analysis ",
     order: 1
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "By analyzing your current price structures, we can define optimal baseline or advanced pricing strategies",
     href: null,
     icon: "💼",
     id: "consultancy-3",
-    name: "Consultancy Service 3",
+    name: "Price Book Review",
     order: 2
   },
   {
@@ -251,68 +231,68 @@ export const config = {
   pricingManagement: [
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "High volumes, trend identification, dynamic pricing ? Track and react will support your needs ",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
-    name: "Pricing Solution 1",
+    name: "Automated Support ",
     order: 0
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Internal or external regulation, segmentation or strategy rules - once set the solution ensures adherence",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Pricing Solution 2",
+    name: "Classic Rules",
     order: 1
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Consultancy to monitor and manage daily oversight - a long term or initial bootstrapping strategy",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Pricing Solution 3",
+    name: "Pricing Operations",
     order: 2
   },
   {
     benefits: null,
-    description: "Pricing management solution description",
+    description: "Flexible training through to 24x7 support - we are here to support your needs",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
-    name: "Pricing Solution 4",
+    name: "On-call Support",
     order: 3
   }
 ],
   // Homepage card content centralized here for easy edits
   homeProductCards: [
   {
-    description: "Words about significance of pricing and the financial opportunities",
+    description: "Pricing is complex, yet effective lever for revenue and value generation",
     href: null,
     icon: "💹",
-    name: "A Financial Reality",
+    name: "A Financial Reality Today",
     order: 0
   },
   {
-    description: "Words about Pricing and the USP",
+    description: "Let us support you along the pricing journey to identify and optimize the right choices to grow your business",
     href: null,
-    icon: "🧼",
-    name: "Market USP",
+    icon: "🧬",
+    name: "Your Market USP",
     order: 1
   },
   {
-    description: "Words about tiered FX rates with clear breakpoints to reward volume and loyalty while protecting margins.",
+    description: "Recognize and reward customers for their business by using personalized pricing and offerings",
     href: null,
-    icon: "📊",
+    icon: "📈",
     name: "Tailored Value",
     order: 2
   },
   {
-    description: "Drive customer loyalty and increase transaction frequency with targeted retention strategies.",
+    description: "Customers appreciate a strong value proposition - in turn driving recurring revenue",
     href: null,
-    icon: "📊",
+    icon: "📈",
     name: "Repeat Business",
     order: 3
   }
@@ -320,27 +300,11 @@ export const config = {
   whyChooseUs: [
   {
     clickable: false,
-    description: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses ",
-    href: null,
-    icon: "💡",
-    order: 0,
-    title: "Passionate About Pricing"
-  },
-  {
-    clickable: false,
-    description: "Fast deployment with minimal disruption to your existing operations.",
-    href: null,
-    icon: "⚡",
-    order: 1,
-    title: "Rapid Implementation"
-  },
-  {
-    clickable: false,
     description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
     href: null,
     icon: "🌍",
     order: 2,
-    title: "Global Platform Meets Local Needs  "
+    title: "Global Platform, Local Requirements"
   },
   {
     clickable: false,
@@ -349,14 +313,6 @@ export const config = {
     icon: "🎓",
     order: 3,
     title: "Expert Foundation"
-  },
-  {
-    clickable: true,
-    description: "Tailored portal solutions designed to meet your specific business requirements.",
-    href: null,
-    icon: "🛠️",
-    order: 4,
-    title: "Fully Customizable Staff Portal"
   }
 ],
 };

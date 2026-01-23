@@ -96,7 +96,6 @@ export default function Home() {
   const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
-  const movedCards = products.filter((p) => ['loyalty', 'offers-campaigns'].includes(p.id));
   return (
     <main>
       {/* Staff Portal Modal */}
@@ -204,20 +203,15 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '45px', paddingBottom: '45px' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '0px', paddingBottom: '0px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center">
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-              {heroSubheading}
-            </p>
-          </div>
         </div>
       </section>
 
       {/* Products Section */}
       <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center" style={{ marginBottom: '120px' }}>
+          <div style={{ marginBottom: '120px' }}>
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {productsHeading}
             </h2>
@@ -226,14 +220,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {homeProductCards.map((product, index) => (
-              <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4" style={{ padding: '32px 48px 32px 32px' }}>
-                <div className="text-3xl mb-5">{product.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-4">
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px' }}>
+                <div className="text-4xl mb-6">{product.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-4">
                   {product.name}
                 </h3>
-                <p className="text-white leading-relaxed text-sm">
+                <p className="text-white leading-relaxed text-base">
                   {product.description}
                 </p>
               </div>
@@ -245,7 +239,7 @@ export default function Home() {
       {/* Solutions Section */}
       <section id="solutions" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '260px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-24">
+          <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {solutionsHeading}
             </h2>
@@ -255,48 +249,21 @@ export default function Home() {
           </div>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-3"
-            style={{ gap: '40px 40px', marginTop: '48px' }}
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ gap: '24px', marginTop: '48px' }}
           >
             {solutions.map((solution: any, index: number) => (
               <Link key={index} href={`/solutions/${solution.name}`}>
-                <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                  <div className="text-3xl mb-5">{solution.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-4">
+                <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className="text-4xl mb-6">{solution.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-base">
                     {solution.description}
                   </p>
                 </div>
               </Link>
-            ))}
-            {movedCards.map((product) => (
-              product.href ? (
-                <Link key={product.id} href={product.href} className="block h-full">
-                  <div className="h-full w-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                    <div className="text-3xl mb-5">{product.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-4">
-                      {product.name}
-                    </h3>
-                    <p className="text-white leading-relaxed text-sm">
-                      {product.description}
-                    </p>
-                  </div>
-                </Link>
-              ) : (
-                <div key={product.id} className="block h-full">
-                  <div className="h-full w-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px', opacity: 0.6 }}>
-                    <div className="text-3xl mb-5">{product.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-4">
-                      {product.name}
-                    </h3>
-                    <p className="text-white leading-relaxed text-sm">
-                      {product.description}
-                    </p>
-                  </div>
-                </div>
-              )
             ))}
           </div>
         </div>
@@ -305,7 +272,7 @@ export default function Home() {
       {/* Use Cases Section */}
       <section id="use-cases" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-24">
+          <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Use Cases
             </h2>
@@ -315,29 +282,29 @@ export default function Home() {
           </div>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-3"
-            style={{ gap: '40px 40px', marginTop: '48px' }}
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ gap: '24px', marginTop: '48px' }}
           >
             {useCases.map((useCase: any, index: number) => (
               useCase.href ? (
                 <Link key={index} href={useCase.href}>
-                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                    <div className="text-3xl mb-5">{useCase.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-4">
+                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                    <div className="text-4xl mb-6">{useCase.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">
                       {useCase.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-base">
                       {useCase.description}
                     </p>
                   </div>
                 </Link>
               ) : (
-                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
-                  <div className="text-3xl mb-5">{useCase.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-4">
+                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className="text-4xl mb-6">{useCase.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {useCase.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-base">
                     {useCase.description}
                   </p>
                 </div>
@@ -350,7 +317,7 @@ export default function Home() {
       {/* Consultancy Section */}
       <section id="consultancy" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-24">
+          <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Consultancy
             </h2>
@@ -361,28 +328,28 @@ export default function Home() {
 
           <div
             className="grid grid-cols-1 md:grid-cols-2"
-            style={{ gap: '40px 40px', marginTop: '48px' }}
+            style={{ gap: '24px', marginTop: '48px' }}
           >
             {consultancy.map((service: any, index: number) => (
               service.href ? (
                 <Link key={index} href={service.href}>
-                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                    <div className="text-3xl mb-5">{service.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-4">
+                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                    <div className="text-4xl mb-6">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">
                       {service.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-base">
                       {service.description}
                     </p>
                   </div>
                 </Link>
               ) : (
-                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
-                  <div className="text-3xl mb-5">{service.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-4">
+                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className="text-4xl mb-6">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4\">
                     {service.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-base">
                     {service.description}
                   </p>
                 </div>
@@ -395,7 +362,7 @@ export default function Home() {
       {/* Pricing Management Solutions Section */}
       <section id="pricing-management" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-24">
+          <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               Pricing Management Solutions
             </h2>
@@ -406,28 +373,28 @@ export default function Home() {
 
           <div
             className="grid grid-cols-1 md:grid-cols-2"
-            style={{ gap: '40px 40px', marginTop: '48px' }}
+            style={{ gap: '24px', marginTop: '48px' }}
           >
             {pricingManagement.map((solution: any, index: number) => (
               solution.href ? (
                 <Link key={index} href={solution.href}>
-                  <div className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition cursor-pointer" style={{ padding: '32px 48px 32px 32px' }}>
-                    <div className="text-3xl mb-5">{solution.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-4">
+                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                    <div className="text-4xl mb-6">{solution.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-4">
                       {solution.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-base">
                       {solution.description}
                     </p>
                   </div>
                 </Link>
               ) : (
-                <div key={index} className="h-full bg-[#14143A] border-t-4 border-blue-600 rounded-lg" style={{ padding: '32px 48px 32px 32px' }}>
-                  <div className="text-3xl mb-5">{solution.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-4">
+                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className="text-4xl mb-6">{solution.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-base">
                     {solution.description}
                   </p>
                 </div>
@@ -440,7 +407,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section id="why-choose-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center mb-16">
+          <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {whyHeading}
             </h2>
@@ -449,19 +416,19 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {whyChooseUs.map((item, index) => {
               // Only render icon if it exists (for type safety)
               const icon = (item as any).icon;
               return (
                 <div
                   key={index}
-                  className={`bg-[#14143A] border-t-4 border-blue-600 rounded-lg hover:shadow-lg transition mr-4 ${item.clickable ? 'cursor-pointer' : ''}`}
-                  style={{ padding: '32px 48px 32px 32px' }}
+                  className={`bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition ${item.clickable ? 'cursor-pointer' : ''}`}
+                  style={{ padding: '36px', minHeight: '260px' }}
                   onClick={() => item.clickable && openPortalModal()}
                 >
-                  {icon && <div className="text-4xl mb-4">{icon}</div>}
-                  <h3 className="text-lg font-bold text-white mb-4">
+                  {icon && <div className="text-4xl mb-6">{icon}</div>}
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {item.title}
                     {item.clickable && (
                       <button
@@ -472,7 +439,7 @@ export default function Home() {
                       </button>
                     )}
                   </h3>
-                  <p className="text-white leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-base">
                     {item.description}
                   </p>
                 </div>
@@ -485,7 +452,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div className="text-center">
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
               {ctaHeading}
             </h2>
