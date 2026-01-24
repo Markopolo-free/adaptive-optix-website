@@ -96,21 +96,6 @@ export const config = {
   },
   {
     benefits: [
-      "Cloud-native architecture",
-      "Subscription management",
-      "Scalable multi-tenant support",
-      "Automated updates",
-      "API-first integration"
-    ],
-    description: "Deliver SaaS solutions with robust infrastructure, seamless integration, and scalable features.",
-    href: "/solutions/saas",
-    icon: "☁️",
-    id: "saas",
-    name: "SaaS Solutions",
-    order: 2
-  },
-  {
-    benefits: [
       "Scalable infrastructure",
       "Automatic backups",
       "Security & compliance",
@@ -212,12 +197,12 @@ export const config = {
     href: null,
     icon: "🎓",
     id: "consultancy-1",
-    name: "Insight Discover",
+    name: "Insight Discovery",
     order: 0
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "By reviewing current processes, let us help identify efficiencies and financial opportunities",
     href: null,
     icon: "📊",
     id: "consultancy-2",
@@ -235,11 +220,11 @@ export const config = {
   },
   {
     benefits: null,
-    description: "Expert consultancy service description",
+    description: "Understand your customer and add value by creating rich segmentation and personalization strategies",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
-    name: "Consultancy Service 4",
+    name: "Customer Segmentation",
     order: 3
   }
 ],
@@ -255,20 +240,20 @@ export const config = {
   },
   {
     benefits: null,
-    description: "Internal or external regulation, segmentation or strategy rules - once set the solution ensures adherence",
+    description: "Internal or external regulation, segmentation or strategy rules - once set, our solution ensures adherence",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
-    name: "Classic Rules",
+    name: "Classical Rules",
     order: 1
   },
   {
     benefits: null,
-    description: "Consultancy to monitor and manage daily oversight - a long term or initial bootstrapping strategy",
+    description: "Expert consultancy to monitor and manage day to day functions - removing operations complexity either as a bootstrap or longer term approach ",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
-    name: "Pricing Operations",
+    name: "Operations Specialists",
     order: 2
   },
   {
@@ -287,7 +272,7 @@ export const config = {
     description: "Pricing is complex, yet effective lever for revenue and value generation",
     href: null,
     icon: "💹",
-    name: "A Financial Reality Today",
+    name: "A Financial Reality",
     order: 0
   },
   {
