@@ -5,10 +5,22 @@ import Button from '@/components/Button';
 import { config } from '@/data/config';
 import { useState } from 'react';
 
-const saas = config.solutions.find((s) => s.id === 'saas')!;
+const saas = config.solutions.find((s) => s.id === 'saas');
 
 export default function SaaSPage() {
   const [showModal, setShowModal] = useState(false);
+
+  if (!saas) {
+    return (
+      <main style={{ backgroundColor: '#000029ff', color: '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">SaaS Solution Not Found</h1>
+          <p className="text-lg md:text-xl text-blue-100 mb-8">The requested SaaS solution is not configured. Please contact the site administrator.</p>
+          <Button href="/" label="← Back to Home" />
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main style={{ backgroundColor: '#000029ff', color: '#ffffff' }}>
@@ -64,12 +76,12 @@ const rate = await pricing.json();`}
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center">
             <Button href="/" label="← Home" />
-            <div className="text-5xl mb-6">{saas.icon}</div>
+            {saas.icon && <div className="text-5xl mb-6">{saas.icon}</div>}
             <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '32px' }}>
-              {saas.name}
+              {saas.name || 'SaaS'}
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
-              {saas.description}
+              {saas.description || ''}
             </p>
             <Button href="#contact" label="Request Demo" variant="home" />
           </div>
@@ -81,7 +93,7 @@ const rate = await pricing.json();`}
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
-              What is {saas.name}?
+              What is {saas.name || 'SaaS'}?
             </h2>
           </div>
           <div className="max-w-3xl mx-auto">
