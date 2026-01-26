@@ -17,6 +17,7 @@ type CardContent = {
   useCases: typeof config.useCases;
   consultancy: typeof config.consultancy;
   pricingManagement: typeof config.pricingManagement;
+  contactUsCards: typeof config.contactUsCards;
   homeCopy?: {
     heroTitle?: string;
     heroSubheading?: string;

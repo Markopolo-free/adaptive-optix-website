@@ -138,7 +138,7 @@ export const config = {
   {
     benefits: null,
     description: "Provide value-add services to your financial partners and end-users",
-    href: null,
+    href: "/use-cases/baas ",
     icon: "💼",
     id: "use-case-1",
     name: "Banking as a Service",
@@ -297,6 +297,23 @@ export const config = {
     order: 3
   }
 ],
+  contactUsCards: [
+    {
+      icon: "📧",
+      title: "General Inquiries",
+      description: "Reach out for general questions about our services and solutions."
+    },
+    {
+      icon: "💼",
+      title: "Business Partnerships",
+      description: "Contact us to discuss partnership opportunities and collaborations."
+    },
+    {
+      icon: "🛠️",
+      title: "Technical Support",
+      description: "Get help with technical issues or product support."
+    }
+  ],
   whyChooseUs: [
   {
     clickable: false,
