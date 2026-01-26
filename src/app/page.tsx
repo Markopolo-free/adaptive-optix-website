@@ -96,6 +96,8 @@ export default function Home() {
   const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
+  const contactCards = cardContent?.contactUsCards ?? [];
+
   return (
     <main>
       {/* Staff Portal Modal */}
@@ -207,8 +209,14 @@ export default function Home() {
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
         </div>
       </section>
+      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+      </section>
 
       {/* Products Section */}
+      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+      </section>
       <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div style={{ marginBottom: '120px' }}>
@@ -237,6 +245,9 @@ export default function Home() {
       </section>
 
       {/* Solutions Section */}
+      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+      </section>
       <section id="solutions" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '260px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
@@ -270,6 +281,9 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section */}
+      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+      </section>
       <section id="use-cases" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
@@ -287,8 +301,8 @@ export default function Home() {
           >
             {useCases.map((useCase: any, index: number) => (
               useCase.href ? (
-                <Link key={index} href={useCase.href}>
-                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
                     <div className="text-4xl mb-6">{useCase.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-4">
                       {useCase.name}
@@ -297,7 +311,12 @@ export default function Home() {
                       {useCase.description}
                     </p>
                   </div>
-                </Link>
+                  <div className="mt-8">
+                    <Link href={useCase.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition" style={{ marginTop: '16px' }}>
+                      Find out more
+                    </Link>
+                  </div>
+                </div>
               ) : (
                 <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
                   <div className="text-4xl mb-6">{useCase.icon}</div>
@@ -315,6 +334,9 @@ export default function Home() {
       </section>
 
       {/* Consultancy Section */}
+      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+      </section>
       <section id="consultancy" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
@@ -359,6 +381,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Orange divider between Consultancy and Pricing Management Solutions */}
+      <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
       {/* Pricing Management Solutions Section */}
       <section id="pricing-management" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -404,7 +428,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Orange divider between Pricing Management Solutions and Contact Us */}
+      <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
+      {/* Contact Us Section */}
+      <section id="contact-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+        <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="mb-24">
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
+              Contact Us
+            </h2>
+            <p className="text-base text-white leading-relaxed mt-2">
+              Get in touch with our team for support, inquiries, or feedback
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-2"
+            style={{ gap: '24px', marginTop: '48px' }}
+          >
+            {contactCards.map((card, index) => (
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                <div className="text-4xl mb-6">{card.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {card.title}
+                </h3>
+                <p className="text-white leading-relaxed text-base">
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
       <section id="why-choose-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-16">
