@@ -87,7 +87,7 @@ export default function Home() {
   const heroTitle = cardContent?.homeCopy?.heroTitle ?? 'Adaptive Optix';
   const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
   const productsHeading = cardContent?.homeCopy?.productsHeading ?? 'The power of pricing';
-  const productsSubheading = cardContent?.homeCopy?.productsSubheading ?? 'Sub header on pricing and its significance';
+  const productsSubheading = cardContent?.homeCopy?.productsSubheading;
   const solutionsHeading = cardContent?.homeCopy?.solutionsHeading ?? 'Solutions';
   const solutionsSubheading = cardContent?.homeCopy?.solutionsSubheading ?? 'Comprehensive approaches to modernize your financial operations';
   const whyHeading = cardContent?.homeCopy?.whyHeading ?? 'Why Adaptive Optix';

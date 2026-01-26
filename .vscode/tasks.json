@@ -26,6 +26,18 @@
 			],
 			"isBackground": true,
 			"group": "build"
+		},
+		{
+			"label": "Dev: Next 3000",
+			"type": "shell",
+			"command": "npm run dev",
+			"args": [
+				"--",
+				"-p",
+				"3000"
+			],
+			"isBackground": true,
+			"group": "build"
 		}
 	]
 }

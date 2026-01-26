@@ -114,7 +114,6 @@ export async function POST() {
       heroTitle: 'Adaptive Optix',
       heroSubheading: 'Empower your organization with data-driven pricing insights',
       productsHeading: 'The power of pricing',
-      productsSubheading: 'Sub header on pricing and its significance',
       solutionsHeading: 'Solutions',
       solutionsSubheading: 'Comprehensive approaches to modernize your financial operations',
       whyHeading: 'Why Adaptive Optix',

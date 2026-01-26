@@ -96,21 +96,6 @@ export const config = {
   },
   {
     benefits: [
-      "Cloud-native architecture",
-      "Subscription management",
-      "Scalable multi-tenant support",
-      "Automated updates",
-      "API-first integration"
-    ],
-    description: "Deliver SaaS solutions with robust infrastructure, seamless integration, and scalable features.",
-    href: "/solutions/saas",
-    icon: "☁️",
-    id: "saas",
-    name: "SaaS Solutions",
-    order: 2
-  },
-  {
-    benefits: [
       "Scalable infrastructure",
       "Automatic backups",
       "Security & compliance",
@@ -291,7 +276,7 @@ export const config = {
     order: 0
   },
   {
-    description: "Let us support you along the pricing journey to identify and optimize the right choices to grow your business",
+    description: "Optimize and manage the relationship between customer value, cost and competition",
     href: null,
     icon: "🧬",
     name: "Your Market USP",
