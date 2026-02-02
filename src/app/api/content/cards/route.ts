@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
-import { homeCardsQuery, productCardsQuery, solutionCardsQuery, useCaseCardsQuery, consultancyCardsQuery, pricingManagementCardsQuery, whyCardsQuery, homeCopyQuery } from '@/sanity/lib/queries';
+import { homeCardsQuery, productCardsQuery, solutionCardsQuery, useCaseCardsQuery, consultancyCardsQuery, pricingManagementCardsQuery, whyCardsQuery, homeCopyQuery, contactUsCardsQuery } from '@/sanity/lib/queries';
 import { config as localConfig } from '@/data/config';
 
 export async function GET() {
@@ -37,7 +37,8 @@ export async function GET() {
   }
 
   try {
-    const [homeProductCards, whyChooseUs, products, solutions, useCases, consultancy, pricingManagement, homeCopy] = await Promise.all([
+
+    const [homeProductCards, whyChooseUs, products, solutions, useCases, consultancy, pricingManagement, homeCopy, contactUsCards] = await Promise.all([
       sanityClient.fetch(homeCardsQuery),
       sanityClient.fetch(whyCardsQuery),
       sanityClient.fetch(productCardsQuery),
@@ -46,7 +47,9 @@ export async function GET() {
       sanityClient.fetch(consultancyCardsQuery),
       sanityClient.fetch(pricingManagementCardsQuery),
       sanityClient.fetch(homeCopyQuery),
+      sanityClient.fetch(contactUsCardsQuery),
     ]);
+
 
     const response = {
       homeProductCards: homeProductCards?.length ? homeProductCards : localConfig.homeProductCards,
@@ -68,6 +71,7 @@ export async function GET() {
         ctaSubheading: 'Connect with our team to discuss how Adaptive Optix can support your business goals.',
         ctaButtonLabel: 'Schedule a Demo',
       },
+      contactUsCards: contactUsCards?.length ? contactUsCards : [],
       source: 'sanity',
     };
 

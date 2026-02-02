@@ -1,0 +1,55 @@
+{
+  "_type": "solutionFeaturePage",
+  "title": "Core Pricing",
+  "slug": { "current": "core-pricing" },
+  "intro": [
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "Considered, careful application of fundamental pricing principles lays the foundation for customer growth and acquisition." }
+      ]
+    },
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "Defining strategies based on these foundations allows customer growth, activation, retention and reactivation strategies to be optimized and customer value maximized." }
+      ]
+    }
+  ],
+  "table": [
+    { "left": "FX Margin", "right": "Currency-pair specific core margin" },
+    { "left": "Transaction Size", "right": "Margin dependent on transaction size - enables incremental value" },
+    { "left": "Channel", "right": "Specific multipliers - levers to drive traffic to preferred channel" },
+    { "left": "Product", "right": "Product transacted - e.g. w2w, top-up, card payment etc." },
+    { "left": "Segmentation", "right": "Business-specific customer definitions" },
+    { "left": "Corridor", "right": "Incentivise certain payment flows" },
+    { "left": "Mon-Fri vs. Weekend", "right": "Configurable, time-based incentivisation" },
+    { "left": "1..n Custom Fields", "right": "Other business domain-specific dimensions can be supported" }
+  ],
+  "body": [
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "As the major lever supporting revenue growth and competitor differentiation, price management can engage multiple dimensions." }
+      ]
+    },
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "Optimizing these, allows businesses to unlock value, align price sensitivity and price perception." }
+      ]
+    },
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "While defining a strategy to achieve this is complex - and sometimes passed over - we can work with you to structure an approach that provides transparency, operational traceability and unlocks significant value." }
+      ]
+    },
+    {
+      "_type": "block",
+      "children": [
+        { "_type": "span", "text": "Through collaboration in defining this approach, we will help you turn pricing, into active price management with an aligned strategy and conscious decision-making." }
+      ]
+    }
+  ]
+}

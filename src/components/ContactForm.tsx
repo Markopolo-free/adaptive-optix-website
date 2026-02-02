@@ -90,7 +90,7 @@ export default function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} suppressHydrationWarning className="bg-[#14143A] rounded-lg shadow-md border border-[#6B5B95] space-y-6 max-w-3xl w-full mx-auto" style={{ padding: '32px 48px 32px 32px' }}>
+          <form onSubmit={handleSubmit} className="bg-[#14143A] rounded-lg shadow-md border border-[#6B5B95] space-y-6 max-w-3xl w-full mx-auto" style={{ padding: '32px 48px 32px 32px' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label htmlFor="name" className="block text-base font-bold text-white mb-3">
@@ -103,7 +103,6 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="John Doe"
                 />
@@ -120,7 +119,6 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="john@company.com"
                 />
@@ -136,7 +134,6 @@ export default function ContactForm() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="Your Company"
                 />
@@ -152,7 +149,6 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  suppressHydrationWarning
                   className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
                   placeholder="+1 (555) 123-4567"
                 />
@@ -169,7 +165,6 @@ export default function ContactForm() {
                 value={formData.interest}
                 onChange={handleChange}
                 required
-                suppressHydrationWarning
                 className="w-full px-5 py-3.5 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-base bg-white"
               >
                 <option value="">Select an option</option>
@@ -197,7 +192,6 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                suppressHydrationWarning
                 className="w-full px-4 py-2 border border-[#6B5B95] rounded-lg focus:outline-none transition text-gray-900 text-sm resize-none bg-white"
                 placeholder="Tell us about your requirements or interests..."
               />

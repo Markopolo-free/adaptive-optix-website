@@ -9,15 +9,30 @@ import { useEffect, useState } from 'react';
 
 // Version: v2.0.0 - Contains Use Cases, Consultancy, and Pricing Management sections
 
+type HomeProductCard = {
+  name: string;
+  title?: string;
+  description?: string;
+  icon?: string;
+  image?: any;
+  href?: string;
+  order?: number;
+  productCard?: {
+    _id: string;
+    href?: string;
+    icon?: string;
+  } | null;
+};
+
 type CardContent = {
-  homeProductCards: typeof config.homeProductCards;
+  homeProductCards: HomeProductCard[];
   whyChooseUs: typeof config.whyChooseUs;
   products: typeof config.products;
   solutions: typeof config.solutions;
   useCases: typeof config.useCases;
   consultancy: typeof config.consultancy;
   pricingManagement: typeof config.pricingManagement;
-  contactUsCards: typeof config.contactUsCards;
+  contactUsCards: Array<{ icon?: string; title: string; description?: string }>;
   homeCopy?: {
     heroTitle?: string;
     heroSubheading?: string;
@@ -78,7 +93,25 @@ export default function Home() {
     refreshContent();
   }, []);
 
-  const homeProductCards = cardContent?.homeProductCards ?? config.homeProductCards;
+  useEffect(() => {
+    if (cardContent) {
+      // Debug: log useCases to console
+      // eslint-disable-next-line no-console
+      console.log('DEBUG useCases:', cardContent.useCases);
+      // Print each use case's name and href for clarity
+      cardContent.useCases?.forEach((uc, i) => {
+        // eslint-disable-next-line no-console
+        console.log(`UseCase[${i}]: name='${uc.name}', href='${uc.href}'`);
+      });
+    }
+  }, [cardContent]);
+
+  // Fetch product feature cards from useCaseCards (Studio-driven)
+  // Filter useCases to get only those that are product features (e.g., by a naming convention or a flag)
+  // For now, assume product feature cards are the first N useCaseCards, or use a property if available
+  // Example: useCaseCard with id starting with 'product-' or a specific field
+  // Here, we select the first 4 as product features for demonstration
+  const productFeatureCards = (cardContent?.useCases ?? config.useCases).slice(0, 4);
   const whyChooseUs = cardContent?.whyChooseUs ?? config.whyChooseUs;
   const products = cardContent?.products ?? config.products;
   const solutions = cardContent?.solutions ?? config.solutions;
@@ -214,7 +247,7 @@ export default function Home() {
         <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
       </section>
 
-      {/* Products Section */}
+      {/* Products Section (now using productFeatureCards from useCaseCard schema) */}
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
         <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
       </section>
@@ -230,15 +263,24 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {homeProductCards.map((product, index) => (
-              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px' }}>
-                <div className="text-4xl mb-6">{product.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  {product.name}
-                </h3>
-                <p className="text-white leading-relaxed text-base">
-                  {product.description}
-                </p>
+            {productFeatureCards.map((card, index) => (
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div className="text-4xl mb-6">{card.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {card.name}
+                  </h3>
+                  <p className="text-white leading-relaxed text-base">
+                    {card.description}
+                  </p>
+                </div>
+                {card.href && (
+                  <div className="mt-8">
+                    <a href={card.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition" style={{ marginTop: '16px' }}>
+                      Find out more
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -265,8 +307,8 @@ export default function Home() {
             style={{ gap: '24px', marginTop: '48px' }}
           >
             {solutions.map((solution: any, index: number) => (
-              <Link key={index} href={`/solutions/${solution.name}`}>
-                <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
                   <div className="text-4xl mb-6">{solution.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
@@ -275,7 +317,14 @@ export default function Home() {
                     {solution.description}
                   </p>
                 </div>
-              </Link>
+                <div className="mt-8">
+                  {solution.href && (
+                    <Link href={solution.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition" style={{ marginTop: '16px' }}>
+                      Find out more
+                    </Link>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -369,7 +418,7 @@ export default function Home() {
               ) : (
                 <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
                   <div className="text-4xl mb-6">{service.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-4\">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {service.name}
                   </h3>
                   <p className="text-white leading-relaxed text-base">

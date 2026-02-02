@@ -38,6 +38,20 @@
 			],
 			"isBackground": true,
 			"group": "build"
+		},
+		{
+			"label": "Dev: Next 3000 (fixed)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--",
+				"-p",
+				"3000"
+			],
+			"isBackground": true,
+			"group": "build"
 		}
 	]
 }

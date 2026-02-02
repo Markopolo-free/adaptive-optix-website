@@ -61,7 +61,10 @@ export const config = {
     ],
     href: "/products/loyalty",
     icon: null,
-    id: "loyalty",
+    id: {
+      _type: "slug",
+      current: "rewards-and-loyalty"
+    },
     name: "Rewards and Loyalty",
     order: 1,
     shortDescription: "Customer loyalty and rewards programs"
@@ -82,15 +85,71 @@ export const config = {
     name: "Offers & Campaigns",
     order: 2,
     shortDescription: "Dynamic promotional campaign management"
+  },
+  {
+    cta: null,
+    description: null,
+    features: null,
+    href: "/products/",
+    icon: "📦",
+    id: {
+      _type: "slug",
+      current: "market-usp"
+    },
+    name: "Market USP",
+    order: null,
+    shortDescription: "Drill down on market USP, needs content"
+  },
+  {
+    cta: null,
+    description: "Needs some contentNeeds some contentNeeds some contentNeeds some contentvvNeeds some contentvvvNeeds some contentNeeds some contentNeeds some contentNeeds some contentvNeeds some content",
+    features: null,
+    href: "/products/",
+    icon: "📦",
+    id: {
+      _type: "slug",
+      current: "repeat-business"
+    },
+    name: "Repeat BusinesS",
+    order: null,
+    shortDescription: "Needs some content"
+  },
+  {
+    cta: null,
+    description: "Drill down information about Financial Reality",
+    features: null,
+    href: null,
+    icon: null,
+    id: {
+      _type: "slug",
+      current: "a-financial-reality"
+    },
+    name: "A Financial Reality",
+    order: null,
+    shortDescription: null
+  },
+  {
+    cta: null,
+    description: null,
+    features: null,
+    href: "/products/",
+    icon: "📦",
+    id: {
+      _type: "slug",
+      current: "tailored-value"
+    },
+    name: "Tailored Value",
+    order: null,
+    shortDescription: "Needs the content"
   }
 ],
   solutions: [
   {
     benefits: null,
     description: "Identify valuable customers or groups, engage directly and grow your business",
-    href: "/solutions/baas",
+    href: "/solution-features/loyalty-rewards",
     icon: "🛠️",
-    id: "baas",
+    id: "/solution-features/loyalty-rewards",
     name: "Loyalty & Rewards",
     order: 0
   },
@@ -103,9 +162,9 @@ export const config = {
       "Reduced operational costs"
     ],
     description: "Visualize your business, harvest insights and capture opportunities that translate directly into strategies",
-    href: "/solutions/baas",
+    href: "\t/solution-features/data-insights",
     icon: "🛠️",
-    id: "data",
+    id: "data-insights",
     name: "Data Insights & Visualisation ",
     order: 1
   },
@@ -118,18 +177,18 @@ export const config = {
       "SDK availability"
     ],
     description: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price",
-    href: "/solutions/api",
+    href: "\t/solution-features/pricing-features-2",
     icon: "🔗",
-    id: "api",
-    name: "Pricing Features",
+    id: "core-pricing-2",
+    name: "Pricing Features 3",
     order: 3
   },
   {
     benefits: null,
     description: "Your data security is central to us - our solution approach ensures its integrity",
-    href: null,
+    href: "\t/solution-features/data-security",
     icon: null,
-    id: "Security",
+    id: "\tdata-security",
     name: "Data Security",
     order: 4
   }
@@ -147,7 +206,7 @@ export const config = {
   {
     benefits: null,
     description: "Personalize customer experiences directly through a range of end-user specific offerings",
-    href: null,
+    href: "/use-cases/fintech-services",
     icon: "🎯",
     id: "use-case-2",
     name: "Fintech Services",
@@ -156,7 +215,7 @@ export const config = {
   {
     benefits: null,
     description: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue",
-    href: null,
+    href: "/use-cases/billing-providers",
     icon: "🚀",
     id: "use-case-3",
     name: "Billing Providers",
@@ -165,7 +224,7 @@ export const config = {
   {
     benefits: null,
     description: "Consolidate price and incentive offerings from multiple service providers through a single solution",
-    href: null,
+    href: "/use-cases/mobility-as-a-service",
     icon: "⚡",
     id: "use-case-4",
     name: "Mobility as a Service",
@@ -174,7 +233,7 @@ export const config = {
   {
     benefits: null,
     description: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives",
-    href: null,
+    href: "/use-cases/leisure-activity-pricing",
     icon: "🌟",
     id: "use-case-5",
     name: "Leisure Activity Pricing",
@@ -183,7 +242,7 @@ export const config = {
   {
     benefits: null,
     description: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value",
-    href: null,
+    href: "use-cases/third-party-rewards",
     icon: "💡",
     id: "use-case-6",
     name: "3rd Party Rewards",
@@ -270,50 +329,33 @@ export const config = {
   homeProductCards: [
   {
     description: "Pricing is complex, yet effective lever for revenue and value generation",
-    href: null,
+    href: "/products/fx-pricing",
     icon: "💹",
     name: "A Financial Reality",
     order: 0
   },
   {
     description: "Optimize and manage the relationship between customer value, cost and competition",
-    href: null,
+    href: "/products/your-mark-usp",
     icon: "🧬",
     name: "Your Market USP",
     order: 1
   },
   {
     description: "Recognize and reward customers for their business by using personalized pricing and offerings",
-    href: null,
+    href: "/products/tailored-value",
     icon: "📈",
-    name: "Tailored Value",
-    order: 2
+    name: "Tailored Value Stream.",
+    order: 1
   },
   {
     description: "Customers appreciate a strong value proposition - in turn driving recurring revenue",
-    href: null,
+    href: "/products/repeat-business",
     icon: "📈",
     name: "Repeat Business",
     order: 3
   }
 ],
-  contactUsCards: [
-    {
-      icon: "📧",
-      title: "General Inquiries",
-      description: "Reach out for general questions about our services and solutions."
-    },
-    {
-      icon: "💼",
-      title: "Business Partnerships",
-      description: "Contact us to discuss partnership opportunities and collaborations."
-    },
-    {
-      icon: "🛠️",
-      title: "Technical Support",
-      description: "Get help with technical issues or product support."
-    }
-  ],
   whyChooseUs: [
   {
     clickable: false,

@@ -1,10 +1,28 @@
+export const useCasePageBySlugQuery = (slug: string) => `*[_type == "useCasePage" && slug == "${slug}"][0] {
+  _id,
+  title,
+  image,
+  body
+}`;
+export const contactUsCardsQuery = `*[_type == "contactUsCard"] | order(_createdAt asc) {
+  _id,
+  icon,
+  title,
+  description
+}`;
 export const homeCardsQuery = `*[_type == "homeCard"] | order(order asc) {
   _id,
   name,
   title,
   description,
   icon,
-  order
+  href,
+  order,
+  productCard->{
+    _id,
+    href,
+    icon
+  }
 }`;
 
 export const whyCardsQuery = `*[_type == "whyCard"] | order(order asc) {
@@ -84,4 +102,14 @@ export const homeCopyQuery = `*[_type == "homeCopy"][0] {
   ctaHeading,
   ctaSubheading,
   ctaButtonLabel
+}`;
+
+export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard" && id == "${slug}"][0] {
+  _id,
+  title: name,
+  image,
+  body,
+  description,
+  features,
+  shortDescription
 }`;

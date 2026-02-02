@@ -1,0 +1,10 @@
+{
+  "_type": "solutionFeatureCard",
+  "title": "Core Pricing",
+  "description": "Careful application of pricing principles for customer growth and acquisition.",
+  "image": null,
+  "page": {
+    "_type": "reference",
+    "_ref": "solutionFeaturePage-core-pricing-id"
+  }
+}

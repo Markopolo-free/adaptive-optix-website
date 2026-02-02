@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
+import { createClient } from 'next-sanity';
+import { sanityConfig } from '@/sanity/env';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
@@ -8,12 +10,21 @@ export const dynamic = 'force-dynamic';
 
 export async function POST() {
   try {
-    if (!sanityClient) {
+
+    // Use a client with write token for mutations
+    const token = process.env.SANITY_API_TOKEN;
+    if (!sanityClient || !token) {
       return NextResponse.json(
-        { success: false, error: 'Sanity client not configured' },
+        { success: false, error: 'Sanity client or token not configured' },
         { status: 500 }
       );
     }
+    const writeClient = createClient({
+      ...sanityConfig,
+      token,
+      useCdn: false,
+      perspective: 'published',
+    });
 
     // Fetch all content from Sanity, including useCases, consultancy, and pricingManagement
     const [homeCards, whyCards, products, solutions, useCases, consultancy, pricingManagement, homeCopy] = await Promise.all([
@@ -26,6 +37,9 @@ export async function POST() {
       sanityClient.fetch(`*[_type == "pricingManagementCard"] | order(order asc) { id, name, href, icon, description, benefits, order }`),
       sanityClient.fetch(`*[_type == "homeCopy"][0] { heroTitle, heroSubheading, productsHeading, productsSubheading, solutionsHeading, solutionsSubheading, whyHeading, whySubheading, ctaHeading, ctaSubheading, ctaButtonLabel }`),
     ]);
+
+    // Solution Feature Cards now directly contain all data needed for rendering
+    // No separate solutionFeaturePage documents are required
 
     // Generate the TypeScript config file content
     const configContent = `// Theme and branding configuration - easily customizable

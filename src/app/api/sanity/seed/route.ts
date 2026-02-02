@@ -123,6 +123,9 @@ export async function POST() {
       ctaButtonLabel: 'Schedule a Demo',
     };
 
+    // Solution Feature Cards now directly contain all data needed for rendering
+    // No separate solutionFeaturePage documents are required
+
     const allDocs = [homeCopyDoc, ...homeDocs, ...whyDocs, ...productDocs, ...solutionDocs, ...useCaseDocs, ...consultancyDocs, ...pricingManagementDocs];
     allDocs.forEach((doc) => {
       tx.createOrReplace(doc as any);
