@@ -23,7 +23,7 @@ export default function MobilityAsAServiceUseCasePage() {
     <main style={{ backgroundColor: '#000029ff', color: '#fff', minHeight: '100vh', padding: '60px 0', position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
       {/* Vertical divider and left margin */}
       <div style={{ width: '1.5cm', minWidth: '1.5cm', height: '100%' }}>
-          <div style={{ position: 'absolute', top: 0, bottom: 0, left: '1.5cm', width: '2px', background: 'transparent', borderRadius: '2px', zIndex: 2 }} />
+          <div style={{ position: 'absolute', top: 0, bottom: 0, left: '1.5cm', width: '2px', background: '#000029ff', borderRadius: '2px', zIndex: 2 }} />
       </div>
       <div className="flex flex-col items-start" style={{ flex: 1, maxWidth: '900px' }}>
         <button

@@ -26,7 +26,7 @@ export default function SolutionFeaturePage({ params }: { params: Promise<{ slug
       {/* Vertical divider and left margin using flex */}
       <div style={{ display: 'flex', flexDirection: 'row', height: '100%', minHeight: '80vh' }}>
         <div style={{ width: '36px', minWidth: '36px', display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-          <div style={{ width: '4px', borderRadius: '2px', background: 'transparent', height: '100%' }} />
+          <div style={{ width: '4px', borderRadius: '2px', background: '#000029ff', height: '100%' }} />
         </div>
         <div className="flex flex-col items-start" style={{ flex: 1, maxWidth: '900px', marginLeft: '32px' }}>
           <button

@@ -5,8 +5,8 @@ export default defineType({
   title: 'Use Case Card',
   type: 'document',
   fields: [
-    defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string', options: { layout: 'fullWidth' } }),
-    defineField({ name: 'name', title: 'Name', type: 'string', options: { layout: 'fullWidth' } }),
+    defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string' }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
     defineField({
       name: 'href',
       title: 'Link (href)',
@@ -18,10 +18,10 @@ export default defineType({
         return `/use-cases/${slug || ''}`;
       },
       description: 'Auto-generated link to the use case page.',
-      options: { layout: 'fullWidth' }
+      // options: { layout: 'fullWidth' }
     }),
-    defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string', options: { layout: 'fullWidth' } }),
-    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3, options: { layout: 'fullWidth' } }),
+    defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
+    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
     defineField({
       name: 'benefits',
       title: 'Benefits',
