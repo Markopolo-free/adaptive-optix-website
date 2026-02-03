@@ -7,7 +7,11 @@ export async function GET() {
   }
 
   try {
-    const results = {
+    const results: {
+      useCaseCards: Array<{ id: string; old: string; new: string }>;
+      solutionFeatureCards: Array<{ id: string; old: string; new: string }>;
+      errors: Array<{ type: string; id: string; error: string }>;
+    } = {
       useCaseCards: [],
       solutionFeatureCards: [],
       errors: [],
