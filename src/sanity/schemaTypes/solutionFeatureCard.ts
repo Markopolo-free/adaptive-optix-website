@@ -5,8 +5,8 @@ export default defineType({
   title: 'Solution Feature Card',
   type: 'document',
   fields: [
-    defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string', validation: Rule => Rule.required(), options: { layout: 'fullWidth' } }),
-    defineField({ name: 'title', title: 'Title', type: 'string', validation: Rule => Rule.required(), options: { layout: 'fullWidth' } }),
+    defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string', validation: Rule => Rule.required() }),
+    defineField({ name: 'title', title: 'Title', type: 'string', validation: Rule => Rule.required() }),
     defineField({
       name: 'href',
       title: 'Link (href)',
@@ -18,9 +18,9 @@ export default defineType({
         return `/solution-features/${slug || ''}`;
       },
       description: 'Auto-generated link to the solution feature page.',
-      options: { layout: 'fullWidth' }
+      // options: { layout: 'fullWidth' }
     }),
-    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3, options: { layout: 'fullWidth' } }),
+    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
     defineField({ name: 'image', title: 'Image', type: 'image' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
