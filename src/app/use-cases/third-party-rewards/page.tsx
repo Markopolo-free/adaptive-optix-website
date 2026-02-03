@@ -19,7 +19,7 @@ export default function ThirdPartyRewardsUseCasePage() {
     fetchData();
   }, []);
 
-  const imageUrl = data?.image ? urlFor(data.image) : null;
+  const imageUrl = data?.imageUrl || null;
   return (
     <main style={{ backgroundColor: '#000029ff', color: '#fff', minHeight: '100vh', padding: '60px 0', position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
       {/* Vertical divider and left margin */}

@@ -18,7 +18,7 @@ export default function OffersCampaignsPage() {
     fetchData();
   }, []);
 
-  const imageUrl = data?.image ? urlFor(data.image) : null;
+  const imageUrl = data?.imageUrl || null;
   return (
     <main style={{ backgroundColor: '#000029ff', color: '#fff', minHeight: '100vh', padding: '60px 0', position: 'relative', zIndex: 1 }}>
       <div className="flex flex-col items-start" style={{ maxWidth: '1200px', marginRight: 'auto', marginLeft: 'auto' }}>
