@@ -6,6 +6,11 @@ const defaultBaaS = {
   name: 'Banking as a Service',
   description: 'A comprehensive Banking as a Service solution for financial institutions.',
   icon: '🏦',
+  benefits: [
+    'Scalable infrastructure',
+    'Automatic backups',
+    'Security & compliance',
+  ],
 };
 
 const baas = config.solutions.find((s) => s.id === 'baas') || defaultBaaS;

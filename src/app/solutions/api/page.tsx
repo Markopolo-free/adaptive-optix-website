@@ -6,6 +6,11 @@ const defaultAPI = {
   name: 'API Solution',
   description: 'A comprehensive API solution for modern integrations.',
   icon: '🔗',
+  benefits: [
+    'RESTful & GraphQL APIs',
+    'Comprehensive documentation',
+    'Rate limiting & throttling',
+  ],
 };
 
 const api = config.solutions.find((s) => s.id === 'api') || defaultAPI;
