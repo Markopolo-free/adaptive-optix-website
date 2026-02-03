@@ -12,25 +12,25 @@ export default defineType({
       options: { source: 'name', maxLength: 96 },
       validation: Rule => Rule.required(),
     }),
-    defineField({ name: 'name', title: 'Name', type: 'string', options: { layout: 'fullWidth' } }),
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
     defineField({
       name: 'href',
       title: 'Link (href)',
       type: 'string',
       readOnly: true,
       initialValue: (props) => `/products/${props.parent?.id?.current || ''}`,
-      options: { layout: 'fullWidth' }
+      // options: { layout: 'fullWidth' }
     }),
     defineField({
       name: 'icon',
       title: 'Icon (emoji or short text)',
       type: 'string',
       initialValue: '📦',
-      options: { layout: 'fullWidth' }
+      // options: { layout: 'fullWidth' }
     }),
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
-    defineField({ name: 'shortDescription', title: 'Short Description', type: 'text', rows: 2, options: { layout: 'fullWidth' } }),
-    defineField({ name: 'description', title: 'Long Description', type: 'text', rows: 4, options: { layout: 'fullWidth' } }),
+    defineField({ name: 'shortDescription', title: 'Short Description', type: 'text', rows: 2 }),
+    defineField({ name: 'description', title: 'Long Description', type: 'text', rows: 4 }),
     defineField({
       name: 'features',
       title: 'Features',
