@@ -20,7 +20,7 @@ export default function SolutionFeaturePage({ params }: { params: Promise<{ slug
     fetchData();
   }, [unwrappedParams.slug]);
 
-  const imageUrl = data?.image ? urlFor(data.image) : null;
+  const imageUrl = data?.imageUrl || null;
   return (
     <main style={{ backgroundColor: '#000029ff', color: '#fff', minHeight: '100vh', padding: '60px 0', zIndex: 1, display: 'flex', flexDirection: 'row', alignItems: 'flex-start', position: 'relative' }}>
       {/* Vertical divider and left margin using flex */}
