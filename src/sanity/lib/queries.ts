@@ -2,6 +2,7 @@ export const useCasePageBySlugQuery = (slug: string) => `*[_type == "useCasePage
   _id,
   title,
   image,
+  description_2,
   body
 }`;
 export const contactUsCardsQuery = `*[_type == "contactUsCard"] | order(_createdAt asc) {
@@ -109,7 +110,6 @@ export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard
   title: name,
   image,
   body,
-  description,
-  features,
+  description,  description_2,  features,
   shortDescription
 }`;

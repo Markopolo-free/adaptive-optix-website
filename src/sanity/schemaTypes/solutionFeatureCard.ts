@@ -21,6 +21,7 @@ export default defineType({
       // options: { layout: 'fullWidth' }
     }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
+    defineField({ name: 'description_2', title: 'Description 2 (Below Image)', type: 'text', rows: 3 }),
     defineField({ name: 'image', title: 'Image', type: 'image' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],

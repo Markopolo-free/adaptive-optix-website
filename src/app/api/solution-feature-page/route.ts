@@ -21,6 +21,7 @@ export async function GET(req: NextRequest) {
   const cardQuery = `*[_type == "solutionFeatureCard" && (id == $id || href == $href)][0]{
     title,
     description,
+    description_2,
     image
   }`;
   const pageQuery = `*[_type == "solutionFeaturePage" && slug.current == $slug][0]{

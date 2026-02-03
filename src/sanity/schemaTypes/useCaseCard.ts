@@ -22,6 +22,7 @@ export default defineType({
     }),
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
+    defineField({ name: 'description_2', title: 'Description 2 (Below Image)', type: 'text', rows: 3 }),
     defineField({
       name: 'benefits',
       title: 'Benefits',

@@ -31,6 +31,7 @@ export default defineType({
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'shortDescription', title: 'Short Description', type: 'text', rows: 2 }),
     defineField({ name: 'description', title: 'Long Description', type: 'text', rows: 4 }),
+    defineField({ name: 'description_2', title: 'Description 2 (Below Image)', type: 'text', rows: 3 }),
     defineField({
       name: 'features',
       title: 'Features',

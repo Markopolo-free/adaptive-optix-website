@@ -63,6 +63,11 @@ export default function SolutionFeaturePage({ params }: { params: Promise<{ slug
               </div>
             )}
           </div>
+          {data?.description_2 && (
+            <div className="text-xl text-white bg-[#14143A] border-t-4 border-blue-500 rounded-2xl p-8 sm:p-12 lg:p-16 w-full" style={{ boxSizing: 'border-box', wordBreak: 'break-word', marginTop: '48px' }}>
+              <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{data.description_2}</div>
+            </div>
+          )}
         </div>
       </div>
     </main>

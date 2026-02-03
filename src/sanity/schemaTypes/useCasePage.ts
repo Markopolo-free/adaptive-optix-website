@@ -31,6 +31,12 @@ export default {
       options: { hotspot: true },
     },
     {
+      name: 'description_2',
+      title: 'Description 2 (Below Image)',
+      type: 'text',
+      rows: 3,
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',
