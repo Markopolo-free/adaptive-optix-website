@@ -6,6 +6,7 @@ export const sanityClient = hasSanityEnv
       projectId: sanityConfig.projectId,
       dataset: sanityConfig.dataset,
       apiVersion: sanityConfig.apiVersion,
+      token: sanityConfig.token || undefined,
       useCdn: sanityConfig.useCdn,
       perspective: 'published',
     })
