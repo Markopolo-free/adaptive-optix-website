@@ -2,7 +2,13 @@ import Link from 'next/link';
 import Button from '@/components/Button';
 import { config } from '@/data/config';
 
-const api = config.solutions.find((s) => s.id === 'api')!;
+const defaultAPI = {
+  name: 'API Solution',
+  description: 'A comprehensive API solution for modern integrations.',
+  icon: '🔗',
+};
+
+const api = config.solutions.find((s) => s.id === 'api') || defaultAPI;
 
 export const metadata = {
   title: `${api.name} - Adaptive Optix`,

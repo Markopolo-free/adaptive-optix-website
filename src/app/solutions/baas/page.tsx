@@ -2,7 +2,13 @@ import Link from 'next/link';
 import Button from '@/components/Button';
 import { config } from '@/data/config';
 
-const baas = config.solutions.find((s) => s.id === 'baas')!;
+const defaultBaaS = {
+  name: 'Banking as a Service',
+  description: 'A comprehensive Banking as a Service solution for financial institutions.',
+  icon: '🏦',
+};
+
+const baas = config.solutions.find((s) => s.id === 'baas') || defaultBaaS;
 
 export const metadata = {
   title: `${baas.name} - Adaptive Optix`,
