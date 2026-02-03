@@ -10,12 +10,41 @@ export async function GET(req: NextRequest) {
   if (!sanityClient) {
     return NextResponse.json({ error: 'Sanity client not configured' }, { status: 500 });
   }
-  // Query using id (which is the slug-friendly identifier from the card)
-  const query = `*[_type == "solutionFeatureCard" && id == $id][0]{
+  const href = `/solution-features/${slug}`;
+  // Query using id or href from the card
+  const cardQuery = `*[_type == "solutionFeatureCard" && (id == $id || href == $href)][0]{
     title,
     description,
     image
   }`;
-  const data = await sanityClient.fetch(query, { id: slug });
-  return NextResponse.json(data || {});
+  const pageQuery = `*[_type == "solutionFeaturePage" && slug.current == $slug][0]{
+    title,
+    intro,
+    body
+  }`;
+
+  const [cardData, pageData] = await Promise.all([
+    sanityClient.fetch(cardQuery, { id: slug, href }),
+    sanityClient.fetch(pageQuery, { slug }),
+  ]);
+
+  if (cardData) {
+    return NextResponse.json(cardData);
+  }
+
+  const blocksToText = (blocks?: Array<{ children?: Array<{ text?: string }> }>) =>
+    blocks
+      ?.map((block) => (block.children || []).map((child) => child.text || '').join(''))
+      .join('\n')
+      .trim();
+
+  if (pageData) {
+    return NextResponse.json({
+      title: pageData.title,
+      description: blocksToText(pageData.body) || blocksToText(pageData.intro) || '',
+      image: null,
+    });
+  }
+
+  return NextResponse.json({});
 }

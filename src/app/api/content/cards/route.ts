@@ -51,12 +51,27 @@ export async function GET() {
     ]);
 
 
+    const normalizeHref = (item: any, prefix: string) => {
+      const rawHref = typeof item?.href === 'string' ? item.href.trim() : '';
+      if (rawHref) return rawHref;
+      const rawSlug = item?.id?.current ?? item?.id ?? item?.name ?? item?.title ?? '';
+      const slug = String(rawSlug)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+      return slug ? `${prefix}/${slug}` : rawHref;
+    };
+
+    const withHref = (items: any[], prefix: string) =>
+      items.map((item) => ({ ...item, href: normalizeHref(item, prefix) }));
+
     const response = {
       homeProductCards: homeProductCards?.length ? homeProductCards : localConfig.homeProductCards,
       whyChooseUs: whyChooseUs?.length ? whyChooseUs : localConfig.whyChooseUs,
-      products: products?.length ? products : localConfig.products,
-      solutions: solutions?.length ? solutions : localConfig.solutions,
-      useCases: useCases?.length ? useCases : localConfig.useCases,
+      products: products?.length ? withHref(products, '/products') : localConfig.products,
+      solutions: solutions?.length ? withHref(solutions, '/solutions') : localConfig.solutions,
+      useCases: useCases?.length ? withHref(useCases, '/use-cases') : localConfig.useCases,
       consultancy: consultancy?.length ? consultancy : localConfig.consultancy,
       pricingManagement: pricingManagement?.length ? pricingManagement : localConfig.pricingManagement,
       homeCopy: homeCopy ?? {

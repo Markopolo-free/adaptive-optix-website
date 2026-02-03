@@ -1,4 +1,4 @@
-export const useCasePageBySlugQuery = (slug: string) => `*[_type == "useCasePage" && slug == "${slug}"][0] {
+export const useCasePageBySlugQuery = (slug: string) => `*[_type == "useCasePage" && slug.current == "${slug}"][0] {
   _id,
   title,
   image,
