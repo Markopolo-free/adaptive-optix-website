@@ -53,7 +53,10 @@ export async function GET() {
 
     const normalizeHref = (item: any, prefix: string) => {
       const rawHref = typeof item?.href === 'string' ? item.href.trim() : '';
-      if (rawHref) return rawHref;
+      if (rawHref) {
+        if (rawHref.startsWith('http')) return rawHref;
+        return rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+      }
       const rawSlug = item?.id?.current ?? item?.id ?? item?.name ?? item?.title ?? '';
       const slug = String(rawSlug)
         .trim()

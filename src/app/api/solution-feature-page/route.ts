@@ -23,28 +23,35 @@ export async function GET(req: NextRequest) {
     body
   }`;
 
-  const [cardData, pageData] = await Promise.all([
-    sanityClient.fetch(cardQuery, { id: slug, href }),
-    sanityClient.fetch(pageQuery, { slug }),
-  ]);
+  try {
+    const [cardData, pageData] = await Promise.all([
+      sanityClient.fetch(cardQuery, { id: slug, href }),
+      sanityClient.fetch(pageQuery, { slug }),
+    ]);
 
-  if (cardData) {
-    return NextResponse.json(cardData);
+    if (cardData) {
+      return NextResponse.json(cardData);
+    }
+
+    const blocksToText = (blocks?: Array<{ children?: Array<{ text?: string }> }>) => {
+      if (!blocks?.length) return '';
+      return blocks
+        .map((block) => (block.children || []).map((child) => child.text || '').join(''))
+        .join('\n')
+        .trim();
+    };
+
+    if (pageData) {
+      return NextResponse.json({
+        title: pageData.title,
+        description: blocksToText(pageData.body) || blocksToText(pageData.intro) || '',
+        image: null,
+      });
+    }
+
+    return NextResponse.json({});
+  } catch (error) {
+    return NextResponse.json({ error: 'Sanity fetch failed' }, { status: 200 });
   }
-
-  const blocksToText = (blocks?: Array<{ children?: Array<{ text?: string }> }>) =>
-    blocks
-      ?.map((block) => (block.children || []).map((child) => child.text || '').join(''))
-      .join('\n')
-      .trim();
-
-  if (pageData) {
-    return NextResponse.json({
-      title: pageData.title,
-      description: blocksToText(pageData.body) || blocksToText(pageData.intro) || '',
-      image: null,
-    });
-  }
-
-  return NextResponse.json({});
 }
+
