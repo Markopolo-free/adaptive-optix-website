@@ -8,5 +8,14 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Missing slug' }, { status: 400 });
   }
   const data = await getUseCasePage(slug);
+  
+  // Normalize href if present
+  if (data && data.href) {
+    const rawHref = data.href.trim();
+    if (rawHref && !rawHref.startsWith('http')) {
+      data.href = rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+    }
+  }
+  
   return NextResponse.json(data || {});
 }

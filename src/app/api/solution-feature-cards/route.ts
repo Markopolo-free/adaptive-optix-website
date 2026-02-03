@@ -11,12 +11,22 @@ export async function GET(req: NextRequest) {
   }
   const query = `*[_type == "solutionFeatureCard"] | order(order asc) { _id, id, title, href, description, image }`;
   const cards = await sanityClient.fetch(query, {});
+  
+  const normalizeHref = (href: string | undefined, id: string) => {
+    const rawHref = typeof href === 'string' ? href.trim() : '';
+    if (rawHref) {
+      if (rawHref.startsWith('http')) return rawHref;
+      return rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+    }
+    return `/solution-features/${id || ''}`;
+  };
+  
   const result = (cards || []).map((card: any) => {
     return {
       _id: card._id,
       id: card.id,
       title: card.title,
-      href: card.href,
+      href: normalizeHref(card.href, card.id),
       description: card.description,
       image: card.image ? builder.image(card.image).width(320).height(200).url() : null,
     };

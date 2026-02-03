@@ -14,8 +14,21 @@ export async function GET(req: NextRequest) {
     title,
     description,
     image,
-    href
+    href,
+    id
   }`;
   const data = await sanityClient.fetch(query, { id });
+  
+  if (data && data.href) {
+    const rawHref = data.href.trim();
+    if (rawHref) {
+      if (!rawHref.startsWith('http')) {
+        data.href = rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+      }
+    } else {
+      data.href = `/solution-features/${data.id || id}`;
+    }
+  }
+  
   return NextResponse.json(data || {});
 }
