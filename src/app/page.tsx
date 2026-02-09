@@ -117,12 +117,8 @@ export default function Home() {
     }
   }, [cardContent]);
 
-  // Fetch product feature cards from useCaseCards (Studio-driven)
-  // Filter useCases to get only those that are product features (e.g., by a naming convention or a flag)
-  // For now, assume product feature cards are the first N useCaseCards, or use a property if available
-  // Example: useCaseCard with id starting with 'product-' or a specific field
-  // Here, we select the first 4 as product features for demonstration
-  const productFeatureCards = (cardContent?.useCases ?? config.useCases).slice(0, 4);
+  // Use homeProductCards from Studio (Homepage Product Cards)
+  const productFeatureCards = cardContent?.homeProductCards ?? config.homeProductCards ?? [];
   const whyChooseUs = cardContent?.whyChooseUs ?? config.whyChooseUs;
   const products = cardContent?.products ?? config.products;
   const solutions = cardContent?.solutions ?? config.solutions;
