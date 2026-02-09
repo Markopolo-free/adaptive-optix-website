@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getProductPage } from '@/sanity/lib/getProductPage';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityConfig } from '@/sanity/env';
+import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 const builder = sanityConfig.projectId && sanityConfig.dataset
   ? imageUrlBuilder({ projectId: sanityConfig.projectId, dataset: sanityConfig.dataset })
@@ -15,8 +16,15 @@ export async function GET(req: Request) {
   }
   const data = await getProductPage(slug);
   
-  if (data && data.image && builder) {
-    data.imageUrl = builder.image(data.image).width(850).url();
+  if (data) {
+    // Convert block content to plain text
+    if (data.description) data.description = blockToPlainText(data.description);
+    if (data.shortDescription) data.shortDescription = blockToPlainText(data.shortDescription);
+    if (data.description_2) data.description_2 = blockToPlainText(data.description_2);
+    
+    if (data.image && builder) {
+      data.imageUrl = builder.image(data.image).width(850).url();
+    }
   }
   
   return NextResponse.json(data || {});

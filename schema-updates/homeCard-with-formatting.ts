@@ -1,3 +1,9 @@
+/**
+ * Updated schema files with block content (rich text formatting)
+ * Use these AFTER running the migration script
+ */
+
+// homeCard.ts - WITH FORMATTING
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
@@ -41,11 +47,6 @@ export default defineType({
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'name', description: 'description' },
-    prepare({ title, description }) {
-      const block = Array.isArray(description) && description[0];
-      const subtitle = block?.children?.[0]?.text || '';
-      return { title, subtitle };
-    },
+    select: { title: 'name', subtitle: 'description' },
   },
 });

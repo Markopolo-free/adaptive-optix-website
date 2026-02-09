@@ -33,21 +33,7 @@ export const config = {
   products: [
   {
     cta: null,
-    description: [
-      {
-        _key: "gmr5x99k1",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Whether starting from scratch or going for sophistication - all pricing needs active management and this is where you can rely on our expertise"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Whether starting from scratch or going for sophistication - all pricing needs active management and this is where you can rely on our expertise",
     features: [
       "Real-time rate updates",
       "Multi-currency support",
@@ -61,39 +47,11 @@ export const config = {
     id: "fx-pricing",
     name: "Price Management Solutions",
     order: 0,
-    shortDescription: [
-      {
-        _key: "uruz2fv9p",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Real-time currency pricing and market intelligence"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Real-time currency pricing and market intelligence"
   },
   {
     cta: null,
-    description: [
-      {
-        _key: "hove39m4m",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Comprehensive loyalty platform designed to increase customer retention and lifetime value through intelligent rewards."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Comprehensive loyalty platform designed to increase customer retention and lifetime value through intelligent rewards.",
     features: [
       "Flexible reward structures",
       "Tiered membership levels",
@@ -103,45 +61,14 @@ export const config = {
     ],
     href: "/products/loyalty",
     icon: null,
-    id: {
-      _type: "slug",
-      current: "rewards-and-loyalty"
-    },
+    id: "rewards-and-loyalty",
     name: "Rewards and Loyalty",
     order: 1,
-    shortDescription: [
-      {
-        _key: "rgyb9nm7d",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Customer loyalty and rewards programs"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Customer loyalty and rewards programs"
   },
   {
     cta: null,
-    description: [
-      {
-        _key: "zsekw7r33",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Create, manage, and optimize promotional campaigns with advanced targeting, segmentation, and performance analytics."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Create, manage, and optimize promotional campaigns with advanced targeting, segmentation, and performance analytics.",
     features: [
       "Campaign builder",
       "Advanced segmentation",
@@ -154,21 +81,7 @@ export const config = {
     id: "offers-campaigns",
     name: "Offers & Campaigns",
     order: 2,
-    shortDescription: [
-      {
-        _key: "gxrrh3y4t",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Dynamic promotional campaign management"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Dynamic promotional campaign management"
   },
   {
     cta: null,
@@ -176,94 +89,29 @@ export const config = {
     features: null,
     href: "/products/",
     icon: "📦",
-    id: {
-      _type: "slug",
-      current: "market-usp"
-    },
+    id: "market-usp",
     name: "Market USP",
     order: null,
-    shortDescription: [
-      {
-        _key: "ogtsw4l7f",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Drill down on market USP, needs content"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Drill down on market USP, needs content"
   },
   {
     cta: null,
-    description: [
-      {
-        _key: "adijw5ooi",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Needs some contentNeeds some contentNeeds some contentNeeds some contentvvNeeds some contentvvvNeeds some contentNeeds some contentNeeds some contentNeeds some contentvNeeds some content"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Needs some contentNeeds some contentNeeds some contentNeeds some contentvvNeeds some contentvvvNeeds some contentNeeds some contentNeeds some contentNeeds some contentvNeeds some content",
     features: null,
     href: "/products/",
     icon: "📦",
-    id: {
-      _type: "slug",
-      current: "repeat-business"
-    },
+    id: "repeat-business",
     name: "Repeat BusinesS",
     order: null,
-    shortDescription: [
-      {
-        _key: "gu19kpgwj",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Needs some content"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Needs some content"
   },
   {
     cta: null,
-    description: [
-      {
-        _key: "lbxg1b20y",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Drill down information about Financial Reality"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Drill down information about Financial Reality",
     features: null,
     href: null,
     icon: null,
-    id: {
-      _type: "slug",
-      current: "a-financial-reality"
-    },
+    id: "a-financial-reality",
     name: "A Financial Reality",
     order: null,
     shortDescription: null
@@ -274,47 +122,16 @@ export const config = {
     features: null,
     href: "/products/",
     icon: "📦",
-    id: {
-      _type: "slug",
-      current: "tailored-value"
-    },
+    id: "tailored-value",
     name: "Tailored Value",
     order: null,
-    shortDescription: [
-      {
-        _key: "ol45335t3",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Needs the content"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ]
+    shortDescription: "Needs the content"
   }
 ],
   solutions: [
   {
     benefits: null,
-    description: [
-      {
-        _key: "naht3nxbx",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Identify valuable customers or groups, engage directly and grow your business"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Identify valuable customers or groups, engage directly and grow your business",
     href: "/solution-features/loyalty-rewards",
     icon: "🛠️",
     id: "/solution-features/loyalty-rewards",
@@ -329,52 +146,7 @@ export const config = {
       "Real-time database",
       "Reduced operational costs"
     ],
-    description: [
-      {
-        _key: "3l4gvthhl",
-        _type: "block",
-        children: [
-          {
-            _key: "08036229da51",
-            _type: "span",
-            marks: [
-              "strong"
-            ],
-            text: "From Data to Decisive Action"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      },
-      {
-        _key: "6b05df69baf2",
-        _type: "block",
-        children: [
-          {
-            _key: "08036229da51",
-            _type: "span",
-            marks: [],
-            text: "Visualizing your business data allows you to identify and respond quickly to shifting market conditions."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      },
-      {
-        _key: "6451fcdc0ed8",
-        _type: "block",
-        children: [
-          {
-            _key: "dc840288c772",
-            _type: "span",
-            marks: [],
-            text: "Map connections between customer needs and behaviors, identify emerging patterns and react with precision to capture competitive advantages."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "From Data to Decisive Action\n\nVisualizing your business data allows you to identify and respond quickly to shifting market conditions.\n\nMap connections between customer needs and behaviors, identify emerging patterns and react with precision to capture competitive advantages.",
     href: "\t/solution-features/data-insights",
     icon: "🛠️",
     id: "data-insights",
@@ -389,21 +161,7 @@ export const config = {
       "Webhook support",
       "SDK availability"
     ],
-    description: [
-      {
-        _key: "20pxbh4gm",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price",
     href: "\t/solution-features/pricing-features-2",
     icon: "🔗",
     id: "core-pricing-2",
@@ -412,21 +170,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "x4qu5lmbm",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Your data security is central to us - our solution approach ensures its integrity"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Your data security is central to us - our solution approach ensures its integrity",
     href: "\t/solution-features/data-security",
     icon: null,
     id: "\tdata-security",
@@ -437,21 +181,7 @@ export const config = {
   useCases: [
   {
     benefits: null,
-    description: [
-      {
-        _key: "szaspkmcc",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Provide value-add services to your financial partners and end-users"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Provide value-add services to your financial partners and end-users",
     href: "/use-cases/baas ",
     icon: "💼",
     id: "use-case-1",
@@ -460,21 +190,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "izk9g28dl",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Personalize customer experiences directly through a range of end-user specific offerings"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Personalize customer experiences directly through a range of end-user specific offerings",
     href: "/use-cases/fintech-services",
     icon: "🎯",
     id: "use-case-2",
@@ -483,21 +199,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "2r55la52c",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Engage and incentivize digital payment - reduce risk, missed payments and lost revenue",
     href: "/use-cases/billing-providers",
     icon: "🚀",
     id: "use-case-3",
@@ -506,21 +208,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "qhobuhph5",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Consolidate price and incentive offerings from multiple service providers through a single solution"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Consolidate price and incentive offerings from multiple service providers through a single solution",
     href: "/use-cases/mobility-as-a-service",
     icon: "⚡",
     id: "use-case-4",
@@ -529,21 +217,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "024l1oo8g",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Combine flexible time-based and stored value pricing with 3rd party rewards and other value incentives",
     href: "/use-cases/leisure-activity-pricing",
     icon: "🌟",
     id: "use-case-5",
@@ -552,21 +226,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "axylgazsh",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Integrate pricing and rewards with leading 3rd parties - elevating your brand and customer value",
     href: "use-cases/third-party-rewards",
     icon: "💡",
     id: "use-case-6",
@@ -577,21 +237,7 @@ export const config = {
   consultancy: [
   {
     benefits: null,
-    description: [
-      {
-        _key: "2e4oyz9tk",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Let us work with you to understand more about your core business to identify where value can be unlocked"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Let us work with you to understand more about your core business to identify where value can be unlocked",
     href: null,
     icon: "🎓",
     id: "consultancy-1",
@@ -600,21 +246,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "rsbox8303",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "By reviewing current processes, let us help identify efficiencies and financial opportunities"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "By reviewing current processes, let us help identify efficiencies and financial opportunities",
     href: null,
     icon: "📊",
     id: "consultancy-2",
@@ -623,21 +255,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "m8enmwar5",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "By analyzing your current price structures, we can define optimal baseline or advanced pricing strategies"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "By analyzing your current price structures, we can define optimal baseline or advanced pricing strategies",
     href: null,
     icon: "💼",
     id: "consultancy-3",
@@ -646,21 +264,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "f00ddxcfb",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Understand your customer and add value by creating rich segmentation and personalization strategies"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Understand your customer and add value by creating rich segmentation and personalization strategies",
     href: null,
     icon: "🔍",
     id: "consultancy-4",
@@ -671,21 +275,7 @@ export const config = {
   pricingManagement: [
   {
     benefits: null,
-    description: [
-      {
-        _key: "3bk22krig",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "High volumes, trend identification, dynamic pricing ? Track and react will support your needs "
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "High volumes, trend identification, dynamic pricing ? Track and react will support your needs ",
     href: null,
     icon: "💰",
     id: "pricing-mgmt-1",
@@ -694,21 +284,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "4wht1d3p4",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Internal or external regulation, segmentation or strategy rules - once set, our solution ensures adherence"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Internal or external regulation, segmentation or strategy rules - once set, our solution ensures adherence",
     href: null,
     icon: "📈",
     id: "pricing-mgmt-2",
@@ -717,21 +293,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "lb2hknqf1",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Expert consultancy to monitor and manage day to day functions - removing operations complexity either as a bootstrap or longer term approach "
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Expert consultancy to monitor and manage day to day functions - removing operations complexity either as a bootstrap or longer term approach ",
     href: null,
     icon: "💳",
     id: "pricing-mgmt-3",
@@ -740,21 +302,7 @@ export const config = {
   },
   {
     benefits: null,
-    description: [
-      {
-        _key: "6fibit8pl",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Flexible training through to 24x7 support - we are here to support your needs"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Flexible training through to 24x7 support - we are here to support your needs",
     href: null,
     icon: "⚙️",
     id: "pricing-mgmt-4",
@@ -765,84 +313,28 @@ export const config = {
   // Homepage card content centralized here for easy edits
   homeProductCards: [
   {
-    description: [
-      {
-        _key: "m6pe31mqg",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Pricing is complex, yet effective lever for revenue and value generation"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Pricing is complex, yet effective lever for revenue and value generation",
     href: "/products/fx-pricing",
     icon: "💹",
     name: "A Financial Reality",
     order: 0
   },
   {
-    description: [
-      {
-        _key: "2g9dyv3d7",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Optimize and manage the relationship between customer value, cost and competition"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Optimize and manage the relationship between customer value, cost and competition",
     href: "/products/your-mark-usp",
     icon: "🧬",
     name: "Your Market USP",
     order: 1
   },
   {
-    description: [
-      {
-        _key: "6fwniehlp",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Recognize and reward customers for their business by using personalized pricing and offerings"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Recognize and reward customers for their business by using personalized pricing and offerings",
     href: "/products/tailored-value",
     icon: "📈",
     name: "Tailored Value Stream.",
     order: 1
   },
   {
-    description: [
-      {
-        _key: "b2gex8vmh",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Customers appreciate a strong value proposition - in turn driving recurring revenue"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Customers appreciate a strong value proposition - in turn driving recurring revenue",
     href: "/products/repeat-business",
     icon: "📈",
     name: "Repeat Business",
@@ -852,21 +344,7 @@ export const config = {
   whyChooseUs: [
   {
     clickable: false,
-    description: [
-      {
-        _key: "mrceois0s",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change",
     href: null,
     icon: "🌍",
     order: 2,
@@ -874,21 +352,7 @@ export const config = {
   },
   {
     clickable: false,
-    description: [
-      {
-        _key: "uigpx7wiu",
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            marks: [],
-            text: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding"
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      }
-    ],
+    description: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding",
     href: null,
     icon: "🎓",
     order: 3,

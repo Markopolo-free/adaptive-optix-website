@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
+import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -19,14 +20,19 @@ export async function GET(req: NextRequest) {
   }`;
   const data = await sanityClient.fetch(query, { id });
   
-  if (data && data.href) {
-    const rawHref = data.href.trim();
-    if (rawHref) {
-      if (!rawHref.startsWith('http')) {
-        data.href = rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+  if (data) {
+    // Convert block content to plain text
+    if (data.description) data.description = blockToPlainText(data.description);
+    
+    if (data.href) {
+      const rawHref = data.href.trim();
+      if (rawHref) {
+        if (!rawHref.startsWith('http')) {
+          data.href = rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
+        }
+      } else {
+        data.href = `/solution-features/${data.id || id}`;
       }
-    } else {
-      data.href = `/solution-features/${data.id || id}`;
     }
   }
   

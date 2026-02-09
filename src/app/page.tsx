@@ -380,9 +380,15 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-4">
                       {useCase.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-base">
-                      {useCase.description}
-                    </p>
+                    <div className="text-white leading-relaxed text-base">
+                      {typeof useCase.description === 'string' ? (
+                        <p>{useCase.description}</p>
+                      ) : Array.isArray(useCase.description) ? (
+                        <PortableText value={useCase.description} components={portableTextComponents} />
+                      ) : (
+                        <p>{String(useCase.description || '')}</p>
+                      )}
+                    </div>
                   </div>
                   <div className="mt-8">
                     <Link href={useCase.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition" style={{ marginTop: '16px' }}>
@@ -396,9 +402,15 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {useCase.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {useCase.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof useCase.description === 'string' ? (
+                      <p>{useCase.description}</p>
+                    ) : Array.isArray(useCase.description) ? (
+                      <PortableText value={useCase.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(useCase.description || '')}</p>
+                    )}
+                  </div>
                 </div>
               )
             ))}
@@ -433,9 +445,15 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-4">
                       {service.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-base">
-                      {service.description}
-                    </p>
+                    <div className="text-white leading-relaxed text-base">
+                      {typeof service.description === 'string' ? (
+                        <p>{service.description}</p>
+                      ) : Array.isArray(service.description) ? (
+                        <PortableText value={service.description} components={portableTextComponents} />
+                      ) : (
+                        <p>{String(service.description || '')}</p>
+                      )}
+                    </div>
                   </div>
                 </Link>
               ) : (
@@ -444,9 +462,15 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {service.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {service.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof service.description === 'string' ? (
+                      <p>{service.description}</p>
+                    ) : Array.isArray(service.description) ? (
+                      <PortableText value={service.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(service.description || '')}</p>
+                    )}
+                  </div>
                 </div>
               )
             ))}
@@ -480,9 +504,15 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-4">
                       {solution.name}
                     </h3>
-                    <p className="text-white leading-relaxed text-base">
-                      {solution.description}
-                    </p>
+                    <div className="text-white leading-relaxed text-base">
+                      {typeof solution.description === 'string' ? (
+                        <p>{solution.description}</p>
+                      ) : Array.isArray(solution.description) ? (
+                        <PortableText value={solution.description} components={portableTextComponents} />
+                      ) : (
+                        <p>{String(solution.description || '')}</p>
+                      )}
+                    </div>
                   </div>
                 </Link>
               ) : (
@@ -491,9 +521,15 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {solution.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof solution.description === 'string' ? (
+                      <p>{solution.description}</p>
+                    ) : Array.isArray(solution.description) ? (
+                      <PortableText value={solution.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(solution.description || '')}</p>
+                    )}
+                  </div>
                 </div>
               )
             ))}
@@ -525,9 +561,15 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-white mb-4">
                   {card.title}
                 </h3>
-                <p className="text-white leading-relaxed text-base">
-                  {card.description}
-                </p>
+                <div className="text-white leading-relaxed text-base">
+                  {typeof card.description === 'string' ? (
+                    <p>{card.description}</p>
+                  ) : Array.isArray(card.description) ? (
+                    <PortableText value={card.description} components={portableTextComponents} />
+                  ) : (
+                    <p>{String(card.description || '')}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>

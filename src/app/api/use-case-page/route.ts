@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getUseCasePage } from '@/sanity/lib/getUseCasePage';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityConfig } from '@/sanity/env';
+import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 const builder = sanityConfig.projectId && sanityConfig.dataset
   ? imageUrlBuilder({ projectId: sanityConfig.projectId, dataset: sanityConfig.dataset })
@@ -16,6 +17,9 @@ export async function GET(req: Request) {
   const data = await getUseCasePage(slug);
   
   if (data) {
+    // Convert block content to plain text
+    if (data.description_2) data.description_2 = blockToPlainText(data.description_2);
+    
     // Normalize href if present
     if (data.href) {
       const rawHref = data.href.trim();

@@ -29,9 +29,69 @@ export default defineType({
       // options: { layout: 'fullWidth' }
     }),
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
-    defineField({ name: 'shortDescription', title: 'Short Description', type: 'text', rows: 2 }),
-    defineField({ name: 'description', title: 'Long Description', type: 'text', rows: 4 }),
-    defineField({ name: 'description_2', title: 'Description 2 (Below Image)', type: 'text', rows: 3 }),
+    defineField({
+      name: 'shortDescription',
+      title: 'Short Description',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'description',
+      title: 'Long Description',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'description_2',
+      title: 'Description 2 (Below Image)',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
     defineField({
       name: 'features',
       title: 'Features',
@@ -51,6 +111,11 @@ export default defineType({
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'name', subtitle: 'shortDescription' },
+    select: { title: 'name', description: 'description' },
+    prepare({ title, description }) {
+      const block = Array.isArray(description) && description[0];
+      const subtitle = block?.children?.[0]?.text || '';
+      return { title, subtitle };
+    },
   },
 });

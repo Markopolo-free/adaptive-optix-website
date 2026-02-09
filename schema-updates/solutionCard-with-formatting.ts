@@ -1,12 +1,15 @@
+// solutionCard.ts - WITH FORMATTING
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'homeCard',
-  title: 'Homepage Product Card',
+  name: 'solutionCard',
+  title: 'Solution Card',
   type: 'document',
   fields: [
+    defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string' }),
     defineField({ name: 'name', title: 'Name', type: 'string' }),
-    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({ name: 'href', title: 'Link (href)', type: 'string' }),
+    defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({
       name: 'description',
       title: 'Description',
@@ -28,24 +31,15 @@ export default defineType({
         }),
       ],
     }),
-    defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
-    defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({
-      name: 'productCard',
-      title: 'Linked Product Card',
-      type: 'reference',
-      to: [{ type: 'productCard' }],
-      description: 'Select the Product Card this homepage card should link to.'
+      name: 'benefits',
+      title: 'Benefits',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
     }),
-    defineField({ name: 'href', title: 'Link (href)', type: 'string' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'name', description: 'description' },
-    prepare({ title, description }) {
-      const block = Array.isArray(description) && description[0];
-      const subtitle = block?.children?.[0]?.text || '';
-      return { title, subtitle };
-    },
+    select: { title: 'name', subtitle: 'description' },
   },
 });

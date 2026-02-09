@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityConfig } from '@/sanity/env';
+import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 const builder = sanityConfig.projectId && sanityConfig.dataset
   ? imageUrlBuilder({ projectId: sanityConfig.projectId, dataset: sanityConfig.dataset })
@@ -38,7 +39,9 @@ export async function GET(req: NextRequest) {
 
     if (cardData) {
       return NextResponse.json({
-        ...cardData,
+        title: cardData.title,
+        description: cardData.description,
+        description_2: cardData.description_2,
         imageUrl: cardData.image && builder ? builder.image(cardData.image).width(850).url() : null,
       });
     }

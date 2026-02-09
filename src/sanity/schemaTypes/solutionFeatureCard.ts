@@ -20,9 +20,57 @@ export default defineType({
       description: 'Auto-generated link to the solution feature page.',
       // options: { layout: 'fullWidth' }
     }),
-    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
-    defineField({ name: 'description_2', title: 'Description 2 (Below Image)', type: 'text', rows: 3 }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'description_2',
+      title: 'Description 2 (Below Image)',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
     defineField({ name: 'image', title: 'Image', type: 'image' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
+  preview: {
+    select: { title: 'title', description: 'description' },
+    prepare({ title, description }) {
+      const block = Array.isArray(description) && description[0];
+      const subtitle = block?.children?.[0]?.text || '';
+      return { title, subtitle };
+    },
+  },
 });

@@ -45,7 +45,15 @@ export default function SolutionFeaturesPage() {
                       <img src={solution.image} alt={solution.title} style={{ width: '100%', height: 'auto', marginBottom: '16px', borderRadius: '8px' }} />
                     )}
                     <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
-                    <p className="text-white leading-relaxed text-base">{solution.description}</p>
+                    <div className="text-white leading-relaxed text-base">
+                      {typeof solution.description === 'string' ? (
+                        <p>{solution.description}</p>
+                      ) : Array.isArray(solution.description) ? (
+                        <p>{solution.description.map(block => block.children?.map(child => child.text).join('')).join(' ')}</p>
+                      ) : (
+                        <p>{String(solution.description || '')}</p>
+                      )}
+                    </div>
                   </div>
                   <div className="mt-8 flex justify-end">
                     {/* Use shared Button component for consistency */}

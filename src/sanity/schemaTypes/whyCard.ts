@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'whyCard',
@@ -6,13 +6,38 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({ name: 'title', title: 'Title', type: 'string' }),
-    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({ name: 'href', title: 'Link (href)', type: 'string' }),
     defineField({ name: 'clickable', title: 'Is Clickable (opens portal)', type: 'boolean', initialValue: false }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'title', subtitle: 'description' },
+    select: { title: 'name', description: 'description' },
+    prepare({ title, description }) {
+      const block = Array.isArray(description) && description[0];
+      const subtitle = block?.children?.[0]?.text || '';
+      return { title, subtitle };
+    },
   },
 });

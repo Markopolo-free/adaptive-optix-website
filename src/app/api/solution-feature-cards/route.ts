@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
 import imageUrlBuilder from '@sanity/image-url';
 import { sanityConfig } from '@/sanity/env';
+import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 const builder = imageUrlBuilder({ projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!, dataset: process.env.NEXT_PUBLIC_SANITY_DATASET! });
 
@@ -27,7 +28,7 @@ export async function GET(req: NextRequest) {
       id: card.id,
       title: card.title,
       href: normalizeHref(card.href, card.id),
-      description: card.description,
+      description: blockToPlainText(card.description),
       image: card.image ? builder.image(card.image).width(320).height(200).url() : null,
     };
   });

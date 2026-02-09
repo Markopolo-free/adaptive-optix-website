@@ -39,7 +39,11 @@ export default function SolutionFeaturePage({ params }: { params: Promise<{ slug
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-10" style={{ marginBottom: '40px' }}>{data?.title || 'Solution Feature'}</h1>
           <div className="text-xl text-white bg-[#14143A] border-t-4 border-blue-500 rounded-2xl p-8 sm:p-12 lg:p-16 mb-14 w-full" style={{ boxSizing: 'border-box', wordBreak: 'break-word', marginBottom: '48px' }}>
             {data?.description ? (
-              <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{data.description}</div>
+              Array.isArray(data.description) ? (
+                <PortableText value={data.description} components={portableTextComponents} />
+              ) : (
+                <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{data.description}</div>
+              )
             ) : (
               <>
                 <p className="mb-6">This Solution Feature page was auto-generated. Please add content in Sanity Studio.</p>
@@ -65,7 +69,11 @@ export default function SolutionFeaturePage({ params }: { params: Promise<{ slug
           </div>
           {data?.description_2 && (
             <div className="text-xl text-white bg-[#14143A] border-t-4 border-blue-500 rounded-2xl p-8 sm:p-12 lg:p-16 w-full" style={{ boxSizing: 'border-box', wordBreak: 'break-word', marginTop: '48px' }}>
-              <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{data.description_2}</div>
+              {Array.isArray(data.description_2) ? (
+                <PortableText value={data.description_2} components={portableTextComponents} />
+              ) : (
+                <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>{data.description_2}</div>
+              )}
             </div>
           )}
         </div>

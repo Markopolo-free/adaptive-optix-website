@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { config } from '@/data/config';
+import { PortableText } from '@portabletext/react';
 
 const defaultBaaS = {
   name: 'Banking as a Service',
@@ -32,9 +33,15 @@ export default function BaaSPage() {
             <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '32px' }}>
               {baas.name}
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
-              {baas.description}
-            </p>
+            <div className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
+              {typeof baas.description === 'string' ? (
+                <p>{baas.description}</p>
+              ) : Array.isArray(baas.description) ? (
+                <PortableText value={baas.description} />
+              ) : (
+                <p>{String(baas.description || '')}</p>
+              )}
+            </div>
             <Button href="#contact" label="Request Demo" variant="home" />
           </div>
         </div>

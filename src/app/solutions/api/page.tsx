@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { config } from '@/data/config';
+import { PortableText } from '@portabletext/react';
 
 const defaultAPI = {
   name: 'API Solution',
@@ -32,9 +33,15 @@ export default function APIPage() {
             <h1 className="text-3xl md:text-4xl font-bold leading-tight" style={{ marginBottom: '32px' }}>
               {api.name}
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
-              {api.description}
-            </p>
+            <div className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
+              {typeof api.description === 'string' ? (
+                <p>{api.description}</p>
+              ) : Array.isArray(api.description) ? (
+                <PortableText value={api.description} />
+              ) : (
+                <p>{String(api.description || '')}</p>
+              )}
+            </div>
             <Button href="#contact" label="Request Demo" />
           </div>
         </div>

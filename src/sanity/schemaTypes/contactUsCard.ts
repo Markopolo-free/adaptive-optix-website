@@ -34,7 +34,23 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        },
+      ],
       // options: { layout: 'fullWidth' }
     },
     {
@@ -44,5 +60,13 @@ export default {
       of: [{ type: 'string' }],
       description: 'Optional list of benefits or features.'
     }
-  ]
+  ],
+  preview: {
+    select: { title: 'name', description: 'description' },
+    prepare({ title, description }) {
+      const block = Array.isArray(description) && description[0];
+      const subtitle = block?.children?.[0]?.text || '';
+      return { title, subtitle };
+    },
+  },
 };

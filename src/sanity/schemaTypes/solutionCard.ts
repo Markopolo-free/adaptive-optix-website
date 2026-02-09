@@ -9,7 +9,27 @@ export default defineType({
     defineField({ name: 'name', title: 'Name', type: 'string' }),
     defineField({ name: 'href', title: 'Link (href)', type: 'string' }),
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
-    defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
     defineField({
       name: 'benefits',
       title: 'Benefits',
@@ -19,6 +39,11 @@ export default defineType({
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'name', subtitle: 'description' },
+    select: { title: 'name', description: 'description' },
+    prepare({ title, description }) {
+      const block = Array.isArray(description) && description[0];
+      const subtitle = block?.children?.[0]?.text || '';
+      return { title, subtitle };
+    },
   },
 });
