@@ -281,9 +281,15 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {card.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {card.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof card.description === 'string' ? (
+                      <p>{card.description}</p>
+                    ) : Array.isArray(card.description) ? (
+                      <PortableText value={card.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(card.description || '')}</p>
+                    )}
+                  </div>
                 </div>
                 {card.href && (
                   <div className="mt-8">
