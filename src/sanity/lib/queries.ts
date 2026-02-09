@@ -107,11 +107,13 @@ export const homeCopyQuery = `*[_type == "homeCopy"][0] {
   ctaButtonLabel
 }`;
 
-export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard" && id == "${slug}"][0] {
+export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard" && id.current == "${slug}"][0] {
   _id,
   title: name,
   image,
   body,
-  description,  description_2,  features,
+  description,
+  description_2,
+  features,
   shortDescription
 }`;
