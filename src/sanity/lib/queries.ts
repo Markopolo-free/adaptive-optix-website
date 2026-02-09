@@ -16,7 +16,9 @@ export const homeCardsQuery = `*[_type == "homeCard"] | order(order asc) {
   name,
   title,
   description,
+  description_2,
   icon,
+  image,
   href,
   order,
   productCard->{

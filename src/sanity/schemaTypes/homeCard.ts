@@ -28,6 +28,27 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'description_2',
+      title: 'Description 2 (Below Image)',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Code', value: 'code' },
+            ],
+            annotations: [],
+          },
+        }),
+      ],
+    }),
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),
     defineField({

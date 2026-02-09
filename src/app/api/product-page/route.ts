@@ -17,10 +17,9 @@ export async function GET(req: Request) {
   const data = await getProductPage(slug);
   
   if (data) {
-    // Keep description as PortableText (block content) for rich formatting in main content area
-    // Convert other description fields to plain text for consistency
+    // Keep description and description_2 as PortableText (block content) for rich formatting
+    // Convert shortDescription to plain text for consistency
     if (data.shortDescription) data.shortDescription = blockToPlainText(data.shortDescription);
-    if (data.description_2) data.description_2 = blockToPlainText(data.description_2);
     
     if (data.image && builder) {
       data.imageUrl = builder.image(data.image).width(850).url();
