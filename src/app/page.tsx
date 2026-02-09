@@ -6,6 +6,8 @@ import ContactForm from '@/components/ContactForm';
 import Header from '@/components/Header';
 import Button from '@/components/Button';
 import { useEffect, useState } from 'react';
+import { PortableText } from '@portabletext/react';
+import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
 
 // Version: v2.0.0 - Contains Use Cases, Consultancy, and Pricing Management sections
 
@@ -81,6 +83,15 @@ export default function Home() {
       const res = await fetch('/api/content/cards', { cache: 'no-store' });
       if (!res.ok) return;
       const data: CardContent = await res.json();
+      
+      // Ensure all descriptions are strings
+      if (data.homeProductCards) {
+        data.homeProductCards = data.homeProductCards.map(card => ({
+          ...card,
+          description: typeof card.description === 'string' ? card.description : String(card.description || ''),
+        }));
+      }
+      
       setCardContent(data);
     } catch (error) {
       console.error('Failed to fetch Sanity content', error);
@@ -118,17 +129,17 @@ export default function Home() {
   const useCases = cardContent?.useCases ?? config.useCases;
   const consultancy = cardContent?.consultancy ?? config.consultancy;
   const pricingManagement = cardContent?.pricingManagement ?? config.pricingManagement;
-  const heroTitle = cardContent?.homeCopy?.heroTitle ?? 'Adaptive Optix';
-  const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
-  const productsHeading = cardContent?.homeCopy?.productsHeading ?? 'The power of pricing';
-  const productsSubheading = cardContent?.homeCopy?.productsSubheading;
-  const solutionsHeading = cardContent?.homeCopy?.solutionsHeading ?? 'Solutions';
-  const solutionsSubheading = cardContent?.homeCopy?.solutionsSubheading ?? 'Comprehensive approaches to modernize your financial operations';
-  const whyHeading = cardContent?.homeCopy?.whyHeading ?? 'Why Adaptive Optix';
-  const whySubheading = cardContent?.homeCopy?.whySubheading ?? 'Proven expertise built on years of successful eMobility implementation';
-  const ctaHeading = cardContent?.homeCopy?.ctaHeading ?? 'Ready to Transform Your Operations?';
-  const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
-  const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
+  const heroTitle = cardContent?.homeCopy?.heroTitle ?? config.homeCopy?.heroTitle ?? 'Adaptive Optix';
+  const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? config.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
+  const productsHeading = cardContent?.homeCopy?.productsHeading ?? config.homeCopy?.productsHeading ?? 'The power of pricing';
+  const productsSubheading = cardContent?.homeCopy?.productsSubheading ?? config.homeCopy?.productsSubheading;
+  const solutionsHeading = cardContent?.homeCopy?.solutionsHeading ?? config.homeCopy?.solutionsHeading ?? 'Solutions';
+  const solutionsSubheading = cardContent?.homeCopy?.solutionsSubheading ?? config.homeCopy?.solutionsSubheading ?? 'Comprehensive approaches to modernize your financial operations';
+  const whyHeading = cardContent?.homeCopy?.whyHeading ?? config.homeCopy?.whyHeading ?? 'Why Adaptive Optix';
+  const whySubheading = cardContent?.homeCopy?.whySubheading ?? config.homeCopy?.whySubheading ?? 'Proven expertise built on years of successful eMobility implementation';
+  const ctaHeading = cardContent?.homeCopy?.ctaHeading ?? config.homeCopy?.ctaHeading ?? 'Ready to Transform Your Operations?';
+  const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? config.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
+  const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? config.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
   const contactCards = cardContent?.contactUsCards ?? [];
 
@@ -313,9 +324,15 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {solution.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof solution.description === 'string' ? (
+                      <p>{solution.description}</p>
+                    ) : Array.isArray(solution.description) ? (
+                      <PortableText value={solution.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(solution.description || '')}</p>
+                    )}
+                  </div>
                 </div>
                 <div className="mt-8">
                   {solution.href && (
