@@ -568,9 +568,15 @@ export default function Home() {
                       </button>
                     )}
                   </h3>
-                  <p className="text-white leading-relaxed text-base">
-                    {item.description}
-                  </p>
+                  <div className="text-white leading-relaxed text-base">
+                    {typeof item.description === 'string' ? (
+                      <p>{item.description}</p>
+                    ) : Array.isArray(item.description) ? (
+                      <PortableText value={item.description} components={portableTextComponents} />
+                    ) : (
+                      <p>{String(item.description || '')}</p>
+                    )}
+                  </div>
                 </div>
               );
             })}
