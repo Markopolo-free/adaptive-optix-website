@@ -1,7 +1,27 @@
-import { PortableTextComponents } from '@portabletext/react';
+import { PortableTextComponents, PortableTextMarkComponentProps } from '@portabletext/react';
+import React from 'react';
+
+// Custom component to handle text with line breaks
+const TextWithBreaks = ({ text }: { text: string }) => {
+  if (!text) return null;
+  
+  const lines = text.split('\n');
+  return (
+    <>
+      {lines.map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < lines.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </>
+  );
+};
 
 export const portableTextComponents: PortableTextComponents = {
-  types: {},
+  types: {
+    hardBreak: () => <br />,
+  },
   block: {
     normal: ({ children }) => <p className="mb-6">{children}</p>,
     h1: ({ children }) => <h1 className="text-2xl font-bold mb-4">{children}</h1>,
