@@ -17,7 +17,8 @@ export async function GET(req: Request) {
   const data = await getProductPage(slug);
   
   if (data) {
-    // Convert block content to plain text
+    // Keep body as PortableText (block content) for rich formatting
+    // Convert other description fields to plain text for consistency
     if (data.description) data.description = blockToPlainText(data.description);
     if (data.shortDescription) data.shortDescription = blockToPlainText(data.shortDescription);
     if (data.description_2) data.description_2 = blockToPlainText(data.description_2);
