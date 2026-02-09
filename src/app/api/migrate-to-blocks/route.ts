@@ -6,13 +6,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@sanity/client';
 
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN!,
-  apiVersion: '2024-01-01',
-  useCdn: false,
-});
+// Mark as dynamic to prevent static optimization during build
+export const dynamic = 'force-dynamic';
+
+function getClient() {
+  return createClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+    token: process.env.SANITY_API_TOKEN!,
+    apiVersion: '2024-01-01',
+    useCdn: false,
+  });
+}
 
 function textToBlocks(text: string | null | undefined): any[] {
   if (!text || text.trim() === '') return [];
@@ -48,6 +53,7 @@ const migrations = [
 
 export async function POST(request: NextRequest) {
   try {
+    const client = getClient();
     const results: any = {
       summary: {},
       details: [],
