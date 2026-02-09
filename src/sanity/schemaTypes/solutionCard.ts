@@ -40,10 +40,11 @@ export default defineType({
   ],
   preview: {
     select: { title: 'name', description: 'description' },
-    prepare({ title, description }) {
+    prepare(selection: { title?: string; description?: any }) {
+      const { title, description } = selection;
       const block = Array.isArray(description) && description[0];
       const subtitle = block?.children?.[0]?.text || '';
-      return { title, subtitle };
+      return { title: title || '', subtitle };
     },
   },
 });
