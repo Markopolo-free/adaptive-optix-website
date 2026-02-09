@@ -82,6 +82,19 @@ export const config = {
   // Homepage card content centralized here for easy edits
   homeProductCards: ${JSON.stringify(homeCards, null, 2).replace(/"([^\"]+)":/g, '$1:')},
   whyChooseUs: ${JSON.stringify(whyCards, null, 2).replace(/"([^\"]+)":/g, '$1:')},
+  // Homepage copy from Sanity
+  homeCopy: ${JSON.stringify(homeCopy || {
+    heroTitle: 'Adaptive Optix',
+    heroSubheading: 'Empower your organization with data-driven pricing insights',
+    productsHeading: 'The power of pricing',
+    solutionsHeading: 'Solutions',
+    solutionsSubheading: 'Comprehensive approaches to modernize your financial operations',
+    whyHeading: 'Why Adaptive Optix',
+    whySubheading: 'Proven expertise built on years of successful eMobility implementation',
+    ctaHeading: 'Ready to Transform Your Operations?',
+    ctaSubheading: 'Connect with our team to discuss how Adaptive Optix can support your business goals.',
+    ctaButtonLabel: 'Schedule a Demo',
+  }, null, 2).replace(/"([^\"]+)":/g, '$1:')},
 };
 
 export type Config = typeof config;
