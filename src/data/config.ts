@@ -762,6 +762,7 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "a67818f4653c",
             _type: "span",
             marks: [],
             text: "Optimize and manage the relationship between customer value, cost and competition"
@@ -771,7 +772,7 @@ export const config = {
         style: "normal"
       }
     ],
-    href: "/products/your-mark-usp",
+    href: "/products/your-market-usp",
     icon: "🧬",
     name: "Your Market USP",
     order: 1
