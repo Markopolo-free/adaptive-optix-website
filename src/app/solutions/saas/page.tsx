@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Button from '@/components/Button';
 import { config } from '@/data/config';
 import { useState } from 'react';
+import { PortableText } from '@portabletext/react';
 
 const saas = config.solutions.find((s) => s.id === 'saas');
 
@@ -81,7 +82,13 @@ const rate = await pricing.json();`}
               {saas.name || 'SaaS'}
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed" style={{ marginBottom: '48px' }}>
-              {saas.description || ''}
+              {typeof saas.description === 'string' ? (
+                <span>{saas.description}</span>
+              ) : Array.isArray(saas.description) ? (
+                <PortableText value={saas.description} />
+              ) : (
+                <span>{String(saas.description || '')}</span>
+              )}
             </p>
             <Button href="#contact" label="Request Demo" variant="home" />
           </div>
