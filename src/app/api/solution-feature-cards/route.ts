@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   if (!sanityClient) {
     return NextResponse.json({ error: 'Sanity client not configured' }, { status: 500 });
   }
-  const query = `*[_type == "solutionFeatureCard"] | order(order asc) { _id, id, title, href, description, image }`;
+  const query = `*[_type == "solutionCard"] | order(order asc) { _id, id, title, name, href, description, image, icon }`;
   const cards = await sanityClient.fetch(query, {});
   
   const normalizeHref = (href: string | undefined, id: string) => {
@@ -26,10 +26,11 @@ export async function GET(req: NextRequest) {
     return {
       _id: card._id,
       id: card.id,
-      title: card.title,
+      title: card.title || card.name,
       href: normalizeHref(card.href, card.id),
       description: blockToPlainText(card.description),
       image: card.image ? builder.image(card.image).width(320).height(200).url() : null,
+      icon: card.icon || null,
     };
   });
   return NextResponse.json(result);

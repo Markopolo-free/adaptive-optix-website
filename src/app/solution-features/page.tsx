@@ -41,6 +41,9 @@ export default function SolutionFeaturesPage() {
               solutions.map((solution, index) => (
                 <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition flex flex-col justify-between cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
                   <div>
+                    {solution.icon && (
+                      <div style={{ fontSize: '48px', marginBottom: '16px' }}>{solution.icon}</div>
+                    )}
                     {solution.image && (
                       <img src={solution.image} alt={solution.title} style={{ width: '100%', height: 'auto', marginBottom: '16px', borderRadius: '8px' }} />
                     )}

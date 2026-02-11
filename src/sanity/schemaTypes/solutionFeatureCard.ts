@@ -63,6 +63,7 @@ export default defineType({
       ],
     }),
     defineField({ name: 'image', title: 'Image', type: 'image' }),
+    defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {

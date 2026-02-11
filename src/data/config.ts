@@ -365,6 +365,7 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "cptc0PvA8gpHazoy2fis4q",
             _type: "span",
             marks: [],
             text: "Product-specific, size, sales channel or timing-based - just some of the dimensions available to price"
@@ -377,7 +378,7 @@ export const config = {
     href: "\t/solution-features/pricing-features-2",
     icon: "🔗",
     id: "core-pricing-2",
-    name: "Core Pricing",
+    name: "HIgh Level Pricing Features",
     order: 3
   },
   {
@@ -388,6 +389,7 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "n1R3vnrXP7D7ze4juVFSrn",
             _type: "span",
             marks: [],
             text: "Your data security is central to us - our solution approach ensures its integrity"
@@ -398,7 +400,7 @@ export const config = {
       }
     ],
     href: "\t/solution-features/data-security",
-    icon: null,
+    icon: "🛡️",
     id: "\tdata-security",
     name: "Data Security",
     order: 4
