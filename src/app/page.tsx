@@ -84,14 +84,7 @@ export default function Home() {
       if (!res.ok) return;
       const data: CardContent = await res.json();
       
-      // Ensure all descriptions are strings
-      if (data.homeProductCards) {
-        data.homeProductCards = data.homeProductCards.map(card => ({
-          ...card,
-          description: typeof card.description === 'string' ? card.description : String(card.description || ''),
-        }));
-      }
-      
+      // Keep block content as-is for PortableText rendering
       setCardContent(data);
     } catch (error) {
       console.error('Failed to fetch Sanity content', error);
