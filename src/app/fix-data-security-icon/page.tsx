@@ -8,7 +8,7 @@ const client = createClient({
   dataset: 'production',
   useCdn: false,
   apiVersion: '2026-01-20',
-  token: typeof window !== 'undefined' ? localStorage.getItem('sanityToken') : null,
+  token: typeof window !== 'undefined' ? localStorage.getItem('sanityToken') || undefined : undefined,
 });
 
 export default function FixDataSecurityIcon() {
