@@ -14,7 +14,7 @@ import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
 type HomeProductCard = {
   name: string;
   title?: string;
-  description?: string;
+  description?: string | any[]; // Allow both string and block content array
   icon?: string;
   image?: any;
   href?: string;
@@ -34,7 +34,7 @@ type CardContent = {
   useCases: typeof config.useCases;
   consultancy: typeof config.consultancy;
   pricingManagement: typeof config.pricingManagement;
-  contactUsCards: Array<{ icon?: string; title: string; description?: string }>;
+  contactUsCards: Array<{ icon?: string; title: string; description?: string | any[] }>;
   homeCopy?: {
     heroTitle?: string;
     heroSubheading?: string;
