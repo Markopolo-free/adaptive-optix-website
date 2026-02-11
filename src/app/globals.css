@@ -56,9 +56,9 @@ html {
   height: 8px;
   background: linear-gradient(
     to bottom,
-    #f26419ff 0 2px,
+    #F26419 0 2px,
     transparent 2px 6px,
-    #f26419ff 6px 8px
+    #F26419 6px 8px
   );
 }
 

@@ -106,7 +106,7 @@ export default function Header() {
         )}
       </nav>
       {/* Orange accent bar - wider */}
-      <div style={{ height: '12px', backgroundColor: '#f26419ff', width: '100%' }}></div>
+      <div style={{ height: '12px', backgroundColor: '#F26419', width: '100%' }}></div>
     </header>
   );
 }

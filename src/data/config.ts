@@ -808,6 +808,7 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "cptc0PvA8gpHazoy2gzIiI",
             _type: "span",
             marks: [],
             text: "Customers appreciate a strong value proposition - in turn driving recurring revenue"
