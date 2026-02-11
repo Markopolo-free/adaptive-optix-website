@@ -251,12 +251,12 @@ export default function Home() {
         </div>
       </section>
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
       </section>
 
       {/* Products Section (now using productFeatureCards from useCaseCard schema) */}
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
       </section>
       <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -302,7 +302,7 @@ export default function Home() {
 
       {/* Solutions Section */}
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
       </section>
       <section id="solutions" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '260px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -351,7 +351,7 @@ export default function Home() {
 
       {/* Use Cases Section */}
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
       </section>
       <section id="use-cases" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -416,7 +416,7 @@ export default function Home() {
 
       {/* Consultancy Section */}
       <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: 0, width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
       </section>
       <section id="consultancy" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -475,7 +475,7 @@ export default function Home() {
       </section>
 
       {/* Orange divider between Consultancy and Pricing Management Solutions */}
-      <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
+      <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
       {/* Pricing Management Solutions Section */}
       <section id="pricing-management" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -534,7 +534,7 @@ export default function Home() {
       </section>
 
       {/* Orange divider between Pricing Management Solutions and Contact Us */}
-      <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
+      <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
       {/* Contact Us Section */}
       <section id="contact-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
@@ -571,7 +571,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-        <hr style={{ border: 'none', borderTop: '6px solid #FFA500', margin: '0', width: '100%' }} />
+        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
       <section id="why-choose-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-16">
