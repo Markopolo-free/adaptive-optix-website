@@ -7,7 +7,13 @@ export const portableTextComponents: PortableTextComponents = {
   },
   block: {
     // Each block gets natural spacing - respects Sanity's block structure
-    normal: ({ children }) => <p className="mb-4">{children}</p>,
+    // Empty blocks will still render with spacing to preserve Sanity's layout
+    normal: ({ children }) => {
+      const hasContent = React.Children.toArray(children).some(
+        child => typeof child === 'string' ? child.trim().length > 0 : true
+      );
+      return <p className="mb-6" style={{ minHeight: hasContent ? 'auto' : '0.5rem' }}>{children}</p>;
+    },
     h1: ({ children }) => <h1 className="text-2xl font-bold mb-4">{children}</h1>,
     h2: ({ children }) => <h2 className="text-xl font-bold mb-4">{children}</h2>,
     h3: ({ children }) => <h3 className="text-lg font-bold mb-4">{children}</h3>,
