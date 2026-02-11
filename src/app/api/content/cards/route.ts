@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/lib/client';
 import { homeCardsQuery, productCardsQuery, solutionCardsQuery, useCaseCardsQuery, consultancyCardsQuery, pricingManagementCardsQuery, whyCardsQuery, homeCopyQuery, contactUsCardsQuery } from '@/sanity/lib/queries';
 import { config as localConfig } from '@/data/config';
-import { blockToPlainText } from '@/sanity/lib/blockToPlainText';
 
 export async function GET() {
   // Disable caching so published changes appear immediately
@@ -51,27 +50,13 @@ export async function GET() {
       sanityClient.fetch(contactUsCardsQuery),
     ]);
 
-    // Convert block content to plain text for all description fields
+    // Keep block content as-is for PortableText rendering on frontend
     const convertDescriptions = (items: any[]) => {
       return items.map(item => {
         const converted: any = { ...item };
         
-        // Convert all description-related fields to plain text strings
-        if (item.description !== undefined) {
-          converted.description = typeof item.description === 'string' 
-            ? item.description 
-            : blockToPlainText(item.description);
-        }
-        if (item.shortDescription !== undefined) {
-          converted.shortDescription = typeof item.shortDescription === 'string'
-            ? item.shortDescription
-            : blockToPlainText(item.shortDescription);
-        }
-        if (item.description_2 !== undefined) {
-          converted.description_2 = typeof item.description_2 === 'string'
-            ? item.description_2
-            : blockToPlainText(item.description_2);
-        }
+        // Keep description fields as block content (don't convert to plain text)
+        // The frontend will handle rendering with PortableText
         
         return converted;
       });

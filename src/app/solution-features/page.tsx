@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { useEffect, useState } from 'react';
+import { PortableText } from '@portabletext/react';
+import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
 
 export default function SolutionFeaturesPage() {
   const [solutions, setSolutions] = useState<any[]>([]);
@@ -52,7 +54,7 @@ export default function SolutionFeaturesPage() {
                       {typeof solution.description === 'string' ? (
                         <p>{solution.description}</p>
                       ) : Array.isArray(solution.description) ? (
-                        <p>{solution.description.map((block: any) => block.children?.map((child: any) => child.text).join('')).join(' ')}</p>
+                        <PortableText value={solution.description} components={portableTextComponents} />
                       ) : (
                         <p>{String(solution.description || '')}</p>
                       )}
