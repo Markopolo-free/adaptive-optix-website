@@ -44,6 +44,8 @@ type CardContent = {
     solutionsSubheading?: string;
     whyHeading?: string;
     whySubheading?: string;
+    consultancyHeading?: string;
+    consultancySubheading?: string;
     ctaHeading?: string;
     ctaSubheading?: string;
     ctaButtonLabel?: string;
@@ -126,6 +128,8 @@ export default function Home() {
   const solutionsSubheading = cardContent?.homeCopy?.solutionsSubheading ?? config.homeCopy?.solutionsSubheading ?? 'Comprehensive approaches to modernize your financial operations';
   const whyHeading = cardContent?.homeCopy?.whyHeading ?? config.homeCopy?.whyHeading ?? 'Why Adaptive Optix';
   const whySubheading = cardContent?.homeCopy?.whySubheading ?? config.homeCopy?.whySubheading ?? 'Proven expertise built on years of successful eMobility implementation';
+  const consultancyHeading = cardContent?.homeCopy?.consultancyHeading ?? config.homeCopy?.consultancyHeading ?? 'Consultancy';
+  const consultancySubheading = cardContent?.homeCopy?.consultancySubheading ?? config.homeCopy?.consultancySubheading ?? 'Expert guidance and strategic insights';
   const ctaHeading = cardContent?.homeCopy?.ctaHeading ?? config.homeCopy?.ctaHeading ?? 'Ready to Transform Your Operations?';
   const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? config.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? config.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
@@ -415,10 +419,10 @@ export default function Home() {
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
-              Consultancy
+              {consultancyHeading}
             </h2>
             <p className="text-base text-white leading-relaxed mt-2">
-              Expert guidance and strategic insights
+              {consultancySubheading}
             </p>
           </div>
 

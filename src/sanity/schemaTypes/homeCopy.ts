@@ -20,6 +20,10 @@ export default defineType({
     defineField({ name: 'whyHeading', title: 'Why Heading', type: 'string' }),
     defineField({ name: 'whySubheading', title: 'Why Subheading', type: 'text', rows: 3 }),
 
+    // Consultancy
+    defineField({ name: 'consultancyHeading', title: 'Consultancy Heading', type: 'string' }),
+    defineField({ name: 'consultancySubheading', title: 'Consultancy Subheading', type: 'text', rows: 3 }),
+
     // CTA
     defineField({ name: 'ctaHeading', title: 'CTA Heading', type: 'string' }),
     defineField({ name: 'ctaSubheading', title: 'CTA Subheading', type: 'text', rows: 3 }),

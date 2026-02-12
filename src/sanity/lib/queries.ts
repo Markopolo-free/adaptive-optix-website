@@ -102,6 +102,8 @@ export const homeCopyQuery = `*[_type == "homeCopy"][0] {
   solutionsSubheading,
   whyHeading,
   whySubheading,
+  consultancyHeading,
+  consultancySubheading,
   ctaHeading,
   ctaSubheading,
   ctaButtonLabel

@@ -348,7 +348,7 @@ export const config = {
     href: "\t/solution-features/data-insights",
     icon: "🛠️",
     id: "data-insights",
-    name: "Data Insights & Visualisation ",
+    name: "Data Insights & Visualization ",
     order: 1
   },
   {
@@ -743,9 +743,10 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "dd516d09b1b0",
             _type: "span",
             marks: [],
-            text: "Pricing is complex, yet effective lever for revenue and value generation"
+            text: "Pricing is the most complex, yet effective lever for revenue and value generation"
           }
         ],
         markDefs: [],
@@ -798,7 +799,7 @@ export const config = {
     ],
     href: "/products/tailored-value",
     icon: "📈",
-    name: "Tailored Value Stream.",
+    name: "Tailored Value",
     order: 1
   },
   {
@@ -877,12 +878,14 @@ export const config = {
   ctaSubheading: "Connect with our team to discuss how Adaptive Optix can support your business goals.",
   heroSubheading: null,
   heroTitle: "Adaptive Optix",
-  productsHeading: "The importance of pricing",
+  productsHeading: "The Importance of Pricing",
   productsSubheading: "Let us support you along the pricing journey to identify and optimize the right choice to grow your business",
   solutionsHeading: "Solution Features ",
   solutionsSubheading: "Leverage feature-rich capabilities to create domain-specific business strategies and capture evolving opportunities",
   whyHeading: "Why Adaptive Optix",
-  whySubheading: "\n\n"
+  whySubheading: "\n\n",
+  consultancyHeading: "Consultancy",
+  consultancySubheading: "Expert guidance and strategic insights"
 },
 };
 
