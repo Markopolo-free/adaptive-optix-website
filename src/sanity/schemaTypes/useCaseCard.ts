@@ -23,8 +23,9 @@ export default defineType({
     defineField({ name: 'icon', title: 'Icon (emoji or short text)', type: 'string' }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Description (Homepage Card Only - Keep Short)',
       type: 'array',
+      description: 'Brief 1-2 sentence summary shown on homepage card. For full content, edit Use Case Page → Body',
       of: [
         defineArrayMember({
           type: 'block',

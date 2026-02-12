@@ -33,7 +33,7 @@ export default defineType({
     defineField({ name: 'order', title: 'Order', type: 'number' }),
   ],
   preview: {
-    select: { title: 'name', description: 'description' },
+    select: { title: 'title', description: 'description' },
     prepare(selection: { title?: string; description?: any }) {
       const { title, description } = selection;
       const block = Array.isArray(description) && description[0];

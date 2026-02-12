@@ -8,8 +8,15 @@ export const useCasePageBySlugQuery = (slug: string) => `*[_type == "useCasePage
 export const contactUsCardsQuery = `*[_type == "contactUsCard"] | order(_createdAt asc) {
   _id,
   icon,
+  name,
   title,
   description
+}`;
+export const footerCardQuery = `*[_type == "footerCard"][0] {
+  connectTitle,
+  connectText,
+  email,
+  linkedInUrl
 }`;
 export const homeCardsQuery = `*[_type == "homeCard"] | order(order asc) {
   _id,
@@ -104,9 +111,12 @@ export const homeCopyQuery = `*[_type == "homeCopy"][0] {
   whySubheading,
   consultancyHeading,
   consultancySubheading,
+  contactUsHeading,
+  contactUsSubheading,
   ctaHeading,
   ctaSubheading,
-  ctaButtonLabel
+  ctaButtonLabel,
+  staffPortalScreens
 }`;
 
 export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard" && id.current == "${slug}"][0] {

@@ -31,6 +31,7 @@ export async function GET() {
         ctaHeading: 'Ready to Transform Your Operations?',
         ctaSubheading: 'Connect with our team to discuss how Adaptive Optix can support your business goals.',
         ctaButtonLabel: 'Schedule a Demo',
+        staffPortalScreens: ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'],
       },
       source: 'local-config',
     });
@@ -64,7 +65,12 @@ export async function GET() {
 
     const normalizeHref = (item: any, prefix: string) => {
       const rawHref = typeof item?.href === 'string' ? item.href.trim() : '';
-      if (rawHref) {
+      const isPlaceholderHref =
+        !rawHref ||
+        rawHref === prefix ||
+        rawHref === `${prefix}/` ||
+        rawHref.startsWith('#');
+      if (rawHref && !isPlaceholderHref) {
         if (rawHref.startsWith('http')) return rawHref;
         return rawHref.startsWith('/') ? rawHref : `/${rawHref}`;
       }
@@ -99,8 +105,12 @@ export async function GET() {
         ctaHeading: 'Ready to Transform Your Operations?',
         ctaSubheading: 'Connect with our team to discuss how Adaptive Optix can support your business goals.',
         ctaButtonLabel: 'Schedule a Demo',
+        staffPortalScreens: ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'],
       },
-      contactUsCards: contactUsCards?.length ? convertDescriptions(contactUsCards) : [],
+      contactUsCards: contactUsCards?.length ? convertDescriptions(contactUsCards).map((card: any) => ({
+        ...card,
+        title: card.name || card.title  // Use name from schema as the primary field
+      })) : [],
       source: 'sanity',
     };
 
@@ -126,6 +136,7 @@ export async function GET() {
           ctaHeading: 'Ready to Transform Your Operations?',
           ctaSubheading: 'Connect with our team to discuss how Adaptive Optix can support your business goals.',
           ctaButtonLabel: 'Schedule a Demo',
+          staffPortalScreens: ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'],
         },
         source: 'local-config',
         error: 'Sanity fetch failed',

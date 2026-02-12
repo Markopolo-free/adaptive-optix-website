@@ -9,8 +9,9 @@ import pricingManagementCard from './pricingManagementCard';
 import homeCopy from './homeCopy';
 import contactUsCard from './contactUsCard';
 import solutionFeatureCard from './solutionFeatureCard';
+import footerCard from './footerCard';
 
 import solutionFeaturePage from './solutionFeaturePage';
 import useCasePage from './useCasePage';
 
-export const schemaTypes = [homeCard, whyCard, productCard, solutionCard, useCaseCard, consultancyCard, pricingManagementCard, homeCopy, contactUsCard, useCasePage, solutionFeaturePage, solutionFeatureCard];
+export const schemaTypes = [homeCard, whyCard, productCard, solutionCard, useCaseCard, consultancyCard, pricingManagementCard, homeCopy, contactUsCard, useCasePage, solutionFeaturePage, solutionFeatureCard, footerCard];

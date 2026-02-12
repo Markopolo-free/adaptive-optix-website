@@ -484,9 +484,52 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "60d0d4b1e2fc",
             _type: "span",
             marks: [],
-            text: "Consolidate price and incentive offerings from multiple service providers through a single solution"
+            text: "In today’s modern hubs, travel and mobility services are many and varied. With no single service provider controling the space, the opportunity for MaaS operators exists."
+          }
+        ],
+        markDefs: [],
+        style: "normal"
+      },
+      {
+        _key: "63e7bc69cf1f",
+        _type: "block",
+        children: [
+          {
+            _key: "f77cd779a98d",
+            _type: "span",
+            marks: [],
+            text: "By consolidating and managing the provision of travel, logistics and other lifestyle-related offerings, MaaS operators provide a critical function to facilitate tomorrow’s cities and workspaces."
+          }
+        ],
+        markDefs: [],
+        style: "normal"
+      },
+      {
+        _key: "d3f1c9bf1e3f",
+        _type: "block",
+        children: [
+          {
+            _key: "976b527408f7",
+            _type: "span",
+            marks: [],
+            text: "In order to increase adoption, effective service usage and brand while maximising service and MaaS provider ROI, pricing plays a pivotal role."
+          }
+        ],
+        markDefs: [],
+        style: "normal"
+      },
+      {
+        _key: "210f46a2e0e0",
+        _type: "block",
+        children: [
+          {
+            _key: "1aaf3c74b177",
+            _type: "span",
+            marks: [],
+            text: "By calculating service consumption supported by retained value management or seasonal/periodic pricing, our solution can support fair and transparent pricing, provide targeted offers and optimize resource utilization- thus ensuring an optimal outcome both for end consumers and providers"
           }
         ],
         markDefs: [],
@@ -834,9 +877,10 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "592fdc545fcd",
             _type: "span",
             marks: [],
-            text: "A single platform that can be configured to meet your business' needs ensures flexibility and the ability to respond quickly to change"
+            text: "A global platform that can be configured to serve local or global business needs while still providing flexibility and agility"
           }
         ],
         markDefs: [],
@@ -856,9 +900,10 @@ export const config = {
         _type: "block",
         children: [
           {
+            _key: "285f50e21f7a",
             _type: "span",
             marks: [],
-            text: "Our core team has been delivering pricing solutions to global businesses since 2014 and brings with it deep understanding"
+            text: "Our team has a long history of delivering pricing solutions globally and brings a wealth of technical expertise and business acumen"
           }
         ],
         markDefs: [],
@@ -874,18 +919,16 @@ export const config = {
   // Homepage copy from Sanity
   homeCopy: {
   ctaButtonLabel: "Schedule a Demo",
-  ctaHeading: "Ready to Transform Your Operations?",
-  ctaSubheading: "Connect with our team to discuss how Adaptive Optix can support your business goals.",
+  ctaHeading: "Ready to Transform Your Operations?\n\n",
+  ctaSubheading: "\nConnect with our team to discuss how Adaptive Optix can support your business goals.\n\n\n",
   heroSubheading: null,
   heroTitle: "Adaptive Optix",
   productsHeading: "The Importance of Pricing",
   productsSubheading: "Let us support you along the pricing journey to identify and optimize the right choice to grow your business",
   solutionsHeading: "Solution Features ",
-  solutionsSubheading: "Leverage feature-rich capabilities to create domain-specific business strategies and capture evolving opportunities",
+  solutionsSubheading: "Leverage feature-rich capabilities to create domain-specific business strategies and capture evolving opportunities\n\n",
   whyHeading: "Why Adaptive Optix",
-  whySubheading: "\n\n",
-  consultancyHeading: "Consultancy",
-  consultancySubheading: "Expert guidance and strategic insights"
+  whySubheading: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses \n\n"
 },
 };
 

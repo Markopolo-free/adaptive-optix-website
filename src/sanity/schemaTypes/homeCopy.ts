@@ -24,8 +24,15 @@ export default defineType({
     defineField({ name: 'consultancyHeading', title: 'Consultancy Heading', type: 'string' }),
     defineField({ name: 'consultancySubheading', title: 'Consultancy Subheading', type: 'text', rows: 3 }),
 
+    // Contact Us
+    defineField({ name: 'contactUsHeading', title: 'Contact Us Heading', type: 'string' }),
+    defineField({ name: 'contactUsSubheading', title: 'Contact Us Subheading', type: 'text', rows: 3 }),
+
+    // Staff Portal
+    defineField({ name: 'staffPortalScreens', title: 'Staff Portal Screenshots', type: 'array', of: [{ type: 'string' }], description: 'Array of image URLs for staff portal screenshots' }),
+
     // CTA
-    defineField({ name: 'ctaHeading', title: 'CTA Heading', type: 'string' }),
+    defineField({ name: 'ctaHeading', title: 'CTA Heading', type: 'text', rows: 2 }),
     defineField({ name: 'ctaSubheading', title: 'CTA Subheading', type: 'text', rows: 3 }),
     defineField({ name: 'ctaButtonLabel', title: 'CTA Button Label', type: 'string' }),
   ],

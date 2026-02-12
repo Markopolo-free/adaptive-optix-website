@@ -46,9 +46,12 @@ type CardContent = {
     whySubheading?: string;
     consultancyHeading?: string;
     consultancySubheading?: string;
+    contactUsHeading?: string;
+    contactUsSubheading?: string;
     ctaHeading?: string;
     ctaSubheading?: string;
     ctaButtonLabel?: string;
+    staffPortalScreens?: string[];
   };
   source?: string;
 };
@@ -71,13 +74,6 @@ export default function Home() {
   };
 
   // Content now sourced from config.homeProductCards
-
-  const staffScreens = [
-    '/staff-portal/screen1.jpg',
-    '/staff-portal/screen2.jpg',
-    '/staff-portal/screen3.jpg',
-    '/staff-portal/screen4.jpg',
-  ];
 
   const refreshContent = async () => {
     try {
@@ -123,18 +119,27 @@ export default function Home() {
   const heroTitle = cardContent?.homeCopy?.heroTitle ?? config.homeCopy?.heroTitle ?? 'Adaptive Optix';
   const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? config.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
   const productsHeading = cardContent?.homeCopy?.productsHeading ?? config.homeCopy?.productsHeading ?? 'The power of pricing';
-  const productsSubheading = cardContent?.homeCopy?.productsSubheading ?? config.homeCopy?.productsSubheading;
+  const productsSubheading = (cardContent?.homeCopy?.productsSubheading?.trim() || config.homeCopy?.productsSubheading?.trim()) ?? 'Let us support you along the pricing journey to identify and optimize the right choice to grow your business';
   const solutionsHeading = cardContent?.homeCopy?.solutionsHeading ?? config.homeCopy?.solutionsHeading ?? 'Solutions';
-  const solutionsSubheading = cardContent?.homeCopy?.solutionsSubheading ?? config.homeCopy?.solutionsSubheading ?? 'Comprehensive approaches to modernize your financial operations';
+  const solutionsSubheading = (cardContent?.homeCopy?.solutionsSubheading?.trim() || config.homeCopy?.solutionsSubheading?.trim()) ?? 'Comprehensive approaches to modernize your financial operations';
   const whyHeading = cardContent?.homeCopy?.whyHeading ?? config.homeCopy?.whyHeading ?? 'Why Adaptive Optix';
-  const whySubheading = cardContent?.homeCopy?.whySubheading ?? config.homeCopy?.whySubheading ?? 'Proven expertise built on years of successful eMobility implementation';
+  const whySubheading = (cardContent?.homeCopy?.whySubheading?.trim() || config.homeCopy?.whySubheading?.trim()) ?? 'Pricing is in our DNA - and something we\'ve been passionate about for over 15 years';
   const consultancyHeading = cardContent?.homeCopy?.consultancyHeading ?? config.homeCopy?.consultancyHeading ?? 'Consultancy';
-  const consultancySubheading = cardContent?.homeCopy?.consultancySubheading ?? config.homeCopy?.consultancySubheading ?? 'Expert guidance and strategic insights';
+  const consultancySubheading = (cardContent?.homeCopy?.consultancySubheading?.trim() || config.homeCopy?.consultancySubheading?.trim()) ?? 'Expert guidance and strategic insights';
+  const contactUsHeading = (cardContent?.homeCopy?.contactUsHeading?.trim() || config.homeCopy?.contactUsHeading?.trim()) ?? 'Contact Us';
+  const contactUsSubheading = (cardContent?.homeCopy?.contactUsSubheading?.trim() || config.homeCopy?.contactUsSubheading?.trim()) ?? 'Get in touch with our team for support, inquiries, or feedback';
   const ctaHeading = cardContent?.homeCopy?.ctaHeading ?? config.homeCopy?.ctaHeading ?? 'Ready to Transform Your Operations?';
-  const ctaSubheading = cardContent?.homeCopy?.ctaSubheading ?? config.homeCopy?.ctaSubheading ?? 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
+  const rawCtaSubheading = cardContent?.homeCopy?.ctaSubheading;
+  const fallbackCtaSubheading = config.homeCopy?.ctaSubheading;
+  const ctaSubheading = (rawCtaSubheading && rawCtaSubheading.trim().length > 0)
+    ? rawCtaSubheading
+    : (fallbackCtaSubheading && fallbackCtaSubheading.trim().length > 0)
+      ? fallbackCtaSubheading
+      : 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? config.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
-  const contactCards = cardContent?.contactUsCards ?? [];
+  const contactCards = cardContent?.contactUsCards ?? config.contactUsCards ?? [];
+  const staffPortalScreens = cardContent?.homeCopy?.staffPortalScreens ?? config.homeCopy?.staffPortalScreens ?? ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'];
 
   return (
     <main>
@@ -166,7 +171,7 @@ export default function Home() {
                   Click any image to open a lightbox viewer.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {staffScreens.map((src, idx) => (
+                  {staffPortalScreens.map((src, idx) => (
                     <button
                       key={src}
                       type="button"
@@ -205,7 +210,7 @@ export default function Home() {
             >
               <div className="relative max-w-5xl w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
                 <img
-                  src={staffScreens[lightboxIndex]}
+                  src={staffPortalScreens[lightboxIndex]}
                   alt={`Staff portal screenshot ${lightboxIndex + 1}`}
                   className="max-h-[80vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
                 />
@@ -213,7 +218,7 @@ export default function Home() {
                   type="button"
                   aria-label="Previous screenshot"
                   className="absolute left-2 md:left-4 px-3 md:px-4 py-2 md:py-3 text-white bg-black/50 hover:bg-black/70 rounded-full"
-                  onClick={() => setLightboxIndex((prev) => (prev === null ? prev : (prev - 1 + staffScreens.length) % staffScreens.length))}
+                  onClick={() => setLightboxIndex((prev) => (prev === null ? prev : (prev - 1 + staffPortalScreens.length) % staffPortalScreens.length))}
                 >
                   ‹
                 </button>
@@ -221,7 +226,7 @@ export default function Home() {
                   type="button"
                   aria-label="Next screenshot"
                   className="absolute right-2 md:right-4 px-3 md:px-4 py-2 md:py-3 text-white bg-black/50 hover:bg-black/70 rounded-full"
-                  onClick={() => setLightboxIndex((prev) => (prev === null ? prev : (prev + 1) % staffScreens.length))}
+                  onClick={() => setLightboxIndex((prev) => (prev === null ? prev : (prev + 1) % staffPortalScreens.length))}
                 >
                   ›
                 </button>
@@ -307,7 +312,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {solutionsHeading}
             </h2>
-            <p className="text-base text-white leading-relaxed mt-2">
+            <p className="text-base text-white leading-relaxed mt-2 mb-8" style={{ whiteSpace: 'pre-line' }}>
               {solutionsSubheading}
             </p>
           </div>
@@ -421,7 +426,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {consultancyHeading}
             </h2>
-            <p className="text-base text-white leading-relaxed mt-2">
+            <p className="text-base text-white leading-relaxed mt-2 mb-8" style={{ whiteSpace: 'pre-line' }}>
               {consultancySubheading}
             </p>
           </div>
@@ -537,10 +542,10 @@ export default function Home() {
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
-              Contact Us
+              {contactUsHeading}
             </h2>
-            <p className="text-base text-white leading-relaxed mt-2">
-              Get in touch with our team for support, inquiries, or feedback
+            <p className="text-base text-white leading-relaxed mt-2 mb-8" style={{ whiteSpace: 'pre-line' }}>
+              {contactUsSubheading}
             </p>
           </div>
 
@@ -575,12 +580,12 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {whyHeading}
             </h2>
-            <p className="text-base text-white leading-relaxed mt-2">
+            <p className="text-base text-white leading-relaxed mt-2 mb-8" style={{ whiteSpace: 'pre-line' }}>
               {whySubheading}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginTop: '48px' }}>
             {whyChooseUs.map((item, index) => {
               // Only render icon if it exists (for type safety)
               const icon = (item as any).icon;
@@ -623,10 +628,10 @@ export default function Home() {
       <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ whiteSpace: 'pre-line' }}>
               {ctaHeading}
             </h2>
-            <p className="text-lg text-blue-100 mb-10 leading-relaxed">
+            <p className="text-lg text-blue-100 mb-10 leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
               {ctaSubheading}
             </p>
             <Button href="#contact" label={ctaButtonLabel} />
