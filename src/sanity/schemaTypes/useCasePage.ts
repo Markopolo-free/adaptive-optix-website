@@ -38,9 +38,8 @@ export default {
     },
     {
       name: 'body',
-      title: 'Body (Full Page Content)',
+      title: 'Body',
       type: 'array',
-      description: 'Full detailed content shown on the dedicated use case page',
       of: [
         { type: 'block' },
         { type: 'image', options: { hotspot: true } },

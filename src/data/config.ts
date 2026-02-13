@@ -487,49 +487,7 @@ export const config = {
             _key: "60d0d4b1e2fc",
             _type: "span",
             marks: [],
-            text: "In today’s modern hubs, travel and mobility services are many and varied. With no single service provider controling the space, the opportunity for MaaS operators exists."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      },
-      {
-        _key: "63e7bc69cf1f",
-        _type: "block",
-        children: [
-          {
-            _key: "f77cd779a98d",
-            _type: "span",
-            marks: [],
-            text: "By consolidating and managing the provision of travel, logistics and other lifestyle-related offerings, MaaS operators provide a critical function to facilitate tomorrow’s cities and workspaces."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      },
-      {
-        _key: "d3f1c9bf1e3f",
-        _type: "block",
-        children: [
-          {
-            _key: "976b527408f7",
-            _type: "span",
-            marks: [],
-            text: "In order to increase adoption, effective service usage and brand while maximising service and MaaS provider ROI, pricing plays a pivotal role."
-          }
-        ],
-        markDefs: [],
-        style: "normal"
-      },
-      {
-        _key: "210f46a2e0e0",
-        _type: "block",
-        children: [
-          {
-            _key: "1aaf3c74b177",
-            _type: "span",
-            marks: [],
-            text: "By calculating service consumption supported by retained value management or seasonal/periodic pricing, our solution can support fair and transparent pricing, provide targeted offers and optimize resource utilization- thus ensuring an optimal outcome both for end consumers and providers"
+            text: "Consolidate price and incentive offerings from multiple service providers through a single solution"
           }
         ],
         markDefs: [],

@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-// import { PortableText } from '@portabletext/react';
-// import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
+import { PortableText } from '@portabletext/react';
+import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
 import { urlFor } from '@/sanity/lib/imageUrl';
 
 export default function MobilityAsAServiceUseCasePage() {
@@ -36,9 +36,7 @@ export default function MobilityAsAServiceUseCasePage() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-10" style={{ marginBottom: '40px' }}>{data?.title || 'Mobility as a Service'}</h1>
         <div className="text-xl text-white bg-[#14143A] border-t-4 border-blue-500 rounded-2xl p-8 sm:p-12 lg:p-16 mb-14 w-full" style={{ boxSizing: 'border-box', wordBreak: 'break-word', marginBottom: '48px' }}>
           {data?.body ? (
-            <div className="text-white leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
-              {typeof data.body === 'string' ? data.body : 'Mobility as a Service card content goes here.'}
-            </div>
+            <PortableText value={data.body} components={portableTextComponents} />
           ) : (
             <p className="mb-6">Mobility as a Service card content goes here.</p>
           )}
