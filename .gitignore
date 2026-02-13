@@ -30,6 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# local artifacts
+cards-check.json
+cards-latest.json
+homepage-output.html
+test-output.txt
+
 # env files (can opt-in for committing if needed)
 .env*
 
