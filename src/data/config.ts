@@ -886,8 +886,14 @@ export const config = {
   solutionsHeading: "Solution Features ",
   solutionsSubheading: "Leverage feature-rich capabilities to create domain-specific business strategies and capture evolving opportunities\n\n",
   whyHeading: "Why Adaptive Optix",
-  whySubheading: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses \n\n"
+  whySubheading: "Pricing is in our DNA - and something we've been passionate about for over 15 years - in which time we've delivered millions of dollars of value to businesses \n\n",
+  consultancyHeading: "Consultancy",
+  consultancySubheading: "Expert guidance and strategic insights",
+  contactUsHeading: "Contact Us",
+  contactUsSubheading: "Get in touch with our team for support, inquiries, or feedback",
+  staffPortalScreens: ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg']
 },
+  contactUsCards: [] as Array<{ icon?: string; title: string; description?: string | any[] }>,
 };
 
 export type Config = typeof config;

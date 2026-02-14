@@ -171,7 +171,7 @@ export default function Home() {
                   Click any image to open a lightbox viewer.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {staffPortalScreens.map((src, idx) => (
+                  {staffPortalScreens.map((src: string, idx: number) => (
                     <button
                       key={src}
                       type="button"
@@ -553,7 +553,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {contactCards.map((card, index) => (
+            {contactCards.map((card: { icon?: string; title: string; description?: string | any[] }, index: number) => (
               <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
                 <div className="text-4xl mb-6">{card.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-4">
