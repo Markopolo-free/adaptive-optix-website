@@ -13,5 +13,6 @@ import footerCard from './footerCard';
 
 import solutionFeaturePage from './solutionFeaturePage';
 import useCasePage from './useCasePage';
+import partner from './partner';
 
-export const schemaTypes = [homeCard, whyCard, productCard, solutionCard, useCaseCard, consultancyCard, pricingManagementCard, homeCopy, contactUsCard, useCasePage, solutionFeaturePage, solutionFeatureCard, footerCard];
+export const schemaTypes = [homeCard, whyCard, productCard, solutionCard, useCaseCard, consultancyCard, pricingManagementCard, homeCopy, contactUsCard, solutionFeatureCard, footerCard, solutionFeaturePage, useCasePage, partner];

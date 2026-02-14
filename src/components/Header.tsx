@@ -12,20 +12,13 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo - Text Only */}
           <Link href="/" className="flex items-center flex-shrink-0">
-            <span className="font-semibold text-2xl text-white">Adaptive Optix</span>
+            <span className="font-semibold text-3xl text-white">Adaptive Optix</span>
           </Link>
 
           {/* Desktop Navigation - Simple Links */}
           <div className="hidden md:flex items-center gap-8">
             <Link 
-              href="/studio" 
-              className="text-white font-normal transition hover:text-gray-300"
-              style={{ fontSize: '16px' }}
-            >
-              Content
-            </Link>
-            <Link 
-              href="#partners" 
+              href="/partners" 
               className="text-white font-normal transition hover:text-gray-300"
               style={{ fontSize: '16px' }}
             >
@@ -67,16 +60,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2">
             <Link
-              href="/studio"
-              className="block px-4 py-2 rounded-lg transition font-medium"
-              style={{ color: '#ffffff' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-            >
-              Content
-            </Link>
-            <Link
-              href="#partners"
+              href="/partners"
               className="block px-4 py-2 rounded-lg transition font-medium"
               style={{ color: '#ffffff' }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(242,100,25,0.15)')}

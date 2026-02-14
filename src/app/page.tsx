@@ -262,18 +262,18 @@ export default function Home() {
       </section>
       <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
-          <div style={{ marginBottom: '120px' }}>
+          <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
               {productsHeading}
             </h2>
-            <p className="text-base text-white leading-relaxed mt-2">
+            <p className="text-base text-white leading-relaxed mt-2 mb-8">
               {productsSubheading}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginTop: '48px' }}>
             {productFeatureCards.map((card, index) => (
-              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', display: 'flex', flexDirection: 'column' }}>
                 <div>
                   <div className="text-4xl mb-6">{card.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
@@ -290,8 +290,8 @@ export default function Home() {
                   </div>
                 </div>
                 {card.href && (
-                  <div className="mt-8">
-                    <a href={card.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition" style={{ marginTop: '16px' }}>
+                  <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
+                    <a href={card.href} className="inline-block px-6 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition">
                       Find out more
                     </a>
                   </div>

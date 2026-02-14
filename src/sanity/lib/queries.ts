@@ -16,7 +16,11 @@ export const footerCardQuery = `*[_type == "footerCard"][0] {
   connectTitle,
   connectText,
   email,
-  linkedInUrl
+  linkedInUrl,
+  instagramUrl,
+  twitterUrl,
+  tiktokUrl,
+  facebookUrl
 }`;
 export const homeCardsQuery = `*[_type == "homeCard"] | order(order asc) {
   _id,
@@ -128,4 +132,11 @@ export const productPageBySlugQuery = (slug: string) => `*[_type == "productCard
   description_2,
   features,
   shortDescription
+}`;
+export const partnersQuery = `*[_type == "partner"] | order(_createdAt asc) {
+  _id,
+  name,
+  websiteUrl,
+  description,
+  logo
 }`;
