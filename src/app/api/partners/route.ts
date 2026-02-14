@@ -2,6 +2,18 @@ import { sanityClient } from '@/sanity/lib/client';
 import { partnersQuery } from '@/sanity/lib/queries';
 
 export async function GET() {
+  if (!sanityClient) {
+    return new Response(
+      JSON.stringify({
+        error: 'Sanity client not configured',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
+
   try {
     const partners = await sanityClient.fetch(partnersQuery);
 
