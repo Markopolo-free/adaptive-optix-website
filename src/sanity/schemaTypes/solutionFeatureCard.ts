@@ -6,7 +6,8 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({ name: 'id', title: 'ID (slug-friendly)', type: 'string', validation: Rule => Rule.required() }),
-    defineField({ name: 'title', title: 'Title', type: 'string', validation: Rule => Rule.required() }),
+    defineField({ name: 'name', title: 'Name', type: 'string', validation: Rule => Rule.required() }),
+    defineField({ name: 'title', title: 'Title (Deprecated - use Name)', type: 'string' }),
     defineField({
       name: 'href',
       title: 'Link (href)',
