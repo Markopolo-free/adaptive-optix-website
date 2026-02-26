@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { config } from '@/data/config';
 import ContactForm from '@/components/ContactForm';
 import Header from '@/components/Header';
@@ -167,11 +168,14 @@ export default function Home() {
                         setLightboxIndex(idx);
                       }}
                     >
-                      <img
-                        src={src}
-                        alt={`Staff portal screenshot ${idx + 1}`}
-                        className="w-full h-56 object-cover"
-                      />
+                      <div className="relative w-full h-56">
+                        <Image
+                          src={src}
+                          alt={`Staff portal screenshot ${idx + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -194,11 +198,12 @@ export default function Home() {
               style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)', zIndex: 60 }}
               onClick={() => setLightboxIndex(null)}
             >
-              <div className="relative max-w-5xl w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-                <img
+              <div className="relative max-w-5xl w-full h-[80vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+                <Image
                   src={staffPortalScreens[lightboxIndex]}
                   alt={`Staff portal screenshot ${lightboxIndex + 1}`}
-                  className="max-h-[80vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+                  fill
+                  className="object-contain rounded-lg shadow-2xl"
                 />
                 <button
                   type="button"
