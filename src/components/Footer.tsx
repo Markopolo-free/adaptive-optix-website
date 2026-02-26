@@ -16,10 +16,11 @@ export default async function Footer() {
   const twitterUrl = footerCard.twitterUrl;
   const tiktokUrl = footerCard.tiktokUrl;
   const facebookUrl = footerCard.facebookUrl;
+  const emailLabel = email ? `${email.split('@')[0]}@` : 'Email';
 
   // Create pairs of social links
   const socialLinks = [
-    { label: 'Email', url: email ? `mailto:${email}` : null, icon: '✉️', isEmail: true },
+    { label: emailLabel, url: email ? `mailto:${email}` : null, icon: '✉️', isEmail: true },
     { label: 'LinkedIn', url: linkedInUrl, icon: '💼' },
     { label: 'Instagram', url: instagramUrl, icon: '📸' },
     { label: 'X (Twitter)', url: twitterUrl, icon: '𝕏' },

@@ -32,7 +32,7 @@ export default function Button({
 
   const variantStyles = {
     primary: {
-      backgroundColor: '#f26419ff',
+      backgroundColor: 'var(--divider)',
       color: 'white',
     },
     secondary: {
@@ -42,10 +42,10 @@ export default function Button({
     },
     home: {
       backgroundColor: 'white',
-      color: '#000029ff',
+      color: 'var(--background)',
     },
     modal: {
-      backgroundColor: '#6B5B95',
+      backgroundColor: 'var(--accent)',
       color: 'white',
     },
   };

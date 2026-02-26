@@ -8,6 +8,14 @@ interface SocialLink {
 }
 
 const SocialIcon = ({ label }: { label: string }) => {
+  if (label.includes('@')) {
+    return (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+    );
+  }
+
   switch (label) {
     case 'LinkedIn':
       return (
@@ -31,12 +39,6 @@ const SocialIcon = ({ label }: { label: string }) => {
       return (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19.321 5.562a5.122 5.122 0 0 1-.868-.075c.268-.875.42-1.8.42-2.755A6.701 6.701 0 0 0 12.172 0a6.701 6.701 0 0 0-6.701 6.732 6.701 6.701 0 0 0 6.701 6.732c.957 0 1.882-.153 2.755-.42V17.8a1.417 1.417 0 0 0 1.398 1.438h1.398V22a5.647 5.647 0 0 1-2.796.731c-3.13 0-5.732-2.603-5.732-5.732V7.402a3.575 3.575 0 0 0-3.576-3.585H1.42V0h3.575C10.24 0 14.69 4.45 14.69 9.95v5.647a5.122 5.122 0 0 0 3.567 1.44 5.121 5.121 0 1 0 0-10.242" />
-        </svg>
-      );
-    case 'Email':
-      return (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
         </svg>
       );
     default:

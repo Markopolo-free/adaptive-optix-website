@@ -7,7 +7,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50" style={{ backgroundColor: '#000029ff' }} suppressHydrationWarning>
+    <header className="sticky top-0 z-50" style={{ backgroundColor: 'var(--background)' }} suppressHydrationWarning>
       <nav className="w-full mx-auto" style={{ paddingTop: '24px', paddingBottom: '24px', paddingLeft: '48px', paddingRight: '48px' }}>
         <div className="flex items-center justify-between">
           {/* Logo - Text Only */}
@@ -90,7 +90,7 @@ export default function Header() {
         )}
       </nav>
       {/* Orange accent bar - wider */}
-      <div style={{ height: '12px', backgroundColor: '#F26419', width: '100%' }}></div>
+      <div style={{ height: '12px', backgroundColor: 'var(--divider)', width: '100%' }}></div>
     </header>
   );
 }

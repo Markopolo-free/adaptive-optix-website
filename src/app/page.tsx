@@ -116,6 +116,7 @@ export default function Home() {
   const useCases = cardContent?.useCases ?? config.useCases;
   const consultancy = cardContent?.consultancy ?? config.consultancy;
   const pricingManagement = cardContent?.pricingManagement ?? config.pricingManagement;
+  const configHomeCopy = config.homeCopy as any;
   const heroTitle = cardContent?.homeCopy?.heroTitle ?? config.homeCopy?.heroTitle ?? 'Adaptive Optix';
   const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? config.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
   const productsHeading = cardContent?.homeCopy?.productsHeading ?? config.homeCopy?.productsHeading ?? 'The power of pricing';
@@ -124,10 +125,10 @@ export default function Home() {
   const solutionsSubheading = (cardContent?.homeCopy?.solutionsSubheading?.trim() || config.homeCopy?.solutionsSubheading?.trim()) ?? 'Comprehensive approaches to modernize your financial operations';
   const whyHeading = cardContent?.homeCopy?.whyHeading ?? config.homeCopy?.whyHeading ?? 'Why Adaptive Optix';
   const whySubheading = (cardContent?.homeCopy?.whySubheading?.trim() || config.homeCopy?.whySubheading?.trim()) ?? 'Pricing is in our DNA - and something we\'ve been passionate about for over 15 years';
-  const consultancyHeading = cardContent?.homeCopy?.consultancyHeading ?? config.homeCopy?.consultancyHeading ?? 'Consultancy';
-  const consultancySubheading = (cardContent?.homeCopy?.consultancySubheading?.trim() || config.homeCopy?.consultancySubheading?.trim()) ?? 'Expert guidance and strategic insights';
-  const contactUsHeading = (cardContent?.homeCopy?.contactUsHeading?.trim() || config.homeCopy?.contactUsHeading?.trim()) ?? 'Contact Us';
-  const contactUsSubheading = (cardContent?.homeCopy?.contactUsSubheading?.trim() || config.homeCopy?.contactUsSubheading?.trim()) ?? 'Get in touch with our team for support, inquiries, or feedback';
+  const consultancyHeading = cardContent?.homeCopy?.consultancyHeading ?? configHomeCopy?.consultancyHeading ?? 'Consultancy';
+  const consultancySubheading = (cardContent?.homeCopy?.consultancySubheading?.trim() || configHomeCopy?.consultancySubheading?.trim()) ?? 'Expert guidance and strategic insights';
+  const contactUsHeading = (cardContent?.homeCopy?.contactUsHeading?.trim() || configHomeCopy?.contactUsHeading?.trim()) ?? 'Contact Us';
+  const contactUsSubheading = (cardContent?.homeCopy?.contactUsSubheading?.trim() || configHomeCopy?.contactUsSubheading?.trim()) ?? 'Get in touch with our team for support, inquiries, or feedback';
   const ctaHeading = cardContent?.homeCopy?.ctaHeading ?? config.homeCopy?.ctaHeading ?? 'Ready to Transform Your Operations?';
   const rawCtaSubheading = cardContent?.homeCopy?.ctaSubheading;
   const fallbackCtaSubheading = config.homeCopy?.ctaSubheading;
@@ -138,8 +139,11 @@ export default function Home() {
       : 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? config.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
-  const contactCards = cardContent?.contactUsCards ?? config.contactUsCards ?? [];
-  const staffPortalScreens = cardContent?.homeCopy?.staffPortalScreens ?? config.homeCopy?.staffPortalScreens ?? ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'];
+  const contactCards = cardContent?.contactUsCards ?? (config as any).contactUsCards ?? [];
+  const staffPortalScreens = cardContent?.homeCopy?.staffPortalScreens ?? configHomeCopy?.staffPortalScreens ?? ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'];
+  const sectionStyle = { paddingTop: '120px', paddingBottom: '120px', backgroundColor: 'var(--background)' };
+  const cardBaseClass = 'section-card';
+  const cardHoverClass = 'section-card cursor-pointer';
 
   return (
     <main>
@@ -248,19 +252,25 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '0px', paddingBottom: '0px' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '84px', paddingBottom: '84px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
+          <div className="hero-panel p-8 sm:p-12">
+            <p className="text-sm uppercase tracking-[0.18em] text-[var(--text-muted)] mb-4">Pricing Intelligence Platform</p>
+            <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{heroTitle}</h1>
+            <p className="text-lg md:text-xl text-[var(--text-muted)] leading-relaxed max-w-3xl whitespace-pre-line">{heroSubheading}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="#contact" label={ctaButtonLabel} />
+              <Link href="#solutions" className="inline-block px-6 py-2 rounded border border-white/35 text-white hover:bg-white/10 transition">
+                Explore Solutions
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
-      </section>
+      <hr className="section-divider" />
 
       {/* Products Section (now using productFeatureCards from useCaseCard schema) */}
-      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
-      </section>
-      <section id="products" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <section id="products" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -273,7 +283,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginTop: '48px' }}>
             {productFeatureCards.map((card, index) => (
-              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', display: 'flex', flexDirection: 'column' }}>
+              <div key={index} className={cardBaseClass} style={{ padding: '36px', display: 'flex', flexDirection: 'column' }}>
                 <div>
                   <div className="text-4xl mb-6">{card.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
@@ -303,10 +313,8 @@ export default function Home() {
       </section>
 
       {/* Solutions Section */}
-      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
-      </section>
-      <section id="solutions" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '260px', backgroundColor: '#000029ff' }}>
+      <hr className="section-divider" />
+      <section id="solutions" className="flex items-center justify-center" style={{ ...sectionStyle, paddingBottom: '180px' }}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -322,7 +330,7 @@ export default function Home() {
             style={{ gap: '24px', marginTop: '48px' }}
           >
             {solutions.map((solution: any, index: number) => (
-              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div className="text-4xl mb-6">{solution.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
@@ -352,10 +360,8 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section */}
-      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
-      </section>
-      <section id="use-cases" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <hr className="section-divider" />
+      <section id="use-cases" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -372,7 +378,7 @@ export default function Home() {
           >
             {useCases.map((useCase: any, index: number) => (
               useCase.href ? (
-                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition" style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <div className="text-4xl mb-6">{useCase.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-4">
@@ -395,7 +401,7 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px' }}>
                   <div className="text-4xl mb-6">{useCase.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
                     {useCase.name}
@@ -417,10 +423,8 @@ export default function Home() {
       </section>
 
       {/* Consultancy Section */}
-      <section style={{ backgroundColor: '#000029ff', padding: 0, margin: 0 }}>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: 0, width: '100%' }} />
-      </section>
-      <section id="consultancy" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <hr className="section-divider" />
+      <section id="consultancy" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -438,7 +442,7 @@ export default function Home() {
             {consultancy.map((service: any, index: number) => (
               service.href ? (
                 <Link key={index} href={service.href}>
-                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className={cardHoverClass} style={{ padding: '36px', minHeight: '260px' }}>
                     <div className="text-4xl mb-6">{service.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-4">
                       {service.name}
@@ -455,7 +459,7 @@ export default function Home() {
                   </div>
                 </Link>
               ) : (
-                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px' }}>
                   <div className="text-4xl mb-6">{service.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
                     {service.name}
@@ -477,9 +481,9 @@ export default function Home() {
       </section>
 
       {/* Orange divider between Consultancy and Pricing Management Solutions */}
-      <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
+      <hr className="section-divider" />
       {/* Pricing Management Solutions Section */}
-      <section id="pricing-management" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <section id="pricing-management" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -497,7 +501,7 @@ export default function Home() {
             {pricingManagement.map((solution: any, index: number) => (
               solution.href ? (
                 <Link key={index} href={solution.href}>
-                  <div className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition cursor-pointer" style={{ padding: '36px', minHeight: '260px' }}>
+                  <div className={cardHoverClass} style={{ padding: '36px', minHeight: '260px' }}>
                     <div className="text-4xl mb-6">{solution.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-4">
                       {solution.name}
@@ -514,7 +518,7 @@ export default function Home() {
                   </div>
                 </Link>
               ) : (
-                <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+                <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px' }}>
                   <div className="text-4xl mb-6">{solution.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">
                     {solution.name}
@@ -536,9 +540,9 @@ export default function Home() {
       </section>
 
       {/* Orange divider between Pricing Management Solutions and Contact Us */}
-      <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
+      <hr className="section-divider" />
       {/* Contact Us Section */}
-      <section id="contact-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <section id="contact-us" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-24">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -554,7 +558,7 @@ export default function Home() {
             style={{ gap: '24px', marginTop: '48px' }}
           >
             {contactCards.map((card: { icon?: string; title: string; description?: string | any[] }, index: number) => (
-              <div key={index} className="bg-[#14143A] border-t-4 border-blue-500 rounded-2xl" style={{ padding: '36px', minHeight: '260px' }}>
+              <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px' }}>
                 <div className="text-4xl mb-6">{card.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   {card.title}
@@ -573,8 +577,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-        <hr style={{ border: 'none', borderTop: '6px solid #F26419', margin: '0', width: '100%' }} />
-      <section id="why-choose-us" className="flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px', backgroundColor: '#000029ff' }}>
+      <hr className="section-divider" />
+      <section id="why-choose-us" className="flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ marginBottom: '32px' }}>
@@ -592,7 +596,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className={`bg-[#14143A] border-t-4 border-blue-500 rounded-2xl hover:shadow-lg transition ${item.clickable ? 'cursor-pointer' : ''}`}
+                  className={`${cardBaseClass} ${item.clickable ? 'cursor-pointer' : ''}`}
                   style={{ padding: '36px', minHeight: '260px' }}
                   onClick={() => item.clickable && openPortalModal()}
                 >
@@ -625,7 +629,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="hero-banner text-white flex items-center justify-center" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+      <section className="hero-banner text-white flex items-center justify-center" style={sectionStyle}>
         <div className="max-w-6xl px-6 sm:px-8 lg:px-12 w-full">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ whiteSpace: 'pre-line' }}>
