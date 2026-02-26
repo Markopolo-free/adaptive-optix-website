@@ -9,7 +9,6 @@ export default async function Footer() {
   if (!footerCard) return null;
 
   const connectTitle = footerCard.connectTitle || 'Connect';
-  const connectText = footerCard.connectText || '';
   const email = footerCard.email;
   const linkedInUrl = footerCard.linkedInUrl;
   const instagramUrl = footerCard.instagramUrl;

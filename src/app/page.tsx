@@ -14,9 +14,9 @@ import { portableTextComponents } from '@/sanity/lib/portableTextComponents';
 type HomeProductCard = {
   name: string;
   title?: string;
-  description?: string | any[]; // Allow both string and block content array
+  description?: string | unknown[]; // Allow both string and block content array
   icon?: string;
-  image?: any;
+  image?: unknown;
   href?: string;
   order?: number;
   productCard?: {
@@ -34,7 +34,7 @@ type CardContent = {
   useCases: typeof config.useCases;
   consultancy: typeof config.consultancy;
   pricingManagement: typeof config.pricingManagement;
-  contactUsCards: Array<{ icon?: string; title: string; description?: string | any[] }>;
+  contactUsCards: Array<{ icon?: string; title: string; description?: string | unknown[] }>;
   homeCopy?: {
     heroTitle?: string;
     heroSubheading?: string;
@@ -58,10 +58,8 @@ type CardContent = {
 
 export default function Home() {
   const [showPortalModal, setShowPortalModal] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [cardContent, setCardContent] = useState<CardContent | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
 
   const openPortalModal = () => {
     setLightboxIndex(null);
@@ -77,7 +75,6 @@ export default function Home() {
 
   const refreshContent = async () => {
     try {
-      setRefreshing(true);
       const res = await fetch('/api/content/cards', { cache: 'no-store' });
       if (!res.ok) return;
       const data: CardContent = await res.json();
@@ -86,8 +83,6 @@ export default function Home() {
       setCardContent(data);
     } catch (error) {
       console.error('Failed to fetch Sanity content', error);
-    } finally {
-      setRefreshing(false);
     }
   };
 
@@ -95,28 +90,14 @@ export default function Home() {
     refreshContent();
   }, []);
 
-  useEffect(() => {
-    if (cardContent) {
-      // Debug: log useCases to console
-      // eslint-disable-next-line no-console
-      console.log('DEBUG useCases:', cardContent.useCases);
-      // Print each use case's name and href for clarity
-      cardContent.useCases?.forEach((uc, i) => {
-        // eslint-disable-next-line no-console
-        console.log(`UseCase[${i}]: name='${uc.name}', href='${uc.href}'`);
-      });
-    }
-  }, [cardContent]);
-
   // Use homeProductCards from Studio (Homepage Product Cards)
   const productFeatureCards = cardContent?.homeProductCards ?? config.homeProductCards ?? [];
   const whyChooseUs = cardContent?.whyChooseUs ?? config.whyChooseUs;
-  const products = cardContent?.products ?? config.products;
   const solutions = cardContent?.solutions ?? config.solutions;
   const useCases = cardContent?.useCases ?? config.useCases;
   const consultancy = cardContent?.consultancy ?? config.consultancy;
   const pricingManagement = cardContent?.pricingManagement ?? config.pricingManagement;
-  const configHomeCopy = config.homeCopy as any;
+  const configHomeCopy = config.homeCopy as Partial<NonNullable<CardContent['homeCopy']>>;
   const heroTitle = cardContent?.homeCopy?.heroTitle ?? config.homeCopy?.heroTitle ?? 'Adaptive Optix';
   const heroSubheading = cardContent?.homeCopy?.heroSubheading ?? config.homeCopy?.heroSubheading ?? 'Empower your organization with data-driven pricing insights';
   const productsHeading = cardContent?.homeCopy?.productsHeading ?? config.homeCopy?.productsHeading ?? 'The power of pricing';
@@ -139,7 +120,8 @@ export default function Home() {
       : 'Connect with our team to discuss how Adaptive Optix can support your business goals.';
   const ctaButtonLabel = cardContent?.homeCopy?.ctaButtonLabel ?? config.homeCopy?.ctaButtonLabel ?? 'Schedule a Demo';
 
-  const contactCards = cardContent?.contactUsCards ?? (config as any).contactUsCards ?? [];
+  const configWithOptionalCards = config as typeof config & { contactUsCards?: CardContent['contactUsCards'] };
+  const contactCards = cardContent?.contactUsCards ?? configWithOptionalCards.contactUsCards ?? [];
   const staffPortalScreens = cardContent?.homeCopy?.staffPortalScreens ?? configHomeCopy?.staffPortalScreens ?? ['/staff-portal/screen1.jpg', '/staff-portal/screen2.jpg', '/staff-portal/screen3.jpg', '/staff-portal/screen4.jpg'];
   const sectionStyle = { paddingTop: '120px', paddingBottom: '120px', backgroundColor: 'var(--background)' };
   const cardBaseClass = 'section-card';
@@ -329,7 +311,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {solutions.map((solution: any, index: number) => (
+            {solutions.map((solution, index: number) => (
               <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <div className="text-4xl mb-6">{solution.icon}</div>
@@ -376,7 +358,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {useCases.map((useCase: any, index: number) => (
+            {useCases.map((useCase, index: number) => (
               useCase.href ? (
                 <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
@@ -439,7 +421,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {consultancy.map((service: any, index: number) => (
+            {consultancy.map((service, index: number) => (
               service.href ? (
                 <Link key={index} href={service.href}>
                   <div className={cardHoverClass} style={{ padding: '36px', minHeight: '260px' }}>
@@ -498,7 +480,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {pricingManagement.map((solution: any, index: number) => (
+            {pricingManagement.map((solution, index: number) => (
               solution.href ? (
                 <Link key={index} href={solution.href}>
                   <div className={cardHoverClass} style={{ padding: '36px', minHeight: '260px' }}>
@@ -557,7 +539,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2"
             style={{ gap: '24px', marginTop: '48px' }}
           >
-            {contactCards.map((card: { icon?: string; title: string; description?: string | any[] }, index: number) => (
+            {contactCards.map((card: { icon?: string; title: string; description?: string | unknown[] }, index: number) => (
               <div key={index} className={cardBaseClass} style={{ padding: '36px', minHeight: '260px' }}>
                 <div className="text-4xl mb-6">{card.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-4">
@@ -592,7 +574,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginTop: '48px' }}>
             {whyChooseUs.map((item, index) => {
               // Only render icon if it exists (for type safety)
-              const icon = (item as any).icon;
+              const icon = (item as { icon?: string }).icon;
               return (
                 <div
                   key={index}
